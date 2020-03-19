@@ -2,7 +2,7 @@
   "name": "hat-ui",
   "version": "0.0.1",
   "description": "a UI framework base on the vuejs2.x",
-  "main": "./src/main.js",
+  "main": "./dist/hat.min.js",
   "dependencies": {
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
@@ -51,6 +51,8 @@
     "dev:demo": "cross-env NODE_ENV=development node ./build/index.js",
     "prod:demo": "cross-env NODE_ENV=production node ./build/index.js",
     "demo:dll": "webpack --progress --config ./build/webpack.demo.dll.js",
+    "build": "webpack --progress --config ./build/webpack.prod.conf.js",
+    "dev": "webpack --progress --config ./build/webpack.dev.conf.js",
     "serve": "http-server ./sites/demo/dist",
     "lint": "eslint src/packages/**/*.{js,vue}"
   },
