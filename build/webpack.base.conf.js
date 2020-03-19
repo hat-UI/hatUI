@@ -4,12 +4,16 @@ const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
 const progressBarPlugin = require("progress-bar-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const config = require("../config/index")
 
 const webpackBaseConfig = {
   entry: path.resolve(__dirname, "../src/index.js"),
   output: {
-    filename:"hat.min.js",
-    path: path.resolve(__dirname, "../dist")
+    filename:`${config.packageName}.min.js`,
+    path: path.resolve(__dirname, "../dist"),
+    libraryTarget: 'umd',
+    globalObject: 'this',
+    umdNamedDefine: true
   },
   resolve: {
     modules: ["node_modules"],

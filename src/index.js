@@ -1,5 +1,4 @@
 import Button from "./packages/button/index.js";
-
 const components = [
     Button
 ];

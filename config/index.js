@@ -11,5 +11,6 @@ module.exports = {
         contentBase: path.resolve(__dirname,'../dist'),
         quiet: true
     },
-    isDll: true
+    isDll: true,
+    packageName: 'hat'
 }

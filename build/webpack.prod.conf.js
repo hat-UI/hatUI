@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const config = require("../config/index")
 const merge = require("webpack-merge");
 
 module.exports = merge(baseConfig, {
@@ -31,7 +32,7 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "hat.min.css",
+      filename: `${config.packageName}.min.css`,
       chunkFilename: "[id].css"
     }),
     new CompressionWebpackPlugin({
