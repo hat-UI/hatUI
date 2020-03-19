@@ -7,7 +7,7 @@ const DllReferencePlugin = require("webpack/lib/DllReferencePlugin");
 const progressBarPlugin = require("progress-bar-webpack-plugin");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const config = require("../config");
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const { isProduction } = require("./utils");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
@@ -15,7 +15,7 @@ const webpackBaseConfig = {
   entry: path.resolve(__dirname, "../sites/demo/src/main.js"),
   output: {
     filename: "[name]_[hash:16].js",
-    path: path.resolve(__dirname, "../dist")
+    path: path.resolve(__dirname, "../sites/demo/dist")
   },
   resolve: {
     modules: ["node_modules"],
@@ -50,7 +50,14 @@ const webpackBaseConfig = {
     }),
     new HappyPack({
       id: "babel",
-      loaders: ["babel-loader?cacheDirectory"],
+      loaders:[
+        {
+          loader:'babel-loader',
+          options: {
+            presets: ['env']
+          }   
+        }
+      ],
       threadPool: happyThreadPool
     }),
     new progressBarPlugin(),
@@ -71,12 +78,12 @@ const webpackBaseConfig = {
 if (config.isDll) {
   webpackBaseConfig.plugins.push(
     new DllReferencePlugin({
-      manifest: require("../dll/framework.manifest.json")
+      manifest: require("../sites/demo/dll/framework.manifest.json")
     })
   );
   webpackBaseConfig.plugins.push(
     new AddAssetHtmlWebpackPlugin({
-      filepath: path.resolve(__dirname, "../dll/framework.dll.js") // 对应的 dll 文件路径
+      filepath: path.resolve(__dirname, "../sites/demo/dll/framework.dll.js") // 对应的 dll 文件路径
     })
   );
 }
