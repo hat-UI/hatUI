@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <hat-button></hat-button>
     <router-view/>
   </div>
 </template>
