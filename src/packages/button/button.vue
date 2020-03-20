@@ -1,7 +1,7 @@
 <template>
-  <div @click="clickHandler($event)" :class="cls" class="primary">
+  <button aria-role="button" @click="clickHandler($event)" :class="cls">
     <slot>点击</slot>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -11,6 +11,10 @@ export default {
     size: {
       type: String,
       default: "medium"
+    },
+    type: {
+      type: String,
+      default: "default"
     }
   },
   data() {
@@ -21,7 +25,13 @@ export default {
   methods: {
     clickHandler($event) {
       this.$emit("click", $event);
+    },
+    generate() {
+      this.cls = `hat-button hat-button-${this.type}`
     }
+  },
+  mounted() {
+    this.generate()
   }
 };
 </script>

@@ -8,7 +8,7 @@ const log = require("./log");
 function checkDll() {
   return new Promise((resolve, reject) => {
     log.info(`检测是否已生成Dll动态链接库`);
-    const filePath = path.resolve(__dirname, "../dll/framework.dll.js");
+    const filePath = path.resolve(__dirname, "../sites/demo/dll/framework.dll.js");
     if (!fs.existsSync(filePath)) {
       downloadDll()
         .then(() => {

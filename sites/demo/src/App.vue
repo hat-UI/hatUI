@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <hat-button></hat-button>
+    <hat-button type="primary">click</hat-button>
     <router-view/>
   </div>
 </template>

@@ -1,3 +1,8 @@
-.primary {
-    background-color: $hat-button-primary-color;
+.hat-button {
+    border: none;
+}
+
+.hat-button-primary {
+    background-color: $hat--primary-color;
+    color: #ff0000;
 }
