@@ -1,5 +1,5 @@
 # hatUI
-
+![](https://travis-ci.org/hat-UI/hatUI.svg?branch=master)
 一套移动端轻量级Vue组件库
     
 ![hat](C:\Users\lvhuahao\Desktop\hat.png)
