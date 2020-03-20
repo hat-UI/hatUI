@@ -52,7 +52,7 @@
     "prod:demo": "cross-env NODE_ENV=production node ./build/index.js",
     "demo:dll": "webpack --progress --config ./build/webpack.demo.dll.js",
     "build": "webpack --progress --config ./build/webpack.prod.conf.js",
-    "dev": "webpack --progress --config ./build/webpack.dev.conf.js",
+    "multiEntry": "webpack --inline --progress --config ./build/webpack.mutilEntry.conf.js",
     "serve": "http-server ./sites/demo/dist",
     "lint": "eslint src/packages/**/*.{js,vue}"
   },

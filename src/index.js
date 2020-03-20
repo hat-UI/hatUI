@@ -1,5 +1,5 @@
-import Button from "./packages/button/index.js";
-import "./packages/button/button.scss";
+import Button from "./packages/Button/index.js";
+import "./packages/Button/button.scss";
 const components = [Button];
 
 const install = function(Vue, opts = {}) {

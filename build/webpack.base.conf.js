@@ -7,14 +7,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const config = require("../config/index")
 
 const webpackBaseConfig = {
-  entry: path.resolve(__dirname, "../src/index.js"),
-  output: {
-    filename:`${config.packageName}.min.js`,
-    path: path.resolve(__dirname, "../dist"),
-    libraryTarget: 'umd',
-    globalObject: 'this',
-    umdNamedDefine: true
-  },
   resolve: {
     modules: ["node_modules"],
     alias: {

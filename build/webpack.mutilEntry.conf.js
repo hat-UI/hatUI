@@ -4,18 +4,25 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const config = require("../config/index")
+const config = require("../config/index");
 const merge = require("webpack-merge");
-
+const pkgConfigs = require("../src/config.json");
+let entry = {};
+pkgConfigs.packages.map(item => {
+  const name = item.name;
+  const pakagePath = path.join(__dirname, `../src/packages/${name}/index.js`);
+  entry[name] = pakagePath;
+});
 module.exports = merge(baseConfig, {
   mode: "production",
-  devtool: false,
-  entry: path.resolve(__dirname, "../src/index.js"),
+  entry,
   output: {
-    filename:`${config.packageName}.min.js`,
-    path: path.resolve(__dirname, "../dist"),
-    libraryTarget: 'umd',
-    globalObject: 'this',
+    path: path.resolve(__dirname, "../dist/packages/"),
+    publicPath: "./assets/",
+    filename: "[name]/[name].js",
+    library: "[name]",
+    libraryTarget: "umd",
+    globalObject: "this",
     umdNamedDefine: true
   },
   module: {
@@ -41,7 +48,7 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${config.packageName}.min.css`,
+      filename: `[name]/[name].css`,
       chunkFilename: "[id].css"
     }),
     new CompressionWebpackPlugin({
@@ -51,8 +58,7 @@ module.exports = merge(baseConfig, {
       minRatio: 0.8
     }),
     new OptimizeCSSAssetsPlugin({
-      // cssProcessorOptions: true ? { map: { inline: false } } : {}
-      cssProcessorOptions:  {
+      cssProcessorOptions: {
         map: {
           inline: false,
           annotation: false
@@ -67,14 +73,8 @@ module.exports = merge(baseConfig, {
         test: /\.js(\?.*)?$/i
       }),
       new OptimizeCSSAssetsPlugin({
-        // cssProcessorOptions: true? {map: { inline: false }}:{}
         cssProcessorOptions: {}
       })
-    ],
-    // splitChunks: {
-    //   chunks: "all",
-    //   minChunks: 1,
-    //   minSize: 0
-    // }
+    ]
   }
 });
