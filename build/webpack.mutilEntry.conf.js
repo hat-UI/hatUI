@@ -60,8 +60,7 @@ module.exports = merge(baseConfig, {
     new OptimizeCSSAssetsPlugin({
       cssProcessorOptions: {
         map: {
-          inline: false,
-          annotation: false
+          inline: true
         }
       }
     })

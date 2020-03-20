@@ -59,6 +59,7 @@ function getNpmParam() {
 function isProduction() {
   return getNpmParam() === "production";
 }
+
 module.exports = {
   downloadDll,
   execScript,

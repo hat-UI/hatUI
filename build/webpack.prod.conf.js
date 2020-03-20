@@ -51,11 +51,10 @@ module.exports = merge(baseConfig, {
       minRatio: 0.8
     }),
     new OptimizeCSSAssetsPlugin({
-      // cssProcessorOptions: true ? { map: { inline: false } } : {}
       cssProcessorOptions:  {
         map: {
-          inline: false,
-          annotation: false
+          inline: true,
+          annotation: true
         }
       }
     })
