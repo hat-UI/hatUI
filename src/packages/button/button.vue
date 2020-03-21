@@ -19,12 +19,14 @@ export default {
   },
   data() {
     return {
-      cls: ""
+      cls: "",
+      count: 0
     };
   },
   methods: {
     clickHandler($event) {
       this.$emit("click", $event);
+      this.count = this.count + 1
     },
     generate() {
       this.cls = `hat-button hat-button-${this.type}`
