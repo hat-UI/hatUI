@@ -15,18 +15,20 @@ export default {
     type: {
       type: String,
       default: "default"
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      cls: "",
-      count: 0
+      cls: ""
     };
   },
   methods: {
     clickHandler($event) {
       this.$emit("click", $event);
-      this.count = this.count + 1
     },
     generate() {
       this.cls = `hat-button hat-button-${this.type}`
