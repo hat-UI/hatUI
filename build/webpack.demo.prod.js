@@ -41,7 +41,7 @@ module.exports = merge(baseConfig, {
       minRatio: 0.8
     }),
     new OptimizeCSSAssetsPlugin({
-      cssProcessorOptions: true ? { map: { inline: false } } : {}
+      cssProcessorOptions: true ? { map: { inline: true } } : {}
     })
   ],
   optimization: {
@@ -51,7 +51,7 @@ module.exports = merge(baseConfig, {
         test: /\.js(\?.*)?$/i
       }),
       new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: true ? { map: { inline: false } } : {}
+        cssProcessorOptions: true ? { map: { inline: true } } : {}
       })
     ],
     splitChunks: {
