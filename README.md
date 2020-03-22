@@ -1,9 +1,11 @@
 # hatUI
 ![](https://travis-ci.org/hat-UI/hatUI.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/hat-UI/hatUI/badge.svg?branch=master)](https://coveralls.io/github/hat-UI/hatUI?branch=master)
+![](https://img.shields.io/badge/License-MIT-brightgreen)
+
 > 一套移动端轻量级Vue组件库
     
-![hat](C:\Users\lvhuahao\Desktop\hat.png)
+![hat](https://s1.ax1x.com/2020/03/22/84zcbd.png)
 
 ## 项目开发目录功能设计说明
 
