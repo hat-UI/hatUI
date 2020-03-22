@@ -32,6 +32,7 @@
     "happypack": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.12.1",
+    "istanbul-instrumenter-loader": "^3.0.1",
     "jsdom": "^16.2.1",
     "jsdom-global": "^3.0.2",
     "log-symbols": "^3.0.0",
@@ -39,6 +40,7 @@
     "mocha": "5.2.0",
     "mocha-webpack": "2.0.0-beta.0",
     "node-sass": "^4.13.1",
+    "nyc": "^15.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "ora": "^4.0.3",
     "postcss-loader": "^3.0.0",
@@ -64,7 +66,19 @@
     "serve": "http-server ./sites/demo/dist",
     "lint": "eslint src/packages/**/*.{js,vue}",
     "test:watch": "npm run test --watch",
-    "test": "mocha-webpack --webpack-config build/webpack.test.conf.js --require test/setup.js src/packages/*/__test__/**.spec.js"
+    "test": "cross-env NODE_ENV=coverage nyc mocha-webpack --webpack-config build/webpack.test.conf.js --require test/setup.js src/packages/*/__test__/**.spec.js",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "nyc": {
+    "include": [
+      "src/packages/**/*.vue"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "instrument": false,
+    "sourceMap": false
   },
   "keywords": [
     "scaffold",
