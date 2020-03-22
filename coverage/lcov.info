@@ -1,5 +1,5 @@
 TN:
-SF:C:/Users/Administrator/Desktop/hatUI/src/packages/button/__test__/button.spec.js
+SF:C:/Users/huahao/Desktop/hatUI/src/packages/button/__test__/button.spec.js
 FN:4,(anonymous_7)
 FN:6,_callee
 FN:10,_callee2
@@ -30,7 +30,7 @@ BRF:6
 BRH:6
 end_of_record
 TN:
-SF:C:\Users\Administrator\Desktop\hatUI\src\packages\button\src\packages\button\button.vue
+SF:C:\Users\huahao\Desktop\hatUI\src\packages\button\src\packages\button\button.vue
 FN:8,data
 FN:29,clickHandler
 FN:29,generate

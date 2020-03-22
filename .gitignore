@@ -1,4 +1,6 @@
 node_modules
+coverage
+.nyc_output
 dist
 sites/demo/dll
 sites/demo/dist
