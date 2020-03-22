@@ -1,6 +1,6 @@
 # hatUI
 ![](https://travis-ci.org/hat-UI/hatUI.svg?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/github/hat-UI/hatUI/badge.svg?branch=master)](https://coveralls.io/github/hat-UI/hatUI?branch=master)
 > 一套移动端轻量级Vue组件库
     
 ![hat](C:\Users\lvhuahao\Desktop\hat.png)
