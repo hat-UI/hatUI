@@ -6,32 +6,32 @@
 
 <script>
 export default {
-  name: "hat-actionsheet",
+  name: 'hat-actionsheet',
   props: {
     size: {
       type: String,
-      default: "medium"
+      default: 'medium',
     },
     type: {
       type: String,
-      default: "default"
-    }
+      default: 'default',
+    },
   },
   data() {
     return {
-      cls: ""
+      cls: '',
     };
   },
   methods: {
     clickHandler($event) {
-      this.$emit("click", $event);
+      this.$emit('click', $event);
     },
     generate() {
-      this.cls = `hat-button hat-button-${this.type}`
-    }
+      this.cls = `hat-button hat-button-${this.type}`;
+    },
   },
   mounted() {
-    this.generate()
-  }
+    this.generate();
+  },
 };
 </script>

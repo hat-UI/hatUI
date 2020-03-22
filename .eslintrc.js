@@ -10,7 +10,11 @@ module.exports = {
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "describe": null,
+        "it": null,
+        "expect": null,
+        "Vue": null
     },
     "parserOptions": {
         "ecmaVersion": 2018,
@@ -22,5 +26,12 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+    },
+    settings: {
+        'import/resolver': {
+            webpack: {
+                config: './build/webpack.base.conf.js',
+            },
+        },
     }
 };

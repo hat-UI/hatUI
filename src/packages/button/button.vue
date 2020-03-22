@@ -6,36 +6,36 @@
 
 <script>
 export default {
-  name: "hat-button",
+  name: 'hat-button',
   props: {
     size: {
       type: String,
-      default: "medium"
+      default: 'medium',
     },
     type: {
       type: String,
-      default: "default"
+      default: 'default',
     },
     disabled: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
-      cls: ""
+      cls: '',
     };
   },
   methods: {
     clickHandler($event) {
-      this.$emit("click", $event);
+      this.$emit('click', $event);
     },
     generate() {
-      this.cls = `hat-button hat-button-${this.type}`
-    }
+      this.cls = `hat-button hat-button-${this.type}`;
+    },
   },
   mounted() {
-    this.generate()
-  }
+    this.generate();
+  },
 };
 </script>
