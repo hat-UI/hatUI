@@ -7,6 +7,13 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const config = require("../config/index");
 const merge = require("webpack-merge");
 const pkgConfigs = require("../src/config.json");
+
+const rimraf = require("rimraf");
+
+rimraf(`./dist/packages`,(err) => {
+  if(err) console.log(err)
+})
+
 let entry = {};
 pkgConfigs.packages.map(item => {
   const name = item.name;

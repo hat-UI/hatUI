@@ -6,6 +6,15 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const config = require("../config/index")
 const merge = require("webpack-merge");
+const rimraf = require("rimraf");
+
+rimraf(`./dist/${config.packageName}.min.css`,(err) => {
+  if(err) console.log(err)
+})
+rimraf(`./dist/${config.packageName}.min.js`,(err) => {
+  if(err) console.log(err)
+})
+
 
 module.exports = merge(baseConfig, {
   mode: "production",
