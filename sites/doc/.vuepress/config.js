@@ -42,7 +42,7 @@ module.exports = {
                 {
                     title: '组件',
                     collapsable: false,
-                    sidebarDepth: 2,
+                    sidebarDepth: 0,
                     children: [
                         {
                             title: '布局组件',
