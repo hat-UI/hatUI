@@ -1,9 +1,62 @@
 .hat-button {
+    display: inline-block;
+    box-sizing: border-box;
     cursor: pointer;
-    border: none;
+    outline: none;
+    &:active {
+        filter: brightness(0.9);
+    }
+    &[disabled] {
+        cursor: not-allowed;
+        border: none;
+        background-color: $hat-disabled-color;
+    }
 }
 
+.hat-button-medium {
+    height: $hat-button-medium;
+    line-height: $hat-button-medium;
+}
+.hat-button-small {
+    height: $hat-button-small;
+    line-height: $hat-button-small;
+    padding: 0 $hat-button-small/2;
+}
+.hat-button-medium {
+    height: $hat-button-medium;
+    line-height: $hat-button-medium;
+    padding: 0 $hat-button-medium/2;
+}
+.hat-button-big {
+    height: $hat-button-big;
+    line-height: $hat-button-big;
+    padding: 0 $hat-button-big/2;
+}
+.hat-button-default {
+    color: $hat-primary--color;
+    background-color: #ffffff;
+    border: 1px solid $hat-primary--color;
+}
 .hat-button-primary {
-    background-color: $hat--primary-color;
-    color: #ff0000;
+    color: #ffffff;
+    border: 1px solid $hat-primary--color;
+    background-color: $hat-primary--color;
+}
+.hat-button-warning {
+    color: #ffffff;
+    border: 1px solid $hat-warning--color;
+    background-color: $hat-warning--color;
+}
+.hat-button-info {
+    color: #ffffff;
+    background-color: $hat-info--color;
+    border: 1px solid $hat-info--color;
+}
+.hat-button-danger {
+    color: #ffffff;
+    border: 1px solid $hat-danger--color;
+    background-color: $hat-danger--color;
+}
+.hat-button-circle {
+    border-radius: $hat-button-circle;
 }

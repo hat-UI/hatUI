@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-    <hat-button type="primary">click</hat-button>
-    <router-view/>
+    <hat-button type="primary" size="small" :circle="true" @click="handle('hello')">click</hat-button>
+    <hat-button type="warning" size="small" :circle="true" @click="handle('hello')">click</hat-button>
+    <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+   handle(msg) {
+     console.log(msg)
+   } 
+  }
 }
 </script>
 

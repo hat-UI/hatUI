@@ -1,6 +1,8 @@
 import Button from "./packages/Button/index.js";
 import "./packages/Button/button.scss";
-const components = [Button];
+import Icon from "./packages/Icon/index.js";
+import "./packages/Icon/icon.scss";
+const components = [Button,Icon];
 
 const install = function(Vue, opts = {}) {
   components.map(component => {
@@ -13,5 +15,5 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
   install,
-  Button
+  ...components
 };

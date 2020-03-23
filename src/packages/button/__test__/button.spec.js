@@ -11,4 +11,5 @@ describe('test hat-button: ', () => {
     wrapper.setProps({ type: 'primary' });
     expect(wrapper.vm.type).toBe('primary');
   });
+  wrapper.destroy()
 });
