@@ -17,12 +17,17 @@ export default {
   mounted() {
     console.log(this.componentName);
     this.url =
-      "https://vux.li/demos/v2?locale=zh-CN&transition=none/#/component/actionsheet";
+      "https://harhao.github.io/";
   }
 };
 </script>
 
 <style scoped lang="scss">
+@media screen and (max-width: 800px) {
+  .demo-wrapper {
+    display: none;
+  }
+}
 .demo-wrapper {
   & > iframe {
     margin: 4rem 2rem 0 0;
