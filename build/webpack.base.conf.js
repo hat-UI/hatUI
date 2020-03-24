@@ -1,9 +1,9 @@
 const path = require("path");
 const HappyPack = require("happypack");
-const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
+const os = require("os")
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 const progressBarPlugin = require("progress-bar-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const config = require("../config/index")
 
 const webpackBaseConfig = {
@@ -32,7 +32,6 @@ const webpackBaseConfig = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(),
     new HappyPack({
       id: "image",
       loaders: ["url-loader"],

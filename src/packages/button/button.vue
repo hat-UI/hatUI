@@ -5,13 +5,19 @@
     :class="cls"
     :disabled="disabled"
   >
+    <hat-icon v-if="icon !== ''" :type="icon"></hat-icon>
     <slot>按钮</slot>
   </button>
 </template>
 
 <script>
+import Icon from '../Icon/icon.vue';
+
 export default {
   name: 'hat-button',
+  components: {
+    'hat-icon': Icon,
+  },
   props: {
     size: {
       type: String,
@@ -40,7 +46,7 @@ export default {
   methods: {
     clickHandler() {
       this.$emit('click');
-    }
+    },
   },
   computed: {
     cls() {
@@ -48,7 +54,7 @@ export default {
       this.circle && (className += ' hat-button-circle');
       this.round && (className += ' hat-button-round');
       return className;
-    }
-  }
+    },
+  },
 };
 </script>

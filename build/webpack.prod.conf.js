@@ -30,7 +30,7 @@ module.exports = merge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass|css)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader
@@ -40,7 +40,7 @@ module.exports = merge(baseConfig, {
           {
             loader: "sass-loader",
             options: {
-              prependData: `@import "./src/styles/index.scss"; `
+              prependData: `@import "./src/styles/index.scss";`
             }
           }
         ],

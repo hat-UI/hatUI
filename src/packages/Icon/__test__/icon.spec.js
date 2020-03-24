@@ -1,10 +1,11 @@
-import { mount } from "@vue/test-utils";
-import Icon from "../icon.vue";
+import { shallowMount } from '@vue/test-utils';
+import Vue from 'vue';
+import Icon from '../icon.vue';
 
-describe("test icon: ", () => {
-  const wrapper = mount(Button);
-  it("Set the icon props: ", async () => {
-    wrapper.setProps({ type: "tick" });
-    expect(wrapper.vm.type).toBe("tick");
+describe('检测Icon.vue: ', () => {
+  const wrapper = shallowMount(Icon);
+  it('props 检测', () => {
+    wrapper.setProps({ type: 'aixin' });
+    expect(wrapper.vm.type).toBe('aixin');
   });
 });

@@ -1,7 +1,8 @@
 const path = require("path");
 const HappyPack = require("happypack");
 const htmlWebpackPlugin = require("html-webpack-plugin");
-const happyThreadPool = HappyPack.ThreadPool({ size: 5 });
+const os = require("os")
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin");
 const DllReferencePlugin = require("webpack/lib/DllReferencePlugin");
 const progressBarPlugin = require("progress-bar-webpack-plugin");

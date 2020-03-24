@@ -17,25 +17,17 @@ const webpackConfig = merge(baseCongfig, {
     devtoolModuleFilenameTemplate: '[absolute-resource-path]',
     devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
   },
-  target: 'node',
   externals: [nodeExternals()],
   module: {
     rules: [{
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        'css-loader',
-      ]
-    },
-    {
-      test: /\.scss$/,
+      test: /\.(scss|sass|css)$/,
       use: [
         'style-loader',
         'css-loader',
         {
           loader: 'sass-loader',
           options: {
-            prependData: `@import "./src/styles/index.scss"; `
+            prependData: `@import "./src/styles/index.scss";`
           }
         }
       ]

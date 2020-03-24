@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <hat-button type="primary" size="small" :circle="true" @click="handle('hello')">click</hat-button>
+    <hat-button type="primary" size="small" :circle="true" @click="handle('hello')" icon="heart">click</hat-button>
     <hat-button type="warning" size="small" :circle="true" @click="handle('hello')">click</hat-button>
     <!-- <router-view/> -->
   </div>
