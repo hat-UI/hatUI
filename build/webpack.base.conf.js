@@ -1,11 +1,11 @@
 const path = require("path");
 const HappyPack = require("happypack");
-const os = require("os")
+const os = require("os");
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 const progressBarPlugin = require("progress-bar-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const config = require("../config/index")
-
+const config = require("../config/index");
+const isMultiEntry = process.env.NODE_ENV === 'multiEntry'
 const webpackBaseConfig = {
   resolve: {
     modules: ["node_modules"],
@@ -31,7 +31,13 @@ const webpackBaseConfig = {
       },
       {
         test: /\.(eot|otf|ttf|woff)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: [ 'file-loader' ]
+        use: [
+          {
+            loader: "file-loader",
+            options: { name: isMultiEntry? "../fonts/[name].[hash:8].[ext]": "fonts/[name].[hash:8].[ext]" 
+            }
+          }
+        ]
       }
     ]
   },
@@ -43,12 +49,12 @@ const webpackBaseConfig = {
     }),
     new HappyPack({
       id: "babel",
-      loaders:[
+      loaders: [
         {
-          loader:'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/env']
-          }   
+            presets: ["@babel/env"]
+          }
         }
       ],
       threadPool: happyThreadPool

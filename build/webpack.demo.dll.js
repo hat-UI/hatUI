@@ -4,11 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
     name: "production",
     entry: {
-        framework: [
-            "vuex",
-            "vue-router",
-            "vue", 
-            ]
+        framework: ["vuex","vue-router","vue",]
     },
     output: {
         filename: "[name].dll.js",
