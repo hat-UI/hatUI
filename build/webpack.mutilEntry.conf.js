@@ -7,8 +7,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const config = require("../config/index");
 const merge = require("webpack-merge");
 const pkgConfigs = require("../src/config.json");
-const { getScssVariable } = require("./utils")
-
+const px2rem = require('postcss-px2rem');
 const rimraf = require("rimraf");
 
 rimraf(`./dist/packages`,(err) => {
@@ -22,7 +21,7 @@ pkgConfigs.packages.map(item => {
   entry[name] = pakagePath;
 });
 
-const golbalVariable = `${getScssVariable()} @import "./src/styles/index.scss";`
+
 module.exports = merge(baseConfig, {
   mode: "production",
   entry,
@@ -44,11 +43,18 @@ module.exports = merge(baseConfig, {
             loader: MiniCssExtractPlugin.loader
           },
           "css-loader",
-          "postcss-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcss: function() {
+                return [px2rem({remUnit: 75})];
+              }
+            }
+          },
           {
             loader: "sass-loader",
             options: {
-              prependData: golbalVariable
+              prependData: `@import "./src/styles/index.scss";`
             }
           }
         ],

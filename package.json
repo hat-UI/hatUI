@@ -48,6 +48,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "ora": "^4.0.3",
     "postcss-loader": "^3.0.0",
+    "postcss-px2rem": "^0.3.0",
     "progress-bar-webpack-plugin": "^2.1.0",
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
@@ -67,8 +68,8 @@
     "dev:demo": "cross-env NODE_ENV=development node ./build/index.js",
     "prod:demo": "cross-env NODE_ENV=production node ./build/index.js",
     "demo:dll": "webpack --progress --config ./build/webpack.demo.dll.js",
-    "build": "webpack --progress --config ./build/webpack.prod.conf.js",
-    "multiEntry": "webpack --inline --progress --config ./build/webpack.mutilEntry.conf.js",
+    "build": "cross-env NODE_ENV=build webpack --progress --config ./build/webpack.prod.conf.js",
+    "multiEntry": "cross-env NODE_ENV=multiEntry webpack --inline --progress --config ./build/webpack.mutilEntry.conf.js",
     "serve": "http-server ./sites/demo/dist",
     "lint": "eslint --fix src/packages/**/*.{js,vue}",
     "test:watch": "npm run test --watch",
@@ -92,6 +93,7 @@
     "scaffold",
     "vue"
   ],
+  "theme": "sites/demo/src/theme/variable.scss",
   "author": "harhao",
   "license": "MIT"
 }

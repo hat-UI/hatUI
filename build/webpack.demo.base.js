@@ -12,6 +12,8 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const { isProduction } = require("./utils");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
+
+
 const webpackBaseConfig = {
   entry: path.resolve(__dirname, "../sites/demo/src/main.js"),
   output: {

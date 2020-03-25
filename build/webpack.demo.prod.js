@@ -5,7 +5,8 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const merge = require("webpack-merge");
 const { getScssVariable } = require("./utils")
-const golbalVariable = `${getScssVariable()} @import "./src/styles/index.scss";`
+const globalVariable = `${getScssVariable()} @import "./src/styles/index.scss";`
+
 module.exports = merge(baseConfig, {
   mode: "production",
   devtool: false,
@@ -23,7 +24,7 @@ module.exports = merge(baseConfig, {
             loader: "sass-loader",
             // 这句只有在引用没有打包的组件库时需要加入,引用min.js后缀，不需要。主要是为了方便调试
             options: {
-              prependData: golbalVariable
+              prependData: globalVariable
             }
           }
         ],
