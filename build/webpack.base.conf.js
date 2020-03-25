@@ -28,6 +28,10 @@ const webpackBaseConfig = {
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         use: ["happypack/loader?id=image"]
+      },
+      {
+        test: /\.(eot|otf|ttf|woff)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        use: [ 'file-loader' ]
       }
     ]
   },
@@ -43,7 +47,7 @@ const webpackBaseConfig = {
         {
           loader:'babel-loader',
           options: {
-            presets: ['env']
+            presets: ['@babel/env']
           }   
         }
       ],

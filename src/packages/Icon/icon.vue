@@ -1,5 +1,5 @@
 <template>
-  <i aria-role="icon" class="hat-icon haticonfont" :class="classStyle">
+  <i aria-role="icon" class="hat-icon hat-icon-font" :class="classStyle">
   </i>
 </template>
 
