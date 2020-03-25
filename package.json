@@ -93,6 +93,7 @@
     "scaffold",
     "vue"
   ],
+  "theme": "sites/demo/src/theme/variable.scss",
   "author": "harhao",
   "license": "MIT"
 }

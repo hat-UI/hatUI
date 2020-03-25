@@ -1,2 +1,2 @@
-// 不需引入variable.scss variable.scss作为主题向外暴露,可以通过用户项目的 package.json中定义theme字段指定路径，可以为字符串或者字符串数组
 @import "./font/icon.scss";
+@import "./variable.scss";
