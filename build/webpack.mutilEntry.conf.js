@@ -7,6 +7,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const config = require("../config/index");
 const merge = require("webpack-merge");
 const pkgConfigs = require("../src/config.json");
+const { getScssVariable } = require("./utils")
 
 const rimraf = require("rimraf");
 
@@ -20,6 +21,8 @@ pkgConfigs.packages.map(item => {
   const pakagePath = path.join(__dirname, `../src/packages/${name}/index.js`);
   entry[name] = pakagePath;
 });
+
+const golbalVariable = `${getScssVariable()} @import "./src/styles/index.scss";`
 module.exports = merge(baseConfig, {
   mode: "production",
   entry,
@@ -45,7 +48,7 @@ module.exports = merge(baseConfig, {
           {
             loader: "sass-loader",
             options: {
-              prependData: `@import "./src/styles/index.scss";`
+              prependData: golbalVariable
             }
           }
         ],

@@ -4,6 +4,9 @@ const config = require("../config");
 const baseCongfig = require("./webpack.base.conf")
 const nodeExternals = require('webpack-node-externals')
 const isCoverage = process.env.NODE_ENV === 'coverage';
+const { getScssVariable } = require("./utils")
+const golbalVariable = `${getScssVariable()} @import "./src/styles/index.scss";`
+
 const webpackConfig = merge(baseCongfig, {
   mode: 'production',
   devtool: 'inline-cheap-module-source-map',
@@ -27,7 +30,7 @@ const webpackConfig = merge(baseCongfig, {
         {
           loader: 'sass-loader',
           options: {
-            prependData: `@import "./src/styles/index.scss";`
+            prependData: golbalVariable
           }
         }
       ]

@@ -4,14 +4,15 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const merge = require("webpack-merge");
-
+const { getScssVariable } = require("./utils")
+const golbalVariable = `${getScssVariable()} @import "./src/styles/index.scss";`
 module.exports = merge(baseConfig, {
   mode: "production",
   devtool: false,
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(scss|sass|css)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader
@@ -20,8 +21,9 @@ module.exports = merge(baseConfig, {
           "postcss-loader",
           {
             loader: "sass-loader",
+            // 这句只有在引用没有打包的组件库时需要加入,引用min.js后缀，不需要。主要是为了方便调试
             options: {
-              prependData: `@import "./src/styles/index.scss"; `
+              prependData: golbalVariable
             }
           }
         ],
