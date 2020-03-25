@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "hat-icon-font";
+  src: url('~@/styles/font/iconfont.woff') format('woff');
+  src: url('~@/styles/font/iconfont.ttf') format('truetype');
+}
+
+.hat-icon-font {
+  font-family: "hat-icon-font" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hat-icon-heart:before {
+  content: "\e8ab";
+}
+
+.hat-icon-success:before {
+  content: "\e8ad";
+}
+
+.hat-icon-menu:before {
+  content: "\e8af";
+}
+
+.hat-icon-password:before {
+  content: "\e8b2";
+}
+
+.hat-icon-scan:before {
+  content: "\e8b5";
+}
+
+.hat-icon-member:before {
+  content: "\e8b6";
+}
+
+.hat-icon-filter:before {
+  content: "\e8b7";
+}
+
+.hat-icon-delete:before {
+  content: "\e8b8";
+}
+
+.hat-icon-upload:before {
+  content: "\e8b9";
+}
+
+.hat-icon-fail:before {
+  content: "\e8ba";
+}
+
+.hat-icon-phone:before {
+  content: "\e8bb";
+}
+
+.hat-icon-data:before {
+  content: "\e8bc";
+}
+
+.hat-icon-refresh:before {
+  content: "\e8bd";
+}
+
+.hat-icon-search:before {
+  content: "\e8be";
+}
+
+.hat-icon-camera:before {
+  content: "\e8c7";
+}
+
+.hat-icon-add:before {
+  content: "\e8c8";
+}

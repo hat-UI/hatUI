@@ -13,7 +13,8 @@ const devConfig = merge(baseConfig, {
       {
         test: /\.(scss|sass|css)$/,
         use: [
-          "style-loader", "css-loader",
+          "style-loader", 
+          "css-loader",
           "postcss-loader",
           {
             loader: "sass-loader",
