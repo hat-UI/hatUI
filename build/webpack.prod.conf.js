@@ -7,7 +7,6 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const config = require("../config/index")
 const merge = require("webpack-merge");
 const rimraf = require("rimraf");
-const px2rem = require('postcss-px2rem');
 
 
 rimraf(`./dist/${config.packageName}.min.css`,(err) => {
@@ -37,14 +36,7 @@ module.exports = merge(baseConfig, {
             loader: MiniCssExtractPlugin.loader
           },
           "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcss: function() {
-                return [px2rem({remUnit: 75})];
-              }
-            }
-          },
+          "postcss-loader",
           {
             loader: "sass-loader",
             options: {
