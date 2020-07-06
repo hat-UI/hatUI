@@ -3,6 +3,8 @@
     <hat-button type="primary" size="small" :circle="true" @click="handle('hello')" icon="success">click</hat-button>
     <hat-button type="warning" size="small" :circle="true" @click="handle('hello')">click</hat-button>
     <!-- <router-view/> -->
+    <span @click="toastClick('toast')">toast</span>
+    <!-- <hat-toast></hat-toast> -->
   </div>
 </template>
 
@@ -12,7 +14,11 @@ export default {
   methods: {
    handle(msg) {
      console.log(msg)
-   } 
+   },
+   toastClick() {
+     console.log('this', this)
+     this.$toast('test')
+   }
   }
 }
 </script>

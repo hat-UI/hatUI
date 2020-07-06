@@ -2,7 +2,8 @@ import Button from "./packages/Button/index.js";
 import "./packages/Button/button.scss";
 import Icon from "./packages/Icon/index.js";
 import "./packages/Icon/icon.scss";
-const components = [Button,Icon];
+import Toast from "./packages/Toast/index.js"
+const components = [Button,Icon,Toast];
 
 const install = function(Vue, opts = {}) {
   components.map(component => {
