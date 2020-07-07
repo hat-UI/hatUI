@@ -11,6 +11,11 @@ module.exports = {
         contentBase: path.resolve(__dirname,'../dist'),
         quiet: true
     },
+    resolve: {
+        alias: {
+          '@': resolve('src'),
+        }
+      },
     isDll: true,
     packageName: 'hat'
 }

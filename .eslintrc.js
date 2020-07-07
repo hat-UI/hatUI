@@ -26,6 +26,7 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        "linebreak-style": [0 ,"error", "windows"],
     },
     settings: {
         'import/resolver': {

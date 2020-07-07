@@ -1,6 +1,6 @@
 <template>
-  <div class="toast">
-    toast
+  <div class="hat-toast" v-show="visible" :class="showAnimation ? 'fadein' : 'fadeout'">
+    <span v-html="text"></span>
   </div>
 </template>
 
@@ -9,16 +9,18 @@ export default {
   name: 'hat-toast',
   data() {
     return {
-      visible: false
-    }
+      visible: false,
+      showAnimation: false,
+      text: '',
+    };
   },
   methods: {
     show() {
-      this.visible = true
+      this.visible = true;
     },
     hide() {
-      this.visible = false
-    }
-  }
-}
+      this.visible = false;
+    },
+  },
+};
 </script>

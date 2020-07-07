@@ -2,9 +2,9 @@
   <div id="app">
     <hat-button type="primary" size="small" :circle="true" @click="handle('hello')" icon="success">click</hat-button>
     <hat-button type="warning" size="small" :circle="true" @click="handle('hello')">click</hat-button>
-    <!-- <router-view/> -->
-    <span @click="toastClick('toast')">toast</span>
-    <!-- <hat-toast></hat-toast> -->
+    <div class="item">
+      <hat-button type="warning" size="small" :circle="true" @click="handleToast()">toast</hat-button>
+    </div>
   </div>
 </template>
 
@@ -12,15 +12,14 @@
 export default {
   name: 'App',
   methods: {
-   handle(msg) {
-     console.log(msg)
-   },
-   toastClick() {
-     console.log('this', this)
-     this.$toast('test')
-   }
-  }
-}
+    handle(msg) {
+      console.log(msg);
+    },
+    handleToast() {
+      this.$toast('我是toast组件,我是toast组件，我是toast组件', 2500);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
@@ -31,5 +30,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  .item {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+  }
 }
 </style>
