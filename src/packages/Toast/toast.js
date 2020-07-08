@@ -29,7 +29,6 @@ function showToast(text, duration = 2000) {
   // 过了 duration 时间后隐藏
   setTimeout(() => {
     toastDom.visible = false;
-    document.body.removeChild(document.querySelector('.hat-toast'));
   }, duration);
 }
 

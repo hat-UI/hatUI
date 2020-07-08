@@ -1,5 +1,5 @@
 <template>
-  <div class="hat-toast" v-show="visible" :class="showAnimation ? 'fadein' : 'fadeout'">
+  <div class="hat-toast" v-if="visible" :class="showAnimation ? 'fadein' : 'fadeout'">
     <span v-html="text"></span>
   </div>
 </template>
