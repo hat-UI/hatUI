@@ -4,7 +4,7 @@
     class="hat-switch"
     :class="swicthCls"
     @change="changeHandle"
-    v-model="checked"
+    :checked="value"
   />
 </template>
 <script>
@@ -16,9 +16,12 @@ export default {
       defualt: false
     },
     activeColor: {
-      
-    }
 
+    },
+    value: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
@@ -37,7 +40,8 @@ export default {
   },
   methods: {
     changeHandle() {
-      this.$emit('change', this.checked)
+      this.$emit('input', this.value)
+      console.log('====>',this.value)
     }
   }
 };

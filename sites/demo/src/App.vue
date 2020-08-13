@@ -5,13 +5,16 @@
     <div class="item">
       <hat-button type="warning" size="small" :circle="true" @click="handleToast()">toast</hat-button>
     </div>
-    <hat-switch :disabled="true"></hat-switch>
+    <hat-switch v-model="checked"></hat-switch>
   </div>
 </template>
 
 <script>
 export default {
   name: 'App',
+  data() {
+    checked: true
+  },
   methods: {
     handle(msg) {
       console.log(msg);
