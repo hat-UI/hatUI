@@ -1,16 +1,16 @@
 <template>
   <div class="hat-datepicker-wrapper">
     <div class="hat-datepicker-header">
-      <span @click="transalte(-1)">&lt;</span>
+      <hat-icon @click.native="transalte(-1)" type="arrow-left"></hat-icon>
       <div class="hat-datepicker-date-wrapper">
         <div class="hat-datepicker-year">{{currentDate.currentYear}}年</div>
-        <div class="hat-datepicker-month">{{currentDate.currentMonth}}月</div>
+        <div class="hat-datepicker-month">{{currentDate.currentMonth > 9 ? currentDate.currentMonth: '0' + currentDate.currentMonth}}月</div>
       </div>
-      <span @click="transalte(1)">&gt;</span>
+      <hat-icon @click.native="transalte(1)" type="arrow-right"></hat-icon>
     </div>
     <div class="hat-datepicker-body">
       <table class="hat-datepicker-canlendar">
-        <thead>
+        <thead class="hat-datepicker-week-header">
           <tr>
             <td>日</td>
             <td>一</td>
@@ -27,7 +27,7 @@
               v-for="(date,idx) in item"
               :key="idx"
               :class="{ 'grey': date.month !== currentDate.currentMonth }"
-            >{{date.showDate}}</td>
+            ><div class="table-cell"  @click.stop.prevent="selectDate(date)" :class="{ 'active': date.date === activeCode }">{{date.showDate}}</div></td>
           </tr>
         </tbody>
       </table>
@@ -35,21 +35,26 @@
   </div>
 </template>
 <script>
+import Icon from '../Icon/icon.vue';
 export default {
   name: "hat-datepicker",
+  components: {
+    'hat-icon': Icon,
+  },
   data() {
     return {
       dateArr: [],
       currentDate: {
         currentYear: null,
         currentMonth: null
-      }
+      },
+      activeCode: null
     }
   },
   methods: {
     dateData(year, month) {
       var ret = [];
-      if (!year || !month) {
+      if (!year || !month && month!== 0) {
         var today = new Date();
         year = today.getFullYear();
         month = today.getMonth() + 1;
@@ -70,7 +75,7 @@ export default {
       var lastDay = new Date(year, month, 0);
       var lastDate = lastDay.getDate();
 
-      for (var i = 0; i < 7 * 6; i++) {
+      for (let i = 0; i < 7 * 6; i++) {
         var date = i + 1 - preMonthDayCount;
         var showDate = date;
         var thisMonth = month;
@@ -96,7 +101,6 @@ export default {
         })
 
       }
-      console.log(`===>`,thisMonth)
       return {
         year: year,
         month: month,
@@ -105,7 +109,6 @@ export default {
     },
     translateToMatrix(year, month) {
       const data = this.dateData(year, month)
-      console.log('------>',data)
       const len = Math.ceil(data.days.length / 7);
       const arr = []
       this.currentDate = Object.assign({}, this.currentDate, {
@@ -119,9 +122,17 @@ export default {
     },
     transalte(number) {
       let year = this.currentDate.currentYear
-      const month = number > 0 ? (this.currentDate.currentMonth + 1) : (this.currentDate.currentMonth - 1)
-      number > 0 ? this.currentDate.currentMonth++ : this.currentDate.currentMonth--
+      const month = number > 0 ? (++this.currentDate.currentMonth ) : (--this.currentDate.currentMonth )
+      this.resetActiveCode()
       this.translateToMatrix(year, month)
+    },
+    resetActiveCode() {
+      this.activeCode = null
+    },
+    selectDate(value) {
+      this.activeCode = value.date
+      const timestamp = new Date(this.currentDate.currentYear,value.month,value.showDate)
+      this.$emit('change',timestamp)
     }
   },
   created() {

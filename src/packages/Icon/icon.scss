@@ -1,6 +1,9 @@
 .hat-icon {
-    width: 3em;
-    height: 3em;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    padding: 5px;
+    cursor: pointer;
     &>img {
         height: 80%;
         background-color: #ffffff;

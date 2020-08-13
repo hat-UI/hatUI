@@ -6,10 +6,23 @@
 
 .hat-icon-font {
   font-family: "hat-icon-font" !important;
-  font-size: 16px;
+  font-size: 18px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.hat-icon-double-arrow-right:before {
+  content: "\e6c4";
+}
+.hat-icon-double-arrow-left:before {
+  content: "\e6c5";
+}
+.hat-icon-arrow-right:before {
+  content: "\e62d";
+}
+
+.hat-icon-arrow-left:before {
+  content: "\e64a";
 }
 
 .hat-icon-heart:before {

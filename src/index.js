@@ -1,15 +1,16 @@
 import Button from "./packages/Button/index.js";
-import "./packages/Button/button.scss";
 import Icon from "./packages/Icon/index.js";
-import "./packages/Icon/icon.scss";
 import Toast from "./packages/Toast/index.js"
 import Switch from "./packages/Switch/index.js"
-const components = [Button,Icon,Toast,Switch];
+import DatePicker from "./packages/DatePicker/index.js"
+import mixins from './mixins/index.js'
+const components = [Button,Icon,Toast,Switch,DatePicker];
 
 const install = function(Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);
   });
+  Vue.use(mixins)
 };
 if (typeof window !== "undefined" && window.Vue) {
   install(window.Vue);

@@ -5,7 +5,8 @@
     <div class="item">
       <hat-button type="warning" size="small" :circle="true" @click="handleToast()">toast</hat-button>
     </div>
-    <hat-switch v-model="checked"></hat-switch>
+    <hat-switch v-model="checked" :disabled="true"></hat-switch>
+    <hat-datepicker @change="changeHandle"></hat-datepicker>
   </div>
 </template>
 
@@ -22,6 +23,9 @@ export default {
     handleToast() {
       this.$toast('我是toast组件,我是toast组件，我是toast组件', 2500);
     },
+    changeHandle(timestamp) {
+      
+    }
   },
 };
 </script>
@@ -32,7 +36,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
   .item {
     padding: 20px 0;
