@@ -13,7 +13,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-          '@': resolve('src'),
+          '@': path.resolve(__dirname,'../src'),
         }
       },
     isDll: true,

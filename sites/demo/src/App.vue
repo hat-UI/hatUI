@@ -5,6 +5,7 @@
     <div class="item">
       <hat-button type="warning" size="small" :circle="true" @click="handleToast()">toast</hat-button>
     </div>
+    <hat-switch :disabled="true"></hat-switch>
   </div>
 </template>
 
