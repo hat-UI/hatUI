@@ -1,0 +1,60 @@
+.hat-loading-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    z-index: 999;
+    & .hat-loading {
+        width: 40px;
+        height: 40px;
+        animation: rotate 2s linear infinite;
+        .hat-loading-circle{
+            stroke: $hat-primary--color;
+            stroke-width: 2;
+            fill: none;
+            animation: dash 1.5s linear infinite;
+        }
+        .hat-loading-wave {
+            fill: $hat-primary--color;
+        }
+    }
+    & .tips {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 130, 200;
+        stroke-dashoffset: -50;
+    }
+
+    100% {
+        stroke-dasharray: 130, 200;
+        stroke-dashoffset: -188;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
