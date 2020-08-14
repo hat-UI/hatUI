@@ -1,6 +1,5 @@
 <template>
-  <i aria-role="icon" class="hat-icon hat-icon-font " :class="classStyle">
-  </i>
+  <i aria-role="icon" class="hat-icon hat-icon-font" :style="styleCls" :class="classStyle"></i>
 </template>
 
 <script>
@@ -11,11 +10,27 @@ export default {
       type: String,
       default: '',
     },
+    size: {
+      type: Number | String,
+      default: 18
+    },
+    round: {
+      type: Boolean,
+      defualt: false
+    }
   },
   computed: {
     classStyle() {
-      return `hat-icon-${this.type}`;
+      return [
+        this.type ? `hat-icon-${this.type}` : '',
+        this.round ? 'round' : ''
+      ]
     },
+    styleCls() {
+      return {
+        fontSize: this.size + 'px',
+      }
+    }
   },
 };
 </script>

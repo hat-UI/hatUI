@@ -1,11 +1,11 @@
 .hat-icon {
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    padding: 5px;
+    margin: 0 5px;
     cursor: pointer;
     &>img {
         height: 80%;
         background-color: #ffffff;
+    }
+    @at-root .round {
+        border-radius: 50%;
     }
 }

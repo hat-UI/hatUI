@@ -1,0 +1,36 @@
+.hat-step-bar-wrapper {
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .hat-step-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin: 0 15px;
+
+        .slot-text {
+            width: 30px;
+            color: #999999;
+            font-size: 14px;
+        }
+        .hat-step-font-active {
+            color: $hat-primary--color;
+        }
+    }
+
+    .hat-step-bar {
+        width: 50px;
+        height: 1px;
+        border-radius: 4px;
+        &.hat-step-bar-active {
+            background-color: $hat-primary--color;
+        }
+    }
+    @at-root .normal {
+        background-color: #c1c4ca ;
+    }
+}

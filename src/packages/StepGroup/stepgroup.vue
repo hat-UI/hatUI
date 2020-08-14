@@ -6,11 +6,15 @@
 
 <script>
 export default {
-  name: 'hat-step-graoup',
+  name: 'hat-step-group',
   props: {
     active: {
       type: Number,
       default: 0
+    },
+    direction: {
+      type: String,
+      default: 'horizontal'
     }
   },
   data() {
