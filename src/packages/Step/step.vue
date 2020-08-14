@@ -1,6 +1,5 @@
 <template>
-  <div class="step-bar-wrapper">
-    <!-- <img :src="active ? activeArrow: inactiveArrow" class="arrow" v-if="!isLast" /> -->
+  <div class="hat-step-bar-wrapper">
     <img :src="active ? activeArrow: inactiveArrow" class="arrow" v-if="!isFirst" />
     <div class="icon-wrapper">
       <img :src="active? finish: unfinish" class="icon" />
@@ -28,10 +27,6 @@ export default {
     }
   },
   computed: {
-    // isLast() {
-    //   const parent = this.$parent
-    //   return parent.steps[parent.steps.length - 1] === this
-    // },
     isFirst() {
       const parent = this.$parent
       return parent.steps[0] === this
@@ -47,7 +42,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.step-bar-wrapper {
+.hat-step-bar-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;

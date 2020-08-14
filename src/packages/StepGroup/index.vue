@@ -1,11 +1,12 @@
 <template>
-  <div class="step-bar-group">
+  <div class="hat-step-graoup">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'hat-step-graoup',
   props: {
     active: {
       type: Number,
@@ -28,7 +29,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.step-bar-group {
+.hat-step-graoup {
   display: flex;
   flex-direction: row;
   padding-bottom: 40px;

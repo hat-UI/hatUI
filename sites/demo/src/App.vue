@@ -1,12 +1,19 @@
 <template>
   <div id="app">
-    <hat-button type="primary" size="small" :circle="true" @click="handle('hello')" icon="success">click</hat-button>
+    <hat-button
+      type="primary"
+      size="small"
+      :circle="true"
+      @click="handle('hello')"
+      icon="success"
+    >click</hat-button>
     <hat-button type="warning" size="small" :circle="true" @click="handle('hello')">click</hat-button>
     <div class="item">
       <hat-button type="warning" size="small" :circle="true" @click="handleToast()">toast</hat-button>
     </div>
-    <hat-switch v-model="checked" :disabled="true"></hat-switch>
-    <hat-datepicker @change="changeHandle"></hat-datepicker>
+    <hat-switch v-model="checked"></hat-switch>
+    <input type="text" v-model="timestamp" />
+    <hat-datepicker @change="changeHandle" type="range" ></hat-datepicker>
   </div>
 </template>
 
@@ -14,7 +21,10 @@
 export default {
   name: 'App',
   data() {
-    checked: true
+    return {
+      checked: true,
+      timestamp: null
+    }
   },
   methods: {
     handle(msg) {
@@ -24,7 +34,7 @@ export default {
       this.$toast('我是toast组件,我是toast组件，我是toast组件', 2500);
     },
     changeHandle(timestamp) {
-      
+      this.timestamp = timestamp
     }
   },
 };
@@ -32,7 +42,7 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
