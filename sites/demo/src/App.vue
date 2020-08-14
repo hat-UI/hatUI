@@ -1,19 +1,8 @@
 <template>
   <div id="app">
-    <hat-button
-      type="primary"
-      size="small"
-      :circle="true"
-      @click="handle('hello')"
-      icon="success"
-    >click</hat-button>
-    <hat-button type="warning" size="small" :circle="true" @click="handle('hello')">click</hat-button>
-    <div class="item">
-      <hat-button type="warning" size="small" :circle="true" @click="handleToast()">toast</hat-button>
-    </div>
-    <hat-switch v-model="checked"></hat-switch>
-    <input type="text" v-model="timestamp" />
-    <hat-datepicker @change="changeHandle" type="range" ></hat-datepicker>
+    <hat-button size="small" :circle="true" @click="handle('hello')" color="linear-gradient(to right, #ff6034, #ee0a24)">主要性能</hat-button>
+    <hat-button type="primary" size="mini" :circle="true" @click="handle('hello')" round>主要性能</hat-button>
+    <hat-button type="primary" size="large" :circle="true" @click="handle('hello')" plain round disabled>主要性能</hat-button>
   </div>
 </template>
 
@@ -29,12 +18,6 @@ export default {
   methods: {
     handle(msg) {
       console.log(msg);
-    },
-    handleToast() {
-      this.$toast('我是toast组件,我是toast组件，我是toast组件', 2500);
-    },
-    changeHandle(timestamp) {
-      this.timestamp = timestamp
     }
   },
 };

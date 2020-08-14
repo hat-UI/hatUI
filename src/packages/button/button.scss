@@ -1,62 +1,95 @@
 .hat-button {
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
     box-sizing: border-box;
     cursor: pointer;
     outline: none;
+
     &:active {
         filter: brightness(0.9);
     }
-    &[disabled] {
+
+    @at-root .disabled {
         cursor: not-allowed;
         border: none;
         background-color: $hat-disabled-color;
     }
 }
 
-.hat-button-medium {
-    height: $hat-button-medium;
-    line-height: $hat-button-medium;
+.hat-button-mini {
+    height: $hat-button-mini;
+    line-height: $hat-button-mini;
+    padding: 0 $hat-button-mini/4;
 }
+
 .hat-button-small {
     height: $hat-button-small;
     line-height: $hat-button-small;
     padding: 0 $hat-button-small/2;
 }
-.hat-button-medium {
-    height: $hat-button-medium;
-    line-height: $hat-button-medium;
-    padding: 0 $hat-button-medium/2;
+
+.hat-button-large {
+    height: $hat-button-large;
+    line-height: $hat-button-large;
+    padding: 0 $hat-button-large/2;
 }
-.hat-button-big {
-    height: $hat-button-big;
-    line-height: $hat-button-big;
-    padding: 0 $hat-button-big/2;
-}
+
+
 .hat-button-default {
     color: $hat-primary--color;
     background-color: #ffffff;
     border: 1px solid $hat-primary--color;
 }
+
 .hat-button-primary {
     color: #ffffff;
     border: 1px solid $hat-primary--color;
     background-color: $hat-primary--color;
+
+    &.hat-button-plain {
+        color: $hat-primary--color;
+    }
 }
+
 .hat-button-warning {
     color: #ffffff;
     border: 1px solid $hat-warning--color;
     background-color: $hat-warning--color;
+
+    &.hat-button-plain {
+        color: $hat-warning--color;
+    }
 }
+
 .hat-button-info {
     color: #ffffff;
     background-color: $hat-info--color;
     border: 1px solid $hat-info--color;
+
+    &.hat-button-plain {
+        color: $hat-info--color;
+    }
 }
+
 .hat-button-danger {
     color: #ffffff;
     border: 1px solid $hat-danger--color;
     background-color: $hat-danger--color;
+
+    &.hat-button-plain {
+        color: $hat-danger--color;
+    }
 }
+
 .hat-button-circle {
     border-radius: $hat-button-circle;
+}
+
+.hat-button-plain {
+    background-color: #ffffff;
+}
+
+.hat-button-round {
+    border-radius: 999px;
 }

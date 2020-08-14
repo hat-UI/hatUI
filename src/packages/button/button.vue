@@ -1,12 +1,9 @@
 <template>
-  <button
-    aria-role="button"
-    @click="clickHandler"
-    :class="cls"
-    :disabled="disabled"
-  >
+  <button aria-role="button" :style="styleCls" @click="clickHandler" :class="cls" :disabled="disabled">
     <hat-icon v-if="icon !== ''" :type="icon"></hat-icon>
-    <slot>按钮</slot>
+    <div class="hat-button-content">
+      <slot></slot>
+    </div>
   </button>
 </template>
 
@@ -23,6 +20,10 @@ export default {
       type: String,
       default: 'medium',
     },
+    plain: {
+      type: Boolean,
+      default: false
+    },
     type: {
       type: String,
       default: 'default',
@@ -35,10 +36,18 @@ export default {
       type: Boolean,
       default: false,
     },
+    round: {
+      type: Boolean,
+      default: false
+    },
     icon: {
       type: String,
       default: '',
     },
+    color: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {};
@@ -53,8 +62,20 @@ export default {
       let className = `hat-button hat-button-${this.type} hat-button-${this.size}`;
       this.circle && (className += ' hat-button-circle');
       this.round && (className += ' hat-button-round');
+      this.disabled && (className += ' disabled')
+      this.plain && (className += ' hat-button-plain')
       return className;
     },
+    styleCls() {
+      if(this.color) {
+        return {
+          background: this.color,
+          color: '#fff',
+          border: 'none'
+        }
+      }
+      return null
+    }
   },
 };
 </script>
