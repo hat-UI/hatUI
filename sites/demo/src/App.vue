@@ -11,7 +11,7 @@
     <hat-button size="small" type="info" @click="active-- " circle>步骤-1</hat-button>
     <hat-button size="small" type="warning" round>完善信息</hat-button>
     <hat-button size="small" plain round @click="showToast">完善信息</hat-button>
-    <hat-button size="small" type="info" plain circle>完善信息</hat-button>
+    <hat-button size="small" type="info" plain circle @click="show = !show">完善信息</hat-button>
     <hat-button
       size="small"
       type="info"
@@ -21,7 +21,7 @@
       icon="camera"
     >完善信息</hat-button>
     <hat-switch></hat-switch>
-    <hat-datepicker type="multiple"></hat-datepicker>
+    <hat-datepicker type="range" :show.sync="show" @closed="handle" circle></hat-datepicker>
     <div style="width:50px;height:50px;">
       <hat-loading :closed="true"></hat-loading>
     </div>
@@ -30,21 +30,23 @@
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
   data() {
     return {
       checked: true,
+      show: false,
       timestamp: null,
-      active: 0
-    }
+      active: 0,
+    };
   },
   methods: {
-    handle(msg) {
-      console.log(msg);
+    handle() {
+      this.show = !this.show;
+      console.log(this.show);
     },
     showToast() {
-      this.$toast('这是一个toast')
-    }
+      this.$toast("这是一个toast");
+    },
   },
 };
 </script>

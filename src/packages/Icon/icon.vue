@@ -12,11 +12,15 @@ export default {
     },
     size: {
       type: Number | String,
-      default: 18
+      default: 24
     },
     round: {
       type: Boolean,
       defualt: false
+    },
+    color: {
+      type: String,
+      default: '#bfbfbf'
     }
   },
   computed: {
@@ -29,6 +33,7 @@ export default {
     styleCls() {
       return {
         fontSize: this.size + 'px',
+        color: this.color
       }
     }
   },

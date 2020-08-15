@@ -6,8 +6,9 @@ import DatePicker from "./packages/DatePicker"
 import StepGroup from "./packages/StepGroup"
 import Step from "./packages/Step"
 import Loading from "./packages/Loading"
+import Popup from "./packages/Popup"
 import mixins from './mixins'
-const components = [Button,Icon,Toast,Switch,DatePicker,StepGroup,Step,Loading];
+const components = [Button,Icon,Toast,Switch,DatePicker,StepGroup,Step,Loading,Popup];
 
 const install = function(Vue, opts = {}) {
   components.map(component => {
