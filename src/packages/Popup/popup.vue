@@ -56,7 +56,6 @@ export default {
       const stylesheet = document.styleSheets[0];
       const positionType = this.position;
       const width = this.width;
-      console.log("=====>", width);
       switch (positionType) {
         case "left":
           stylesheet.insertRule(

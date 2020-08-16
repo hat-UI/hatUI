@@ -76,6 +76,7 @@ export default {
       },
       activeCode: null,
       selectedDate: [],
+      timestamp: null
     };
   },
   methods: {
@@ -238,25 +239,23 @@ export default {
         year: this.currentDate.currentYear,
         showDate: this.activeCode,
       };
-      let timestamp = null;
       switch (type) {
         case "single":
-          timestamp = this.formatDate(dateData, formatType);
+          this.timestamp = this.formatDate(dateData, formatType);
           break;
         case "multiple":
           this.selectedDate.length > 0 &&
-            (timestamp = this.selectedDate
+            (this.timestamp = this.selectedDate
               .map((item) => this.formatDate(item, formatType))
               .sort());
           break;
         case "range":
           this.selectedDate.length === 2 &&
-            (timestamp = this.selectedDate
+            (this.timestamp = this.selectedDate
               .map((item) => this.formatDate(item, formatType))
               .sort());
           break;
       }
-      this.$emit("change", timestamp);
     },
     formatDate(dateData, formatType) {
       switch (formatType) {
@@ -282,6 +281,7 @@ export default {
       this.$emit("closed");
     },
     certain() {
+      this.$emit("change", this.timestamp);
       this.closeDatepicker()
     }
   },

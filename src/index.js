@@ -18,7 +18,6 @@ import Popup from "./packages/popup/index.js"
 import "./packages/popup/popup.scss"
 import mixins from './mixins'
 const components = [Button,Icon,Toast,Switch,DatePicker,StepGroup,Step,Loading,Popup];
-console.log('===============>',components)
 const install = function(Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);

@@ -3,28 +3,9 @@
     <hat-step-group :active="active">
       <hat-step>注册用户</hat-step>
       <hat-step>完善信息</hat-step>
-      <hat-step>获取奖励</hat-step>
     </hat-step-group>
-    <hat-icon type="camera"></hat-icon>
-    <hat-icon type="add"></hat-icon>
     <hat-button size="small" type="danger" @click="active++ " circle>步骤+1</hat-button>
     <hat-button size="small" type="info" @click="active-- " circle>步骤-1</hat-button>
-    <hat-button size="small" type="warning" round>完善信息</hat-button>
-    <hat-button size="small" plain round @click="showToast">完善信息</hat-button>
-    <hat-button size="small" type="info" plain circle @click="show = !show">完善信息</hat-button>
-    <hat-button
-      size="small"
-      type="info"
-      plain
-      circle
-      color="linear-gradient(to right, #ff6034, #ee0a24)"
-      icon="camera"
-    >完善信息</hat-button>
-    <hat-switch></hat-switch>
-    <hat-datepicker type="range" :show.sync="show" @closed="handle" circle></hat-datepicker>
-    <div style="width:50px;height:50px;">
-      <hat-loading :closed="true"></hat-loading>
-    </div>
   </div>
 </template>
 
@@ -40,13 +21,6 @@ export default {
     };
   },
   methods: {
-    handle() {
-      this.show = !this.show;
-      console.log(this.show);
-    },
-    showToast() {
-      this.$toast("这是一个toast");
-    },
   },
 };
 </script>
