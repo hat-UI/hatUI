@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import icon from '../Icon/index'
+import icon from '../icon/icon.vue'
 export default {
   name: 'hat-step',
   components: {

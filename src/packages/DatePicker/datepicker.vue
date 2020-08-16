@@ -38,12 +38,14 @@
         </table>
       </div>
     </div>
-    <hat-button size="small" round type="primary">确定</hat-button>
+    <div class="hat-datepicker-btn-wrapper">
+      <hat-button size="small" round type="primary" block @click="certain">确定</hat-button>
+    </div>
   </hat-popup>
 </template>
 <script>
-import Popup from "../Popup";
-import Icon from "../Icon/icon.vue";
+import Popup from "../popup";
+import Icon from "../icon/icon.vue";
 import Button from "../button";
 export default {
   name: "hat-datepicker",
@@ -279,6 +281,9 @@ export default {
     closeDatepicker() {
       this.$emit("closed");
     },
+    certain() {
+      this.closeDatepicker()
+    }
   },
   created() {
     this.translateToMatrix();

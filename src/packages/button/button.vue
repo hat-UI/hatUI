@@ -1,5 +1,11 @@
 <template>
-  <button aria-role="button" :style="styleCls" @click="clickHandler" :class="cls" :disabled="disabled">
+  <button
+    aria-role="button"
+    :style="styleCls"
+    @click="clickHandler"
+    :class="cls"
+    :disabled="disabled"
+  >
     <hat-icon v-if="icon !== ''" :type="icon"></hat-icon>
     <div class="hat-button-content">
       <slot></slot>
@@ -8,25 +14,25 @@
 </template>
 
 <script>
-import Icon from '../Icon/icon.vue';
+import Icon from "../icon/icon.vue"
 
 export default {
-  name: 'hat-button',
+  name: "hat-button",
   components: {
-    'hat-icon': Icon,
+    "hat-icon": Icon,
   },
   props: {
     size: {
       type: String,
-      default: 'medium',
+      default: "medium",
     },
     plain: {
       type: Boolean,
-      default: false
+      default: false,
     },
     type: {
       type: String,
-      default: 'default',
+      default: "default",
     },
     disabled: {
       type: Boolean,
@@ -38,44 +44,52 @@ export default {
     },
     round: {
       type: Boolean,
-      default: false
+      default: false,
     },
     icon: {
       type: String,
-      default: '',
+      default: "",
     },
     color: {
       type: String,
-      default: ''
-    }
+      default: "",
+    },
+    block: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {};
   },
   methods: {
     clickHandler() {
-      this.$emit('click');
+      this.$emit("click");
     },
   },
   computed: {
     cls() {
       let className = `hat-button hat-button-${this.type} hat-button-${this.size}`;
-      this.circle && (className += ' hat-button-circle');
-      this.round && (className += ' hat-button-round');
-      this.disabled && (className += ' disabled')
-      this.plain && (className += ' hat-button-plain')
+      this.circle && (className += " hat-button-circle");
+      this.round && (className += " hat-button-round");
+      this.disabled && (className += " disabled");
+      this.plain && (className += " hat-button-plain");
       return className;
     },
     styleCls() {
-      if(this.color) {
-        return {
+      const styleObj = [];
+      this.color &&
+        styleObj.push({
           background: this.color,
-          color: '#fff',
-          border: 'none'
-        }
-      }
-      return null
-    }
+          color: "#fff",
+          border: "none",
+        });
+      this.block && styleObj.push({
+        display: 'block',
+        width: '100%'
+      })
+      return styleObj;
+    },
   },
 };
 </script>

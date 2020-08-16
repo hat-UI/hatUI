@@ -31,11 +31,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-.hat-step-graoup {
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 40px;
-}
-</style>

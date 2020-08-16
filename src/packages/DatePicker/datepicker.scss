@@ -40,10 +40,9 @@
             }
         }
     }
-
     .hat-datepicker-body {
         width: 100%;
-        padding: 15px 0px;
+        // padding: 15px 0px;
         .hat-datepicker-canlendar {
             width: 100%;
             border-collapse: collapse;
@@ -82,4 +81,8 @@
             }
         }
     }
+}
+.hat-datepicker-btn-wrapper {
+    width: 90%;
+    margin: 10px auto;
 }
