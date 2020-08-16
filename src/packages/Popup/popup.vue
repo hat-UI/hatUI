@@ -35,7 +35,7 @@ export default {
     },
     width: {
       type: String | Number,
-      default: "35%",
+      default: "25%",
     },
     circle: {
       type: Boolean,

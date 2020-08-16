@@ -6,6 +6,9 @@
     </hat-step-group>
     <hat-button size="small" type="danger" @click="active++ " circle>步骤+1</hat-button>
     <hat-button size="small" type="info" @click="active-- " circle>步骤-1</hat-button>
+    <hat-button size="small" type="info" @click="changeHandle" circle>show</hat-button>
+    <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions"></hat-actionsheet>
+    <hat-datepicker :show="show"></hat-datepicker>
   </div>
 </template>
 
@@ -14,13 +17,22 @@ export default {
   name: "App",
   data() {
     return {
-      checked: true,
       show: false,
-      timestamp: null,
       active: 0,
+      actions: [
+        {
+          name: "选项一",
+        },
+        {
+          name: "选项二",
+        },
+      ],
     };
   },
   methods: {
+    changeHandle() {
+      this.show = !this.show;
+    },
   },
 };
 </script>

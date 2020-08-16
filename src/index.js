@@ -16,8 +16,10 @@ import Loading from "./packages/loading/index.js"
 import "./packages/loading"
 import Popup from "./packages/popup/index.js"
 import "./packages/popup/popup.scss"
+import ActionSheet from "./packages/actionsheet/index.js"
+import "./packages/actionsheet/actionsheet.scss"
 import mixins from './mixins'
-const components = [Button,Icon,Toast,Switch,DatePicker,StepGroup,Step,Loading,Popup];
+const components = [Button,Icon,Toast,Switch,DatePicker,StepGroup,Step,Loading,Popup,ActionSheet];
 const install = function(Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);
