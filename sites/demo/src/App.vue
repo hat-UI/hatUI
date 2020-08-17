@@ -7,10 +7,11 @@
     <hat-button size="small" type="danger" @click="active++ " circle>步骤+1</hat-button>
     <hat-button size="small" type="info" @click="active-- " circle>步骤-1</hat-button>
     <hat-button size="small" type="info" @click="changeHandle" circle>show</hat-button>
-    <!-- <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions"></hat-actionsheet> -->
-    <hat-datepicker :show="show" @closed="changeHandle"></hat-datepicker>
+    <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions"></hat-actionsheet>
+    <!-- <hat-datepicker :show="show" @closed="changeHandle"></hat-datepicker> -->
     <!-- <hat-popup :show="show" @closed="changeHandle" position="top"></hat-popup> -->
-    <hat-switch></hat-switch>
+    <!-- <hat-switch></hat-switch> -->
+    <hat-upload :multiple="true"></hat-upload>
   </div>
 </template>
 
@@ -49,7 +50,7 @@ export default {
   margin-top: 60px;
   .item {
     padding: 20px 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ffffff;
   }
 }
 </style>

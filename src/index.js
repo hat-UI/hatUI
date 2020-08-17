@@ -11,16 +11,18 @@ import "./packages/switch/switch.scss";
 import StepGroup from "./packages/stepgroup/index.js"
 import "./packages/stepgroup/stepgroup.scss";
 import Step from "./packages/step/index.js"
-import"./packages/step/step.scss"
+import "./packages/step/step.scss"
 import Loading from "./packages/loading/index.js"
 import "./packages/loading"
 import Popup from "./packages/popup/index.js"
 import "./packages/popup/popup.scss"
 import ActionSheet from "./packages/actionsheet/index.js"
 import "./packages/actionsheet/actionsheet.scss"
+import Upload from './packages/upload/index.js';
+import './packages/upload/upload.scss';
 import mixins from './mixins'
-const components = [Button,Icon,Toast,Switch,DatePicker,StepGroup,Step,Loading,Popup,ActionSheet];
-const install = function(Vue, opts = {}) {
+const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload];
+const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);
   });
