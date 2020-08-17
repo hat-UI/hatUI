@@ -7,7 +7,7 @@
     <hat-button size="small" type="danger" @click="active++ " circle>步骤+1</hat-button>
     <hat-button size="small" type="info" @click="active-- " circle>步骤-1</hat-button>
     <hat-button size="small" type="info" @click="changeHandle" circle>show</hat-button>
-    <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions"></hat-actionsheet>
+    <!-- <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions" circle cancelText="取消" :closedIcon="true"></hat-actionsheet> -->
     <!-- <hat-datepicker :show="show" @closed="changeHandle"></hat-datepicker> -->
     <!-- <hat-popup :show="show" @closed="changeHandle" position="top"></hat-popup> -->
     <!-- <hat-switch></hat-switch> -->
@@ -25,10 +25,15 @@ export default {
       actions: [
         {
           name: "选项一",
+          color: '#ff0000'
         },
         {
           name: "选项二",
           loading: true
+        },
+        {
+          name: "选项三",
+          disabled: true,
         },
       ],
     };

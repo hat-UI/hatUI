@@ -21,7 +21,7 @@
           :class="{'hat-actionsheet-item-disabled': item.disabled}"
         >
           <template v-if="!item.loading">
-            <div class="hat-actionsheet-list-title" :style="{color: color}">{{item.name}}</div>
+            <div class="hat-actionsheet-list-title" :style="{color: item.color}">{{item.name}}</div>
             <div class="hat-actionsheet-list-subtitle" v-if="item.subname">{{item.subname}}</div>
           </template>
           <template v-else>
@@ -59,10 +59,6 @@ export default {
     circle: {
       type: Boolean,
       defualt: false
-    },
-    color: {
-      type: String,
-      default: '#000000'
     },
     closedIcon: {
       type: Boolean,
