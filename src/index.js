@@ -20,8 +20,10 @@ import ActionSheet from "./packages/actionsheet/index.js"
 import "./packages/actionsheet/actionsheet.scss"
 import Upload from './packages/upload/index.js';
 import './packages/upload/upload.scss';
+import Radio from './packages/radio/index.js';
+import './packages/radio/radio.scss';
 import mixins from './mixins'
-const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload];
+const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio];
 const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);

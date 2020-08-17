@@ -20,7 +20,7 @@ export default {
     },
     color: {
       type: String,
-      default: '#bfbfbf'
+      default: ''
     }
   },
   computed: {
@@ -33,7 +33,7 @@ export default {
     styleCls() {
       return {
         fontSize: this.size + 'px',
-        color: this.color
+        color: this.color,
       }
     }
   },

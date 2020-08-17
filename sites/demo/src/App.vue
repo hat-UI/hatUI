@@ -11,6 +11,7 @@
     <!-- <hat-datepicker :show="show" @closed="changeHandle"></hat-datepicker> -->
     <!-- <hat-popup :show="show" @closed="changeHandle" position="top"></hat-popup> -->
     <!-- <hat-switch></hat-switch> -->
+    <hat-radio></hat-radio>
     <hat-upload :multiple="true"></hat-upload>
   </div>
 </template>
@@ -52,6 +53,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  color: #ffffff;
   margin-top: 60px;
   .item {
     padding: 20px 0;
