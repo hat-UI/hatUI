@@ -13,8 +13,8 @@
     background-color: rgba(255, 255, 255, 0.6);
     z-index: 10;
     & .hat-loading {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         animation: rotate 2s linear infinite;
         .hat-loading-circle{
             stroke: $hat-primary--color;

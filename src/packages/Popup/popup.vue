@@ -1,13 +1,13 @@
 <template>
   <div class="hat-popup-wrapper" ref="hatPopup">
     <transition name="fade">
-      <div class="hat-popup-mask" v-show="show" @click="closePopup"></div>
+      <div class="hat-popup-mask" v-if="show" @click="closePopup"></div>
     </transition>
     <transition name="translate-animation" appear>
       <div
         class="hat-popup-content"
         :style="styleClass"
-        v-show="show"
+        v-if="show"
         :class="{'hat-popup-circle': circle}"
       >
         <slot name="header"></slot>

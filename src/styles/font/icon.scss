@@ -11,6 +11,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.hat-icon-close:before {
+  content: "\e607";
+}
+
 .hat-icon-double-arrow-right:before {
   content: "\e6c4";
 }

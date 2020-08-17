@@ -3,14 +3,16 @@
     width: 100%;
     box-sizing: border-box;
     padding: 14px 16px;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #ffffff;
     border: none;
     cursor: pointer;
 }
+
 .hat-actionsheet-wrapper {
     position: relative;
     width: 100%;
+
     .hat-actionsheet-default-header {
         position: relative;
         box-sizing: border-box;
@@ -20,30 +22,42 @@
         align-items: center;
         margin: 0 8px;
         border-bottom: 1px solid #f7f8fa;
+
         .hat-actionsheet-title {
             padding: 10px 0;
         }
-        .hat-actionsheet-closed{
+
+        .hat-actionsheet-closed {
             position: absolute;
             right: 5px;
         }
     }
+
     .hat-acitonsheet-list {
         .hat-actionsheet-list-item {
             @include list-item;
-            .hat-actionsheet-list-subtitle{
+
+            .hat-actionsheet-list-subtitle {
                 margin-top: 8px;
                 color: #969799;
                 font-size: 12px;
                 line-height: 18px;
             }
         }
+
+        .hat-actionsheet-item-disabled {
+            pointer-events: none;
+            opacity: 0.5;
+            cursor: pointer;
+        }
     }
+
     .hat-actionsheet-gap {
         display: block;
         height: 10px;
         background-color: #f7f8fa;
     }
+
     .hat-actionsheet-cancel-btn {
         @include list-item;
     }

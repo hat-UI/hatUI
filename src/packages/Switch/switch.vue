@@ -4,7 +4,8 @@
     class="hat-switch"
     :class="swicthCls"
     @change="changeHandle"
-    :checked="value"
+    :checked="checked"
+    :disabled="disabled"
   />
 </template>
 <script>
@@ -15,33 +16,21 @@ export default {
       type: Boolean,
       defualt: false
     },
-    activeColor: {
-
-    },
-    value: {
+    checked: {
       type: Boolean,
       default: false
-    }
-  },
-  data() {
-    return {
-      checked: false
     }
   },
   computed: {
     swicthCls() {
       return {
-        'disabled': this.disabled
+        'hat-switch-disabled': this.disabled,
       }
-    },
-    swicthStyle() {
-
     }
   },
   methods: {
     changeHandle() {
-      this.$emit('input', this.value)
-      console.log('====>',this.value)
+      this.$emit('change', this.checked)
     }
   }
 };

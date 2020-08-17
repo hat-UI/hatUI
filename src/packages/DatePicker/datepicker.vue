@@ -2,7 +2,7 @@
   <hat-popup :show="show" @closed="closeDatepicker" :circle="true">
     <div class="hat-datepicker-btn">
       <span>选择日期</span>
-      <hat-icon type="fail" class="icon" @click.native="closeDatepicker"></hat-icon>
+      <hat-icon type="close" class="icon" @click.native="closeDatepicker"></hat-icon>
     </div>
     <div class="hat-datepicker-wrapper">
       <div class="hat-datepicker-header">

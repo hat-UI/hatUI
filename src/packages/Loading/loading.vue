@@ -1,5 +1,5 @@
 <template>
-  <div :class="[prefixCls +'-wrap']" v-show="closed">
+  <div :class="[prefixCls +'-wrap']" v-show="show">
     <svg :class="prefixCls" viewBox="25 25 50 50" v-if="type === 'circle'">
       <circle :class="[prefixCls+'-circle']" cx="50" cy="50" r="20" fill="none" />
     </svg>
@@ -18,7 +18,7 @@ export default {
     };
   },
   props: {
-    closed: {
+    show: {
       type: Boolean,
       default: false
     },
