@@ -1,10 +1,11 @@
 <template>
-  <div class="hat-radio-wrapper">
-    <div class="hat-radio-icon-wrapper" :class="radioCls">
-      <i aria-role="icon" class="hat-icon hat-icon-font hat-icon-checked hat-radio-icon"></i>
-    </div>
-    <span></span>
-  </div>
+  <label class="hat-radio-wrapper">
+    <span class="hat-radio-box is-checked">
+      <span class="hat-radio-inner"></span>
+      <input type="radio" class="hat-radio-input"/>
+    </span>
+    <span class="hat-radio-label">备选项</span>
+  </label>
 </template>
 
 <script>
@@ -13,19 +14,24 @@ export default {
   props: {
     round: {
       type: Boolean,
-      default: true
+      default: false
     },
-    checked: {
-      type: Boolean,
-      default: true
+    name: {
+      type: String,
+      default: ''
+    },
+    value: {
+      type: String,
+      default: ''
     }
   },
   computed: {
-    radioCls() {
+    radioCls()  {
       return {
-        'hat-selected-color': this.checked
+        'round': this.round,
+        // 'is-checked': this.value === 
       }
-    },
+    }
   }
 }
 </script>

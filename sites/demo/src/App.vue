@@ -11,8 +11,10 @@
     <!-- <hat-datepicker :show="show" @closed="changeHandle"></hat-datepicker> -->
     <!-- <hat-popup :show="show" @closed="changeHandle" position="top"></hat-popup> -->
     <!-- <hat-switch></hat-switch> -->
-    <hat-radio></hat-radio>
-    <hat-upload :multiple="true"></hat-upload>
+    <br/>
+    <hat-radio v-model="checked" @click.native="changeHandle"></hat-radio>
+    <hat-radio v-model="checked" @click.native="changeHandle"></hat-radio>
+    <!-- <hat-upload :multiple="true"></hat-upload> -->
   </div>
 </template>
 
@@ -22,6 +24,7 @@ export default {
   data() {
     return {
       show: false,
+      checked: false,
       active: 0,
       actions: [
         {
@@ -41,7 +44,9 @@ export default {
   },
   methods: {
     changeHandle() {
-      this.show = !this.show;
+      console.log('--->')
+      this.checked = !this.checked;
+      console.log(this.show)
     },
   },
 };
