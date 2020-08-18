@@ -25,6 +25,7 @@
       <hat-checkbox label="b"></hat-checkbox>
       <hat-checkbox label="c"></hat-checkbox>
     </hat-checkbox-group>
+    <hat-slider v-model="active"></hat-slider>
   </div>
 </template>
 
