@@ -24,8 +24,12 @@ import Radio from './packages/radio/index.js';
 import './packages/radio/radio.scss';
 import RadioGroup from './packages/radiogroup/index.js';
 import './packages/radiogroup/radiogroup.scss';
+import Checkbox from './packages/checkbox/index.js';
+import './packages/checkbox/checkbox.scss';
+import CheckboxGroup from './packages/checkboxgroup/index.js';
+import './packages/checkboxgroup/checkboxgroup.scss';
 import mixins from './mixins'
-const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio,RadioGroup];
+const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup];
 const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);

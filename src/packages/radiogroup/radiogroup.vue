@@ -15,7 +15,6 @@ export default {
   },
   methods: {
     changeHandle(value) {
-      console.log('------>',value)
       const newVal = value
       this.$emit('input', newVal)
     }
