@@ -4,6 +4,7 @@
     align-items: center;
     color: #333333;
     font-size: 15px;
+    outline: none;
     cursor: pointer;
     .hat-radio-box {
         position: relative;
@@ -12,6 +13,7 @@
         height: 18px;
         border: 1px solid #dddddd;
         border-radius: $hat-button-circle;
+        transition: all ease-in-out 0.3s;
         &.is-checked {
             border-color: $hat-primary--color;
             background-color: $hat-primary--color;

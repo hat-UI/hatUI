@@ -1,10 +1,12 @@
 <template>
-  <label class="hat-radio-wrapper">
-    <span class="hat-radio-box is-checked">
+  <label class="hat-radio-wrapper" :for="name" @click="changeHandle">
+    <span class="hat-radio-box" :class="radioCls">
       <span class="hat-radio-inner"></span>
-      <input type="radio" class="hat-radio-input"/>
+      <input type="radio" class="hat-radio-input" :name="name" :value="value" />
     </span>
-    <span class="hat-radio-label">备选项</span>
+    <span class="hat-radio-label">
+      <slot></slot>
+    </span>
   </label>
 </template>
 
@@ -14,7 +16,7 @@ export default {
   props: {
     round: {
       type: Boolean,
-      default: false
+      default: true
     },
     name: {
       type: String,
@@ -26,11 +28,16 @@ export default {
     }
   },
   computed: {
-    radioCls()  {
+    radioCls() {
       return {
         'round': this.round,
-        // 'is-checked': this.value === 
+        'is-checked': this.value
       }
+    }
+  },
+  methods: {
+    changeHandle() {
+      this.$emit('input', !this.value)
     }
   }
 }

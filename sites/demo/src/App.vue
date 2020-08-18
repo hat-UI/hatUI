@@ -12,8 +12,7 @@
     <!-- <hat-popup :show="show" @closed="changeHandle" position="top"></hat-popup> -->
     <!-- <hat-switch></hat-switch> -->
     <br/>
-    <hat-radio v-model="checked" @click.native="changeHandle"></hat-radio>
-    <hat-radio v-model="checked" @click.native="changeHandle"></hat-radio>
+    <hat-radio v-model="checked">备选项</hat-radio>
     <!-- <hat-upload :multiple="true"></hat-upload> -->
   </div>
 </template>
