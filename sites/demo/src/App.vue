@@ -12,7 +12,13 @@
     <!-- <hat-popup :show="show" @closed="changeHandle" position="top"></hat-popup> -->
     <!-- <hat-switch></hat-switch> -->
     <br/>
-    <hat-radio v-model="checked">备选项</hat-radio>
+    <hat-radio-group v-model="checked">
+      <hat-radio label="a">备选项a</hat-radio>
+      <hat-radio label="b">备选项b</hat-radio>
+      <hat-radio label="c">备选项c</hat-radio>
+    </hat-radio-group>
+    <hat-radio v-model="checked1" label="a">单独使用</hat-radio>
+    <hat-radio v-model="checked1" label="b">单独使用</hat-radio>
     <!-- <hat-upload :multiple="true"></hat-upload> -->
   </div>
 </template>
@@ -23,7 +29,8 @@ export default {
   data() {
     return {
       show: false,
-      checked: false,
+      checked: 'a',
+      checked1: 'a',
       active: 0,
       actions: [
         {

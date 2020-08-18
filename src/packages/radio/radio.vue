@@ -1,8 +1,8 @@
 <template>
-  <label class="hat-radio-wrapper" :for="name" @click="changeHandle">
+  <label class="hat-radio-wrapper" :for="label" @click="changeHandle">
     <span class="hat-radio-box" :class="radioCls">
       <span class="hat-radio-inner"></span>
-      <input type="radio" class="hat-radio-input" :name="name" :value="value" />
+      <input type="radio" class="hat-radio-input" :name="label" :value="checkedValue" />
     </span>
     <span class="hat-radio-label">
       <slot></slot>
@@ -18,7 +18,7 @@ export default {
       type: Boolean,
       default: true
     },
-    name: {
+    label: {
       type: String,
       default: ''
     },
@@ -31,13 +31,28 @@ export default {
     radioCls() {
       return {
         'round': this.round,
-        'is-checked': this.value
+        'is-checked': this.checkedValue
       }
+    },
+    isGroup() {
+      if (this.$parent.$options._componentTag === 'hat-radio-group') {
+        return true
+      }
+      return false
+    },
+    checkedValue() {
+      return this.isGroup ? this.$parent.value === this.label : this.value === this.label
     }
   },
   methods: {
     changeHandle() {
-      this.$emit('input', !this.value)
+      const newValue = this.label
+      if (this.isGroup) {
+        this.$parent.changeHandle(newValue)
+      } else {
+        
+        this.$emit('input', newValue)
+      }
     }
   }
 }
