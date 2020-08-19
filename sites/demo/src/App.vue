@@ -25,7 +25,13 @@
       <hat-checkbox label="b"></hat-checkbox>
       <hat-checkbox label="c"></hat-checkbox>
     </hat-checkbox-group>
-    <hat-slider v-model="active"></hat-slider>
+    <!-- <hat-slider></hat-slider> -->
+    <hat-tabs v-model="a">
+      <hat-tabpanel name="a" label="a">a</hat-tabpanel>
+      <hat-tabpanel name="b" label="b">b</hat-tabpanel>
+      <hat-tabpanel name="c" label="c">c</hat-tabpanel>
+      <hat-tabpanel name="d" label="c">d</hat-tabpanel>
+    </hat-tabs>
   </div>
 </template>
 

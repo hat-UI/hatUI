@@ -30,8 +30,12 @@ import CheckboxGroup from './packages/checkboxgroup/index.js';
 import './packages/checkboxgroup/checkboxgroup.scss';
 import Slider from './packages/slider/index.js';
 import './packages/slider/slider.scss';
+import Tabs from './packages/tabs/index.js';
+import './packages/tabs/tabs.scss';
+import TabPanel from './packages/tabpanel/index.js';
+import './packages/tabpanel/tabpanel.scss';
 import mixins from './mixins'
-const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup,Slider];
+const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup, Slider, Tabs,TabPanel];
 const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);
