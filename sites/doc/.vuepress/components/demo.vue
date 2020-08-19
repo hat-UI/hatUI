@@ -1,34 +1,38 @@
 <template>
   <div class="demo-wrapper">
-    <iframe :src="url" width="320" height="585" scrolling="no"></iframe>
+    <iframe :src="componentUrl" width="340" height="580" scrolling="no"></iframe>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'demo',
   props: {
-    componentName: ""
+    componentName: {
+      type: String,
+      default: ''
+    }
   },
-  data() {
-    return {
-      url: ""
-    };
+  computed: {
+    componentUrl() {
+      return `http://localhost:8081/#/${this.componentName}`
+    }
   },
-  mounted() {
-    console.log(this.componentName);
-    this.url =
-      "https://harhao.github.io/";
-  }
 };
 </script>
 
 <style scoped lang="scss">
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1200px) {
   .demo-wrapper {
     display: none;
   }
 }
+
 .demo-wrapper {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   & > iframe {
     margin: 4rem 2rem 0 0;
     box-sizing: border-box;
@@ -37,8 +41,9 @@ export default {
     overflow: hidden;
     background: #fafafa;
     border-radius: 12px;
-    border:none;
-    box-shadow: #ebedf0 0 1px 12px;
+    border: none;
+    z-index: 999;
+    box-shadow: 0 4px 25px 0 rgba(4,40,60,.18);
     overflow: hidden;
   }
 }

@@ -2,7 +2,9 @@ const path = require("path");
 const existsSync = require("fs").existsSync;
 const process = require("process");
 const root = process.cwd();
-const { execSync } = require("child_process");
+const {
+  execSync
+} = require("child_process");
 const ora = require("ora");
 const log = require("./log");
 
@@ -103,6 +105,7 @@ function resolvePath(path) {
   }
 }
 
+
 function resolve(dir) {
   return path.join(root, dir);
 }
@@ -121,5 +124,5 @@ module.exports = {
   checkDll,
   getNpmParam,
   isProduction,
-  getScssVariable
+  getScssVariable,
 };

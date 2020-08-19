@@ -3,7 +3,7 @@
     <div class="hat-actionsheet-wrapper">
       <slot name="header">
         <div class="hat-actionsheet-default-header">
-          <div class="hat-actionsheet-title">标题</div>
+          <div class="hat-actionsheet-title">{{title}}</div>
           <hat-icon
             type="close"
             class="hat-actionsheet-closed"
@@ -55,6 +55,10 @@ export default {
       default() {
         return []
       }
+    },
+    title: {
+      type: String,
+      default: '标题'
     },
     circle: {
       type: Boolean,

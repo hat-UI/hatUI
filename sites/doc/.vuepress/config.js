@@ -36,7 +36,6 @@ module.exports = {
                         ['introduce.md', '快速上手'],
                         ['theme.md', '主题定制'],
                         ['internation.md', '国际化'],
-                        ['update.md', '更新日志']
                     ]
                 },
                 {
@@ -56,7 +55,10 @@ module.exports = {
                             title: '操作反馈',
                             collapsable: false,
                             sidebarDepth: 0,
-                            children: []
+                            children: [
+                                ['actionsheet.md', 'ActionSheet 动作面板'],
+                                ['popup.md', 'popUp 弹出层']
+                            ]
                         }, {
                             title: '基础组件',
                             collapsable: true,
@@ -67,7 +69,6 @@ module.exports = {
                                 ['uploader.md', 'ButtonGroup 按钮组'],
                                 ['buttonGroup.md', 'uploader 上传'],
                                 ['avatar.md', 'Avatar 头像'],
-                                ['popup.md', 'popUp 弹出层']
                             ]
                         }, {
                             title: '导航组件',
@@ -79,23 +80,7 @@ module.exports = {
                                 ['navBar.md', 'NavBar 导航栏'],
                                 ['noticeBar.md', 'NoeticeBar 公告栏'],
                                 ['menu.md', 'Menu 菜单'],
-                                ['elevator.md', ' Elevator 电梯楼层']
                             ]
-                        }, {
-                            title: '数据录入',
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: []
-                        }, {
-                            title: '数据展示',
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: []
-                        }, {
-                            title: '业务组件',
-                            collapsable: false,
-                            sidebarDepth: 0,
-                            children: []
                         }
                     ]
                 }

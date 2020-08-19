@@ -5,7 +5,6 @@ const HotModuleReplacementPlugin = require("webpack/lib/HotModuleReplacementPlug
 const merge = require("webpack-merge");
 const { getScssVariable } = require("./utils")
 const globalVariable = `${getScssVariable()} @import "./src/styles/index.scss";`
-
 const devConfig = merge(baseConfig, {
   mode: "development",
   devtool: "cheap-module-eval-source-map",
@@ -30,7 +29,7 @@ const devConfig = merge(baseConfig, {
   },
   plugins: [new HotModuleReplacementPlugin()],
   devServer: {
-    ...config.devServer
+    ...config.devServer,
   },
   watch: true,
   watchOptions: {
