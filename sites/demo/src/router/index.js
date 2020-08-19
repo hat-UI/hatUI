@@ -14,6 +14,16 @@ export default new Router({
       path: '/popup',
       name: 'popup',
       component: () => import('../components/popup.vue')
-    }
+    },
+    {
+      path: '/button',
+      name: 'button',
+      component: () => import('../components/button.vue')
+    },
+    {
+      path: '/datepicker',
+      name: 'datepicker',
+      component: () => import('../components/datepicker.vue')
+    },
   ]
 })

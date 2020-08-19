@@ -14,7 +14,8 @@
     @at-root .disabled {
         cursor: not-allowed;
         border: none;
-        background-color: $hat-disabled-color;
+        opacity: 0.5;
+        pointer-events: none;
     }
 }
 

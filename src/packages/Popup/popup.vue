@@ -19,11 +19,6 @@
 <script>
 export default {
   name: "hat-popup",
-  // data() {
-  //   return {
-  //     show: false,
-  //   };
-  // },
   props: {
     position: {
       type: String,

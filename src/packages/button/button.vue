@@ -24,7 +24,7 @@ export default {
   props: {
     size: {
       type: String,
-      default: "medium",
+      default: "small",
     },
     plain: {
       type: Boolean,

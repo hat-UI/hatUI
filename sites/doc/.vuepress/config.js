@@ -1,5 +1,5 @@
 module.exports = {
-    title: "移动端组件库",
+    title: "",
     description: "hatUI,hat-ui,vue2,mobile,libray,组件库",
     head: [
         ["link", { rel: "icon", href: "/hat.png" }]
@@ -57,7 +57,8 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 ['actionsheet.md', 'ActionSheet 动作面板'],
-                                ['popup.md', 'popUp 弹出层']
+                                ['popup.md', 'popUp 弹出层'],
+                                ['datepicker.md', 'datepicker 日历'],
                             ]
                         }, {
                             title: '基础组件',
@@ -66,9 +67,8 @@ module.exports = {
                             children: [
                                 ['icon.md', 'Icon 图标'],
                                 ['button.md', 'Button 按钮'],
-                                ['uploader.md', 'ButtonGroup 按钮组'],
-                                ['buttonGroup.md', 'uploader 上传'],
-                                ['avatar.md', 'Avatar 头像'],
+                                ['radio.md', 'Radio 单选项'],
+                                ['checkbox.md', 'checkbox 多选项'],
                             ]
                         }, {
                             title: '导航组件',
