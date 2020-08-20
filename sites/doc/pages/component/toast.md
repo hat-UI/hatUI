@@ -118,6 +118,6 @@ export default {
 | change  |  选择日历数据发生改变时触发，参数在type为sngle为字符串，其余情况为数组数据 | 
 
 <ClientOnly>
-  <demo componentName="switch" />
+  <demo componentName="toast" />
 </ClientOnly>
 

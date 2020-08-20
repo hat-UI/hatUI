@@ -59,7 +59,6 @@ export default {
       if (this.isGroup) {
         this.$parent.changeHandle(newValue)
       } else {
-
         this.$emit('input', newValue)
       }
     }

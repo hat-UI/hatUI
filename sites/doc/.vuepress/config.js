@@ -30,7 +30,7 @@ module.exports = {
             '/pages/component/': [
                 {
                     title: '指南',
-                    collapsable: false,
+                    collapsable: true,
                     sidebarDepth: 0,
                     children: [
                         ['introduce.md', '快速上手'],
@@ -40,7 +40,7 @@ module.exports = {
                 },
                 {
                     title: '组件',
-                    collapsable: false,
+                    collapsable: true,
                     sidebarDepth: 0,
                     children: [
                         {
@@ -53,7 +53,7 @@ module.exports = {
                             ]
                         }, {
                             title: '操作反馈',
-                            collapsable: false,
+                            collapsable: true,
                             sidebarDepth: 0,
                             children: [
                                 ['actionsheet.md', 'ActionSheet 动作面板'],
@@ -94,7 +94,7 @@ module.exports = {
                         }, 
                     ]
                 }
-            ]
+            ],
         }
     }
 }

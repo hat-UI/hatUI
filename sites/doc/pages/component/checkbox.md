@@ -1,89 +1,119 @@
-### Radio单选项
+### CheckBox多选项
 
 ### 引入
 
 ```js
 import Vue from 'vue';
-import { Radio } from 'hatUI';
-Vue.use(Radio);
+import { CheckBox } from 'hatUI';
+Vue.use(CheckBox);
 ```
 
 ### 代码演示
 
-- 按钮类型
+- 单选项支持圆形、方形
 
-按钮支持 `primary`、`info`、`warning`、`danger`、`default`五种类型，默认为`default`
-
-```js
-<hat-button type="primary" size="small">主要按钮</hat-button>
-<hat-button type="info" size="small">信息按钮</hat-button>
-<hat-button type="warning" size="small">警告按钮</hat-button>
-<hat-button type="danger" size="small">危险按钮</hat-button>
-<hat-button size="small">危险按钮</hat-button>
-```
-- 按钮大小
-
-按钮支持 `mini`、`small`、`large`三种类型，默认为`small`
+单选项支持 `round`、`default`两种种类型，默认为`default`
 
 ```js
-<hat-button type="primary" size="small">主要按钮</hat-button>
-<hat-button type="info" size="mini">信息按钮</hat-button>
-<hat-button type="warning" size="large">警告按钮</hat-button>
+  <template>
+    <hat-checkbox-group v-model="modelValue">
+      <hat-checkbox label="a">男</hat-checkbox>
+      <hat-checkbox label="b">女</hat-checkbox>
+    </hat-checkbox-group>
+  </template>
+  <script>
+    export default {
+      data() {
+        return {
+          modelValue: 'a'
+        }
+      }
+    }
+  </script>
 ```
-- 按钮自定义颜色
-
-按钮支持自定义颜色
+- 圆形单选项
 
 ```js
-<hat-button color="linear-gradient(to right, #ff6034, #ee0a24)" size="small">自定义颜色</hat-button>
-```
-- 带图标按钮
+  <template>
+    <hat-checkbox-group v-model="modelValue">
+      <hat-checkbox label="a" round>男</hat-checkbox>
+      <hat-checkbox label="b" round>女</hat-checkbox>
+    </hat-checkbox-group>
+  </template>
+  <script>
+    export default {
+      data() {
+        return {
+          modelValue: 'a'
+        }
+      }
+    }
+  </script>
 
-按钮支持带图标
+```
+- 单选项目禁止
+
+设置单选项目不可选`disabled`值
 
 ```js
-<hat-button color="linear-gradient(to right, #ff6034, #ee0a24)" size="small" icon="camera">朴素按钮</hat-button>
+  <template>
+    <hat-checkbox-group v-model="modelValue">
+      <hat-checkbox label="a" round disabled>男</hat-checkbox>
+      <hat-checkbox label="b" round>女</hat-checkbox>
+    </hat-checkbox-group>
+  </template>
+  <script>
+    export default {
+      data() {
+        return {
+          modelValue: 'a'
+        }
+      }
+    }
+  </script>
 ```
-- block块级按钮
 
-支持block块级按钮
+- checkbox支持单个使用
+
+`checkbox`在单个使用，传入布尔值，决定改多选项是否被选中，在`checkbox-group`中传递数组。
+
 
 ```js
-<hat-button block size="small" icon="camera">块级按钮</hat-button>
+<template>
+  <div class="button-wrap">
+    <hat-checkbox v-model="checked"></hat-checkbox>
+    <hat-checkbox v-model="checked1"></hat-checkbox>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      checked: false,
+      checked1: true,
+    }
+  }
+}
+</script>
 ```
-- plain朴素按钮
-
-支持朴素按钮
-
-```js
-<hat-button plain size="small" icon="camera">自定义颜色</hat-button>
-```
-- 禁止按钮点击
-
-```js
-<hat-button disabled size="small" icon="camera">自定义颜色</hat-button>
-```
 
 
-
-### props
+### checkbox-group
 
 | 字段    | 说明    | 类型 |默认值|
 | :------------- |:-------------:| :-----:|:-------:|
-| type  | 按钮类型，支持primary、info、danger、info、default | String |default|
-| circle  | 圆角按钮   |  Boolean |false|
-| round | 椭圆形按钮   | Boolean| false|
-|icon|设置带图标的按钮，为图标字符串类型|String|null|
-|plain|设置朴素按钮|Boolean|false|
-|disabled |设置按钮是否可点击|Boolean|false|
-|color |自定义颜色，支持渐变色|String|null|
-|size |按钮大小，small、large、mini|String|small|
+| model  | 选择的多选项数组 | Array |[]|
 
-### Events
 
-| 事件名    | 说明   |
-| :------------- |:-------------:|
-| click  | 按钮的点击事件 | 
+### checkbox
+
+| 字段    | 说明    | 类型 |默认值|
+| :------------- |:-------------:| :-----:|:-------:|
+| label  | 设置显示checkbox说明文字| String |''|
+| round  | 圆形checkbox   |  Boolean |false| 
+| disabled  | checkbox是否可选   |  Boolean |false| 
+| model  | checkbox可选，在checkbox单个使用时使用   |  Boolean |false| 
 
 <ClientOnly>
   <demo componentName="checkbox" />
