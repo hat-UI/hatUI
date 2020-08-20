@@ -1,8 +1,8 @@
-### popup弹出层
+### Popup弹出层
 
 ### 介绍
 
-底部弹起的操作面板，可以自定义面板标题，颜色相关的多个选项。
+popup弹出层，支持自定义内容，宽高度和弹层的位置
 
 
 ### 引入
@@ -20,8 +20,8 @@ Vue.use(Popup);
 ```js
 <template>
     <div>
-        <hat-button size="small" type="info" @click="changeHandle" circle>show</hat-button>
-        <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions" ></hat-actionsheet>
+        <hat-button size="small" type="info" @click="changeHandle">默认底部popup</hat-button>
+        <hat-popup :show="show" @closed="changeHandle" ></hat-popup>
     </div>
 </template>
 <script>
@@ -29,7 +29,6 @@ export default {
     data() {
         return {
             show: false,
-            actions: [ {name: "选项一",color: '#ff0000'},{name: "选项二"loading:true},{name: "选项三",disabled: true,}],
         }
     },
     methods: {
@@ -41,41 +40,22 @@ export default {
 </script>
 ```
 
-- 带取消按钮
+- 带圆弧形的弹层
 
-在`hat-actionsheet`上设置`cancelText`值，可以设置带取消按钮的动作面板
+在`hat-popup`上设置`circle`值，可以设置带圆弧形的popup弹层
 
 ```js
 <template>
-    <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions" cancelText="取消"><hat-actionsheet>
-</template>
+    <hat-popup :show="show" @closed="changeHandle" circle></hat-popup>
 ```
 
-- 设置circle
+- 设置popup弹出层方向
 
-在`hat-actionsheet`上设置`circlw`值，可以设置带圆弧形的动作面板
-
-```js
-<template>
-    <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions" cancelText="取消" circle><hat-actionsheet>
-</template>
-```
-- 设置closedIcon
-
-在`hat-actionsheet`上设置`closedIcon`值，可以设置带关闭按钮的动作面板
+在`hat-popup`上设置`position`值，可以设置弹出层弹出位置,支持`left`、`right`、`top`、`bottom`四个方向
 
 ```js
 <template>
-    <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions" cancelText="取消" closedIcon><hat-actionsheet>
-</template>
-```
-### 自定义标题
-
-```js
-<template>
-    <hat-actionsheet :show="show" @closed="changeHandle" :actions="actions" cancelText="取消" closedIcon>
-        <div slot="header">这是自定义标题</div>
-    <hat-actionsheet>
+    <hat-popup :show="show" @closed="changeHandle" position="left"></hat-popup>
 </template>
 ```
 

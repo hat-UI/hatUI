@@ -1,10 +1,12 @@
 <template>
   <div class="demo-wrapper">
-    <iframe :src="componentUrl" width="340" height="580" scrolling="no"></iframe>
+    <img :src="phone" class="phone" />
+    <iframe :src="componentUrl" width="320" height="570" scrolling="no"></iframe>
   </div>
 </template>
 
 <script>
+import phone from '../public/phone.png'
 export default {
   name: 'demo',
   props: {
@@ -13,9 +15,14 @@ export default {
       default: ''
     }
   },
+  data() {
+    return {
+      phone
+    }
+  },
   computed: {
     componentUrl() {
-      return `http://localhost:8080/#/${this.componentName}`
+      return `http://localhost:8081/#/${this.componentName}`
     }
   },
 };
@@ -24,27 +31,42 @@ export default {
 <style scoped lang="scss">
 @media screen and (max-width: 1200px) {
   .demo-wrapper {
-    display: none;
+    display: none !important;
   }
 }
 
 .demo-wrapper {
   position: fixed;
-  right: 0;
+  width: 360px;
+  height: 630px;
+  right: 15px;
   top: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   transform: translateY(-50%);
+  .phone {
+    position: absolute;
+    display: inline-block;
+    width: 345px;
+    height: 620px;
+    pointer-events: none;
+    z-index: 99;
+    border-radius: 48px;
+    box-shadow: 0 4px 25px 0 rgba(4,40,60,.18);
+  }
   & > iframe {
-    margin: 4rem 2rem 0 0;
+    position: absolute;
     box-sizing: border-box;
-    width: 340px;
-    min-width: 340px;
+    width: 302px;
+    top: 25px;
+    margin: 0 auto;
     overflow: hidden;
     background: #fafafa;
-    border-radius: 12px;
-    border: none;
-    z-index: 999;
-    box-shadow: 0 4px 25px 0 rgba(4,40,60,.18);
+    border-radius: 30px;
+    z-index: 98;
     overflow: hidden;
+    border: 1px solid #e8e7e7;
   }
 }
 </style>

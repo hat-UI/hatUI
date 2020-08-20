@@ -57,8 +57,10 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 ['actionsheet.md', 'ActionSheet 动作面板'],
-                                ['popup.md', 'popUp 弹出层'],
-                                ['datepicker.md', 'datepicker 日历'],
+                                ['popup.md', 'PopUp 弹出层'],
+                                ['datepicker.md', 'Datepicker 日历'],
+                                ['toast.md', 'Toast 吐司'],
+                                ['loading.md', 'Loading 加载'],
                             ]
                         }, {
                             title: '基础组件',
@@ -68,20 +70,28 @@ module.exports = {
                                 ['icon.md', 'Icon 图标'],
                                 ['button.md', 'Button 按钮'],
                                 ['radio.md', 'Radio 单选项'],
-                                ['checkbox.md', 'checkbox 多选项'],
+                                ['checkbox.md', 'Checkbox 多选项'],
+                                ['switch.md', 'Swicth 切换开关'],
                             ]
                         }, {
                             title: '导航组件',
                             collapsable: true,
                             sidebarDepth: 0,
                             children: [
+                                ['step.md', 'Step 步骤条'],
                                 ['tab.md', 'Tab 选项卡'],
                                 ['tabBar.md', 'TabBar 标签栏'],
                                 ['navBar.md', 'NavBar 导航栏'],
-                                ['noticeBar.md', 'NoeticeBar 公告栏'],
-                                ['menu.md', 'Menu 菜单'],
+                                ['noticeBar.md', 'NoeticeBar 公告栏']
                             ]
-                        }
+                        },{
+                            title: '数据录入',
+                            collapsable: true,
+                            sidebarDepth: 0,
+                            children: [
+                                ['upload.md', 'Upload 上传'],
+                            ]
+                        }, 
                     ]
                 }
             ]

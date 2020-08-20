@@ -13,9 +13,10 @@ export default {
 <style lang="scss">
 body {
   width: 100%;
-  height: 580px;
+  height: 570px;
   margin: 0;
   padding: 0;
+    overflow: auto;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -23,9 +24,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #333333;
-  .item {
-    padding: 20px 0;
-    border-bottom: 1px solid #ffffff;
-  }
+  margin-top: 30px;
 }
 </style>

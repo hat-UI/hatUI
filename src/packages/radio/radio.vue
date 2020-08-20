@@ -16,7 +16,7 @@ export default {
   props: {
     round: {
       type: Boolean,
-      default: true
+      default: false
     },
     label: {
       type: String,

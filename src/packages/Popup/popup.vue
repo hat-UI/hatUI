@@ -1,16 +1,15 @@
 <template>
   <div class="hat-popup-wrapper" ref="hatPopup">
     <transition name="fade">
-      <div class="hat-popup-mask" v-if="show" @click="closePopup"></div>
+      <div class="hat-popup-mask" v-show="show" @click="closePopup"></div>
     </transition>
-    <transition name="translate-animation" appear>
+    <transition :name="`translate-${position}-animation`" appear>
       <div
         class="hat-popup-content"
         :style="styleClass"
-        v-if="show"
+        v-show="show"
         :class="{'hat-popup-circle': circle}"
       >
-        <slot name="header"></slot>
         <slot></slot>
       </div>
     </transition>
@@ -19,6 +18,11 @@
 <script>
 export default {
   name: "hat-popup",
+  data() {
+    return {
+      show: false,
+    };
+  },
   props: {
     position: {
       type: String,
@@ -54,22 +58,22 @@ export default {
       switch (positionType) {
         case "left":
           stylesheet.insertRule(
-            `@keyframes translate-animation { 0% { left: -100%; } 100% { left:0; }}`
+            `@keyframes translate-left-animation { 0% { left: -100%; } 100% { left:0; }}`
           );
           break;
         case "right":
           stylesheet.insertRule(
-            `@keyframes translate-animation { 0% { right: -100%; } 100% { right:0; }}`
+            `@keyframes translate-right-animation { 0% { right: -100%; } 100% { right:0; }}`
           );
           break;
         case "top":
           stylesheet.insertRule(
-            `@keyframes translate-animation { 0% { top: -100%;  } 100% { top: 0; }}`
+            `@keyframes translate-top-animation { 0% { top: -100%;  } 100% { top: 0; }}`
           );
           break;
         case "bottom":
           stylesheet.insertRule(
-            `@keyframes translate-animation { 0% { bottom: -100%;} 100% { bottom: 0; }}`
+            `@keyframes translate-bottom-animation { 0% { bottom: -100%;} 100% { bottom: 0; }}`
           );
           break;
       }
@@ -87,6 +91,7 @@ export default {
           return {
             top: 0,
             bottom: 0,
+            left: 0,
             minWidth: width,
           };
         case "right":

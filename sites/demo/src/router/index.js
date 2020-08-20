@@ -6,6 +6,15 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '*',
+      redirect:'/home'
+    },
+    {
+      path:'/home',
+      name: 'home',
+      component: () => import('../components/home.vue')
+    },
+    {
       path: '/actionsheet',
       name: 'actionsheet',
       component: () => import('../components/actionsheet.vue')
@@ -24,6 +33,41 @@ export default new Router({
       path: '/datepicker',
       name: 'datepicker',
       component: () => import('../components/datepicker.vue')
+    },
+    {
+      path: '/radio',
+      name: 'radio',
+      component: () => import('../components/radio.vue')
+    },
+    {
+      path: '/checkbox',
+      name: 'checkbox',
+      component: () => import('../components/checkbox.vue')
+    },
+    {
+      path: '/switch',
+      name: 'switch',
+      component: () => import('../components/switch.vue')
+    },
+    {
+      path: '/loading',
+      name: 'loading',
+      component: () => import('../components/loading.vue')
+    },
+    {
+      path: '/step',
+      name: 'step',
+      component: () => import('../components/step.vue')
+    },
+    {
+      path: '/upload',
+      name: 'upload',
+      component: () => import('../components/upload.vue')
+    },
+    {
+      path: '/toast',
+      name: 'toast',
+      component: () => import('../components/toast.vue')
     },
   ]
 })

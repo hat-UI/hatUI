@@ -1,44 +1,121 @@
-### Button按钮
+### Datepicker日历
 
 ### 引入
 
 ```js
 import Vue from 'vue';
-import { Button } from 'hatUI';
-Vue.use(Button);
+import { DatePicker } from 'hatUI';
+Vue.use(DatePicker);
 ```
 
 ### 代码演示
 
-- 按钮类型
+- Datepicker日历
 
-按钮支持 `primary`、`info`、`warning`、`danger`、`default`五种类型，默认为`default`
+DatePicker支持type为 `range`,`single`、`multiple`三种类型，默认为`range`
+
+- 支持选择单个日期演示
+```js
+<template>
+  <div class="datepicker-wrapper">
+     <hat-button type="danger" size="small" @click="changeHandle">选择单个日期</hat-button>
+     <span>{{date}}</span>
+    <hat-datepicker :show="show" type="single" @closed="changeHandle" @change="setDate"></hat-datepicker>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      show: false,
+      date: ''
+    };
+  },
+  methods: {
+    setDate(val) {
+        this.date = val
+    },
+    changeHandle() {
+      this.show = !this.show
+    },
+  },
+};
+</script>
+```
+- 支持多个日期选择
+
+```vue
+<template>
+<div>
+    <hat-button  size="small" @click="changeHandle">选择多个日期</hat-button>
+     <span>{{date}}</span>
+    <hat-datepicker :show="showMultiple" type="multiple" @closed="changeHandle" @change="setDate"></hat-datepicker>
+</div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      show: false,
+      date: ''
+    };
+  },
+  methods: {
+    setDate(val) {
+        this.date = val
+    },
+    changeHandle() {
+      this.show = !this.show
+    },
+  },
+};
+</script>
+```
+- 支持选择日期范围
 
 ```js
-<hat-button type="primary" size="small">主要按钮</hat-button>
-<hat-button type="info" size="small">信息按钮</hat-button>
-<hat-button type="warning" size="small">警告按钮</hat-button>
-<hat-button type="danger" size="small">危险按钮</hat-button>
+<template>
+  <div>
+    <span>{{date}}</span>
+    <hat-datepicker :show="showRange" type="range" @closed="changeHandle" @change="setDate"></hat-datepicker>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      show: false,
+      date: ''
+    };
+  },
+  methods: {
+    setDate(val) {
+        this.date = val
+    },
+    changeHandle() {
+      this.show = !this.show
+    },
+  },
+};
+</script>
+
 ```
-
-
 
 ### props
 
 | 字段    | 说明    | 类型 |默认值|
 | :------------- |:-------------:| :-----:|:-------:|
-| type  | 按钮类型，支持primary、info、danger、info、default | String |default|
-| circle  | 圆弧形actionshett面板   |  Boolean |false|
-| closedIcon | 是否显示actionsheet的关闭按钮   | Boolean| false|
-|cancelText|底部按钮取消按钮的文案|String|空字符串|
-|title|actionsheet自定义标题|String|'标题'|
+| type  | 日历类型，支持single、range、multiple | String |range|
+| format  | 支持时间返回格式YYYY-MM-DD YYYY/MM/DD   |  String |YYYY-MM-DD|
+| closedIcon | 是否显示DatePicker的关闭按钮   | Boolean| false|
+|show|DatePicker显示和隐藏|Boolean|false|
 
 ### Events
 
 | 事件名    | 说明   |
-| :------------- |:-------------:|
-| closed  | actionSheet关闭事件 | 
-| select  |  actionsheet面板选中单个选项触发的事件 | 
+| ------------- |:-------------:|
+| closed  | Datepicker关闭事件 | 
+| change  |  选择日历数据发生改变时触发，参数在type为sngle为字符串，其余情况为数组数据 | 
 
 <ClientOnly>
   <demo componentName="datepicker" />

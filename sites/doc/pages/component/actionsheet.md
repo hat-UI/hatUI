@@ -83,7 +83,7 @@ export default {
 ### props
 
 | 字段    | 说明    | 类型 |默认值|
-| :------------- |:-------------:| :-----:|:-------:|
+| :-------------: | :-------------: |  -----: |  :-------: |
 | actions  | actionsheet动作面板的选项 | Array |[]|
 | circle  | 圆弧形actionshett面板   |  Boolean |false|
 | closedIcon | 是否显示actionsheet的关闭按钮   | Boolean| false|

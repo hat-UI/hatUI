@@ -13,7 +13,7 @@
             class="hat-datepicker-month"
           >{{currentDate.currentMonth > 9 ? currentDate.currentMonth: '0' + currentDate.currentMonth}}月</div>
         </div>
-        <hat-icon @click.native="transalte(1)" type="arrow-right"></hat-icon>
+        <hat-icon @click.native="transalte(1)" type="arrow-right" v-if="closedIcn"></hat-icon>
       </div>
       <div class="hat-datepicker-body">
         <div class="hat-datepicker-mark">{{currentDate.currentMonth}}</div>
@@ -62,6 +62,10 @@ export default {
     format: {
       type: "String",
       default: "YYYY-MM-DD",
+    },
+    closedIcon: {
+      type: Boolean,
+      default: false
     },
     show: {
       type: Boolean,

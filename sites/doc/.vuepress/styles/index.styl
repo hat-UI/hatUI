@@ -24,15 +24,17 @@ p.sidebar-heading
     margin-bottom: 2rem
 
 .theme-default-content:not(.custom)
-    max-width: calc(100% - 450px)
+    max-width: calc(100% - 500px)
     padding-top: 2.8rem;
     margin: 0;
 @media (max-width: 1200px)
   .theme-default-content:not(.custom)
         max-width: 100%
 .theme-default-content:not(.custom) > table
-    width:100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    table-layout: fixed;
-
+    display:table
+    width:100%
+    border-collapse: collapse
+    border-spacing: 0
+    table-layout: fixed
+.theme-default-content:not(.custom) > tr
+    width: 100% !important
