@@ -13,10 +13,10 @@ export default {
 <style lang="scss">
 body {
   width: 100%;
-  height: 570px;
+  height: 550px;
   margin: 0;
   padding: 0;
-    overflow: auto;
+  overflow-y: scroll;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -25,5 +25,11 @@ body {
   text-align: center;
   color: #333333;
   margin-top: 30px;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
 }
+::-webkit-scrollbar {
+  width: 0px;
+}   
 </style>

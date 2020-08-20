@@ -2,7 +2,7 @@
   <hat-popup :show="show" @closed="closeDatepicker" :circle="true">
     <div class="hat-datepicker-btn">
       <span>选择日期</span>
-      <hat-icon type="close" class="icon" @click.native="closeDatepicker" size="20"></hat-icon>
+      <hat-icon type="close" class="icon" @click.native="closeDatepicker" size="20" v-if="closedIcon"></hat-icon>
     </div>
     <div class="hat-datepicker-wrapper">
       <div class="hat-datepicker-header">
@@ -13,7 +13,7 @@
             class="hat-datepicker-month"
           >{{currentDate.currentMonth > 9 ? currentDate.currentMonth: '0' + currentDate.currentMonth}}月</div>
         </div>
-        <hat-icon @click.native="transalte(1)" type="arrow-right" v-if="closedIcn"></hat-icon>
+        <hat-icon @click.native="transalte(1)" type="arrow-right"></hat-icon>
       </div>
       <div class="hat-datepicker-body">
         <div class="hat-datepicker-mark">{{currentDate.currentMonth}}</div>

@@ -1,8 +1,8 @@
 <template>
   <div class="datepicker-wrapper">
-    <div>
-     <hat-button type="danger" size="small" @click="changeHandle('show')">选择单个日期</hat-button>
-     <span>{{singleDate}}</span>
+    <div class="row-box">
+      <span>{{singleDate}}</span>
+      <hat-button type="danger" size="small" @click="changeHandle('show')">选择单个日期</hat-button>
     </div>
     <div>
      <hat-button type="danger" size="small" @click="changeHandle('showRange')">选择日期范围</hat-button>
@@ -40,3 +40,22 @@ export default {
   },
 };
 </script>
+<style scoped lang="scss">
+.datepicker-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .row-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 20px;
+    .label-text {
+      color: #333333;
+      font-size: 14px;
+    }
+  }
+}
+</style>

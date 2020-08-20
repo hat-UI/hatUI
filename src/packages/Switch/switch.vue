@@ -1,12 +1,15 @@
 <template>
-  <input
-    type="checkbox"
-    class="hat-switch"
-    :class="swicthCls"
-    @change="changeHandle"
-    :checked="checked"
-    :disabled="disabled"
-  />
+  <span class="hat-switch-wrapper">
+    <input
+      type="checkbox"
+      class="hat-switch"
+      :class="swicthCls"
+      @change="changeHandle"
+      :checked="checked"
+      :disabled="disabled"
+    />
+    <slot></slot>
+  </span>
 </template>
 <script>
 export default {

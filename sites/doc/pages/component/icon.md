@@ -98,6 +98,6 @@ export default {
 | select  |  actionsheet面板选中单个选项触发的事件 | 
 
 <ClientOnly>
-  <demo componentName="actionsheet" />
+  <demo componentName="icon" />
 </ClientOnly>
 

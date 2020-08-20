@@ -1,17 +1,26 @@
 <template>
   <div class="actionsheet-introduce">
-    <br/>
-    <hat-button size="small" type="info" @click="changeHandle('show')" circle>默认面板</hat-button>
-    <br/>
-    <hat-button size="small" type="info" @click="changeHandle('showCircle')" circle>带圆弧面板</hat-button>
-    <br/>
-    <hat-button size="small" type="info" @click="changeHandle('showCancel')" circle>带取消按钮面板</hat-button>
-    <br/>
-    <hat-button size="small" type="primary" @click="changeHandle('showIcon')" circle>带关闭按钮面板</hat-button>
-    <br/>
-    <hat-button size="small" type="primary" @click="changeHandle('showCustom')" circle>带自定义标题面板</hat-button>
-    <br/>
-    <hat-actionsheet :show="show" @closed="changeHandle('show')" :actions="actions"></hat-actionsheet>
+    <div class="row-box">
+      <span>默认用法：</span>
+      <hat-button size="small" type="info" @click="changeHandle('show')" circle plain>默认面板</hat-button>
+    </div>
+    <div class="row-box">
+      <span>圆弧面板：</span>
+      <hat-button size="small" type="info" @click="changeHandle('showCircle')" circle plain>圆弧面板</hat-button>
+    </div>
+    <div class="row-box">
+      <span class="label-text">取&nbsp;消&nbsp;按&nbsp;钮：</span>
+      <hat-button size="small" type="info" @click="changeHandle('showCancel')" circle plain>取消按钮</hat-button>
+    </div>
+    <div class="row-box">
+      <span class="label-text">关&nbsp;闭&nbsp;按&nbsp;钮：</span>
+      <hat-button size="small" type="primary" @click="changeHandle('showIcon')" circle plain>关闭按钮</hat-button>
+    </div>
+    <div class="row-box">
+      <span class="label-text">自&nbsp;&nbsp;&nbsp;定&nbsp;&nbsp;&nbsp;&nbsp;义：</span>
+      <hat-button size="small" type="primary" @click="changeHandle('showCustom')" circle plain>自定义标题</hat-button>
+    </div>
+    <hat-actionsheet :show="show" @closed="changeHandle('show')" :actions="actions" plain></hat-actionsheet>
     <hat-actionsheet
       :show="showCircle"
       @closed="changeHandle('showCircle')"
@@ -40,7 +49,7 @@
       cancelText="取消"
       closedIcon
     >
-        <div slot="header">这是自定义标题</div>
+      <div slot="header">这是自定义标题</div>
     </hat-actionsheet>
   </div>
 </template>
@@ -65,6 +74,20 @@ export default {
 </script>
 <style scoped lang="scss">
 .actionsheet-introduce {
-  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .row-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 20px;
+    .label-text {
+      color: #333333;
+      font-size: 14px;
+    }
+  }
 }
 </style>

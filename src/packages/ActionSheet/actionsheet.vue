@@ -1,17 +1,18 @@
 <template>
   <hat-popup :show="show" @closed="closeActionSheet" :circle="circle">
     <div class="hat-actionsheet-wrapper">
-      <slot name="header">
+      
         <div class="hat-actionsheet-default-header">
-          <div class="hat-actionsheet-title">{{title}}</div>
-          <hat-icon
-            type="close"
-            class="hat-actionsheet-closed"
-            @click.native="closeActionSheet"
-            v-if="closedIcon"
-          ></hat-icon>
+          <slot name="header">
+            <div class="hat-actionsheet-title">{{title}}</div>
+            <hat-icon
+              type="close"
+              class="hat-actionsheet-closed"
+              @click.native="closeActionSheet"
+              v-if="closedIcon"
+            ></hat-icon>
+          </slot>
         </div>
-      </slot>
       <div class="hat-acitonsheet-list">
         <div
           class="hat-actionsheet-list-item"
@@ -89,6 +90,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>

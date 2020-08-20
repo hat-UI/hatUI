@@ -95,7 +95,6 @@ if (config.isDll) {
   );
 }
 if (!isProduction()) {
-  console.log(config)
   webpackBaseConfig.plugins.push(
     new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {

@@ -20,6 +20,11 @@ export default new Router({
       component: () => import('../components/actionsheet.vue')
     },
     {
+      path: '/icon',
+      name: 'icon',
+      component: () => import('../components/icon.vue')
+    },
+    {
       path: '/popup',
       name: 'popup',
       component: () => import('../components/popup.vue')
