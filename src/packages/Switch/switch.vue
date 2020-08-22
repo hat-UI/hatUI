@@ -8,7 +8,9 @@
       :checked="checked"
       :disabled="disabled"
     />
-    <slot></slot>
+    <span class="label-text">
+      <slot></slot>
+    </span>
   </span>
 </template>
 <script>

@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     componentUrl() {
-      return `http://localhost:8081/#/${this.componentName}`
+      return `http://localhost:8080/#/${this.componentName}`
     }
   },
 };
@@ -48,6 +48,7 @@ export default {
   transform: translateY(-50%);
   .phone {
     position: absolute;
+    top: 23px;
     display: inline-block;
     width: 345px;
     height: 620px;
@@ -60,7 +61,7 @@ export default {
     position: absolute;
     box-sizing: border-box;
     width: 302px;
-    top: 25px;
+    top: 38px;
     margin: 0 auto;
     background: #fafafa;
     border-radius: 30px;

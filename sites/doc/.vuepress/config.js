@@ -45,15 +45,14 @@ module.exports = {
                     children: [
                         {
                             title: '布局组件',
-                            collapsable: true,
+                            collapsable: false,
                             sidebarDepth: 0,
                             children: [
-                                ["cell.md","Cell 列表项"],
-                                ["flex.md","Flex flex布局"],
+                                ["flex.md","Flex 布局"],
                             ]
                         }, {
                             title: '操作反馈',
-                            collapsable: true,
+                            collapsable: false,
                             sidebarDepth: 0,
                             children: [
                                 ['actionsheet.md', 'ActionSheet 动作面板'],
@@ -64,9 +63,10 @@ module.exports = {
                             ]
                         }, {
                             title: '基础组件',
-                            collapsable: true,
+                            collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                ["cell.md","Cell 列表项"],
                                 ['icon.md', 'Icon 图标'],
                                 ['button.md', 'Button 按钮'],
                                 ['radio.md', 'Radio 单选项'],
@@ -75,7 +75,7 @@ module.exports = {
                             ]
                         }, {
                             title: '导航组件',
-                            collapsable: true,
+                            collapsable: false,
                             sidebarDepth: 0,
                             children: [
                                 ['step.md', 'Step 步骤条'],
@@ -86,7 +86,7 @@ module.exports = {
                             ]
                         },{
                             title: '数据录入',
-                            collapsable: true,
+                            collapsable: false,
                             sidebarDepth: 0,
                             children: [
                                 ['upload.md', 'Upload 上传'],

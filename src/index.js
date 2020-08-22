@@ -34,8 +34,10 @@ import Tabs from './packages/tabs/index.js';
 import './packages/tabs/tabs.scss';
 import TabPanel from './packages/tabpanel/index.js';
 import './packages/tabpanel/tabpanel.scss';
+import NavBar from './packages/navbar/index.js';
+import './packages/navbar/navbar.scss';
 import mixins from './mixins'
-const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup, Slider, Tabs,TabPanel];
+const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup, Slider, Tabs,TabPanel,NavBar];
 const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);

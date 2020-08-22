@@ -104,7 +104,7 @@ export default {
 ### props
 
 | 字段    | 说明    | 类型 |默认值|
-| :------------- |:-------------:| :-----:|:-------:|
+| ------------- |:-------------:| -----|-------|
 | type  | 日历类型，支持single、range、multiple | String |range|
 | format  | 支持时间返回格式YYYY-MM-DD YYYY/MM/DD   |  String |YYYY-MM-DD|
 | closedIcon | 是否显示DatePicker的关闭按钮   | Boolean| false|

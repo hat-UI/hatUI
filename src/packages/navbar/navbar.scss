@@ -1,0 +1,32 @@
+.hat-navbar-warpper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    background-color: #ffffff;
+    .hat-navbar-left-icon,.hat-navbar-right-icon {
+        width: 60px;
+        height: 100%;
+        cursor: pointer;
+    }
+    .hat-navbar-title {
+        flex: 1;
+        height: 100%;
+    }
+    .hat-navbar-left-icon .hat-navbar-default-left-nav {
+        display: flex;
+        flex-direction: row;
+        .hat-navbar-text {
+            font-size: 14px;
+        }
+    }
+    @at-root .hat-navbar-fixed {
+        position: fixed;
+        top: 0;
+    }
+    @at-root .hat-navbar-border-bottom {
+        border-bottom: 1px solid #f2f2f2;
+    }
+}

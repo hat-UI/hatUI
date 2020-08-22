@@ -1,5 +1,6 @@
 <template>
   <div class="actionsheet-introduce">
+    <hat-navbar title="actionsheet动作面板"></hat-navbar>
     <div class="row-box">
       <span>默认用法：</span>
       <hat-button size="small" type="info" @click="changeHandle('show')" circle plain>默认面板</hat-button>
@@ -74,11 +75,11 @@ export default {
 </script>
 <style scoped lang="scss">
 .actionsheet-introduce {
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   .row-box {
     display: flex;

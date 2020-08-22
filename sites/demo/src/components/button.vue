@@ -1,5 +1,6 @@
 <template>
   <div class="button-wrap">
+      <hat-navbar title="button按钮" border ></hat-navbar>
       <hat-button type="primary" size="small">主要按钮</hat-button>
       <hat-button type="info" size="small">信息按钮</hat-button>
       <hat-button type="warning" size="small">警告按钮</hat-button>

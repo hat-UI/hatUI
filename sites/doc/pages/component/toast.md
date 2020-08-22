@@ -4,8 +4,8 @@
 
 ```js
 import Vue from 'vue';
-import { DatePicker } from 'hatUI';
-Vue.use(DatePicker);
+import { Toast } from 'hatUI';
+Vue.use(Toast);
 ```
 
 ### 代码演示

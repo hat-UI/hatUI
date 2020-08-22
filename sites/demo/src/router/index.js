@@ -74,5 +74,10 @@ export default new Router({
       name: 'toast',
       component: () => import('../components/toast.vue')
     },
+    {
+      path: '/navbar',
+      name: 'navbar',
+      component: () => import('../components/navbar.vue')
+    },
   ]
 })
