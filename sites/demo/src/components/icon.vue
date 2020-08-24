@@ -1,5 +1,6 @@
 <template>
   <div class="icon-wrapper">
+    <hat-navbar title="Icon图标" border></hat-navbar>
     <div class="section">
       <hat-icon type="camera"></hat-icon>
       <span class="class-name">camera</span>

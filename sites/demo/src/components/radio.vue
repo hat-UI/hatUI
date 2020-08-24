@@ -1,5 +1,6 @@
 <template>
   <div class="radio-wrap">
+    <hat-navbar title="Radio单选" border></hat-navbar>
     <div class="row-box">
       <span class="label-text">方形单选项目：</span>
       <hat-radio-group v-model="modelValue">
@@ -49,7 +50,6 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   .row-box {
     display: flex;
     flex-direction: row;

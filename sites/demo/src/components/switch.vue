@@ -1,5 +1,6 @@
 <template>
     <div class="switch-wrap">
+        <hat-navbar title="switch切换" border></hat-navbar>
         <hat-switch>默认switch</hat-switch>
         <hat-switch disabled>禁止点击switch</hat-switch>
     </div>
@@ -16,7 +17,6 @@ export default {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 </style>
