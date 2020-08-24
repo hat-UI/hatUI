@@ -1,6 +1,6 @@
 <template>
   <div class="actionsheet-introduce">
-    <hat-navbar title="Popup弹层" border></hat-navbar>
+    <hat-navbar title="PopUp弹层" border></hat-navbar>
     <div class="row-box">
       <span class="label-text">底部弹层：</span>
       <hat-button size="small" type="info" @click="changeHandle('show')" plain circle>默认底部popup</hat-button>
@@ -46,7 +46,6 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   .row-box {
     display: flex;
     flex-direction: row;

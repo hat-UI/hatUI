@@ -1,8 +1,8 @@
 ---
 home: true,
-heroImage: /hat.png
-heroText: hat-UI 文档
-tagline: 移动端网站快速成型工具component
+heroImage: /draw.png
+heroText: hatUI 组件文档
+tagline: 一套轻量级移动端Vue组件库
 actionText: 立刻了解
 actionLink: /pages/component/introduce.md
 features:

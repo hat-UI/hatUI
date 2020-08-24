@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     componentUrl() {
-      return `http://localhost:8080/#/${this.componentName}`
+      return `http://localhost:8081/#/${this.componentName}`
     }
   },
 };

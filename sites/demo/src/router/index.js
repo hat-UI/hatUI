@@ -79,5 +79,10 @@ export default new Router({
       name: 'navbar',
       component: () => import('../components/navbar.vue')
     },
+    {
+      path: '/noticebar',
+      name: 'noticebar',
+      component: () => import('../components/noticebar.vue')
+    },
   ]
 })

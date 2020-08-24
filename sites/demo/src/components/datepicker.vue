@@ -1,5 +1,6 @@
 <template>
   <div class="datepicker-wrapper">
+    <hat-navbar title="DatePicker日期" border></hat-navbar>
     <div class="row-box">
       <hat-button type="danger" size="small" @click="changeHandle('show')">选择单个日期</hat-button>
        <span class="selectDate">{{singleDate}}</span>
@@ -46,7 +47,6 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   .row-box {
     display: flex;
     flex-direction: column;

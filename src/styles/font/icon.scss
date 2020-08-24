@@ -11,6 +11,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.hat-icon-volumn:before {
+  content: "\e741";
+}
 .hat-icon-checked:before {
   content: "\e655";
 }

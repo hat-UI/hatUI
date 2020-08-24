@@ -1,5 +1,6 @@
 <template>
   <div class="checkbox-wrap">
+    <hat-navbar title="Checkbox多选" border></hat-navbar>
     <div class="row-box">
       <span class="label-text">方形多选项：</span>
       <hat-checkbox-group v-model="modelValue">
@@ -44,14 +45,12 @@ export default {
 .checkbox-wrap {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   width: 100%;
   height: 100%;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-content: center;
   .row-box {
     display: flex;
