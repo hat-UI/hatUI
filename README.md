@@ -5,8 +5,7 @@
 
 > 一套移动端轻量级Vue组件库
     
-![hat](https://s1.ax1x.com/2020/03/22/84zcbd.png)
-
+[![dDoAeI.png](https://s1.ax1x.com/2020/08/24/dDoAeI.png)](https://imgchr.com/i/dDoAeI)
 ## 项目开发目录功能设计说明
 
 ```bash

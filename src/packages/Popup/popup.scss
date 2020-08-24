@@ -40,12 +40,10 @@
 }
 
 @each $direction in ("top", "left", "bottom", "right") {
-
     .translate-#{$direction}-animation-enter-active,
     .translate-#{$direction}-animation-leave-active {
         animation: translate-#{$direction}-animation 0.4s ease-in-out;
     }
-
     .translate-#{$direction}-animation-enter,
     .translate-#{$direction}-animation-leave-to {
         animation: translate-#{$direction}-animation 0.4s ease-in-out reverse;

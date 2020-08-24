@@ -1,6 +1,6 @@
 ---
 home: true,
-heroImage: /hat.png
+heroImage: /draw.png
 heroText: hat-UI 文档
 tagline: 移动端网站快速成型工具component
 actionText: 立刻了解
