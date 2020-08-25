@@ -38,8 +38,10 @@ import NavBar from './packages/navbar/index.js';
 import './packages/navbar/navbar.scss';
 import NoticeBar from './packages/noticebar/index.js';
 import './packages/noticebar/noticebar.scss';
+import TabBar from './packages/tabbar/index.js';
+import './packages/tabbar/tabbar.scss';
 import mixins from './mixins'
-const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup, Slider, Tabs,TabPanel,NavBar,NoticeBar];
+const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup, Slider, Tabs, TabPanel, NavBar, NoticeBar,TabBar];
 const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);

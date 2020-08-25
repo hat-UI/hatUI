@@ -56,10 +56,10 @@ module.exports = {
                             sidebarDepth: 0,
                             children: [
                                 ['actionsheet.md', 'ActionSheet 动作面板'],
-                                ['popup.md', 'PopUp 弹出层'],
                                 ['datepicker.md', 'Datepicker 日历'],
                                 ['toast.md', 'Toast 吐司'],
                                 ['loading.md', 'Loading 加载'],
+                                ['dialog.md', 'Dialog 对话框'],
                             ]
                         }, {
                             title: '基础组件',
@@ -69,9 +69,7 @@ module.exports = {
                                 ["cell.md","Cell 列表项"],
                                 ['icon.md', 'Icon 图标'],
                                 ['button.md', 'Button 按钮'],
-                                ['radio.md', 'Radio 单选项'],
-                                ['checkbox.md', 'Checkbox 多选项'],
-                                ['switch.md', 'Swicth 切换开关'],
+                                ['popup.md', 'PopUp 弹出层'],
                             ]
                         }, {
                             title: '导航组件',
@@ -89,7 +87,12 @@ module.exports = {
                             collapsable: false,
                             sidebarDepth: 0,
                             children: [
+                                ['radio.md', 'Radio 单选项'],
+                                ['checkbox.md', 'Checkbox 多选项'],
+                                ['switch.md', 'Swicth 切换开关'],
                                 ['upload.md', 'Upload 上传'],
+                                ['field.md', 'Field 文本框'],
+                                ['searchbar.md', 'Search 搜索框'],
                             ]
                         }, 
                     ]

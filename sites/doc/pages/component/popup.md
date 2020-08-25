@@ -63,7 +63,7 @@ export default {
 ### props
 
 | 字段    | 说明    | 类型 |默认值|
-| :------------- |:-------------:| :-----:|:-------:|
+| ------- |------------------------------- |----- |------ |
 | position  | poup弹出层的方向（top/bottom/left/right） | String |bottom|
 | show  | 控制popup显示隐藏   |  Boolean |false|
 | width | 设置弹出层的高度（direction为top/bottom）,若为（left/right时）设置宽度   | String或者Number| 25%|

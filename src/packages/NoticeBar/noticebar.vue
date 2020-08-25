@@ -34,7 +34,7 @@ export default {
     },
     speed: {
       type: Number,
-      default: 30
+      default: 20
     },
     text: {
       type: String,
