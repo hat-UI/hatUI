@@ -1,4 +1,22 @@
 .hat-tabbar-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     width: 100%;
     height: auto;
+    padding: 8px 0;
+    background-color: #ffffff;
+    border-top: 1px solid #f2f2f2;
+    .hat-tabbar-item {
+        flex: 1;
+        cursor: pointer;
+        .hat-tabbar-custom-image {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+        .hat-tabbar-label {
+            font-size: 12px;
+        }
+    }
 }

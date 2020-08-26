@@ -1,7 +1,9 @@
 <template>
   <div class="hat-badge-wrapper">
-    <span class="hat-badge-dot" v-if="isDot" :style="DotStyle"></span>
-    <span class="hat-badge-value" v-else :style="DotStyle">{{noticeCount}}</span>
+    <template v-if="isDot || value > 0">
+      <span class="hat-badge-dot" v-if="isDot" :style="DotStyle"></span>
+      <span class="hat-badge-value" v-else :style="DotStyle">{{noticeCount}}</span>
+    </template>
     <slot>
       <hat-icon :type="icon" size="30" :color="iconColor"></hat-icon>
     </slot>
@@ -14,7 +16,7 @@ export default {
   props: {
     value: {
       type: Number,
-      default: 99,
+      default: 0,
     },
     isDot: {
       type: Boolean,

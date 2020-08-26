@@ -89,5 +89,10 @@ export default new Router({
       name: 'badge',
       component: () => import('../components/badge.vue')
     },
+    {
+      path: '/tabbar',
+      name: 'tabbar',
+      component: () => import('../components/tabbar.vue')
+    },
   ]
 })
