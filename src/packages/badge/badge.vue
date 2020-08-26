@@ -1,9 +1,9 @@
 <template>
   <div class="hat-badge-wrapper">
-    <span class="hat-badge-dot"></span>
-    <span class="hat-badge-value">{{value}}</span>
-    <slot name="icon">
-      <hat-icon type="upload" size="30"></hat-icon>
+    <span class="hat-badge-dot" v-if="isDot" :style="DotStyle"></span>
+    <span class="hat-badge-value" v-else :style="DotStyle">{{noticeCount}}</span>
+    <slot>
+      <hat-icon :type="icon" size="30" :color="iconColor"></hat-icon>
     </slot>
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
   props: {
     value: {
       type: Number,
-      default: 10,
+      default: 99,
     },
     isDot: {
       type: Boolean,
@@ -26,8 +26,33 @@ export default {
     },
     zIndex: {
       type: Number,
-      default: 99,
+      default: 1,
     },
+    color: {
+      type: String,
+      default: '#f61605'
+    },
+    iconColor: {
+      type: String,
+      default: '#f61605'
+    },
+    icon: {
+      type: String,
+      default: 'upload'
+    }
   },
+  computed: {
+    DotStyle() {
+      return {
+        color: this.color,
+        zIndex: this.zIndex,
+        border: `1px solid ${this.color}`,
+        'background-color': this.isDot ? `${this.color}`: ''
+      }
+    },
+    noticeCount() {
+      return this.value > 99 ? '99+' : this.value
+    }
+  }
 };
 </script>
