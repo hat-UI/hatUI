@@ -35,7 +35,7 @@
 }
 
 .hat-switch:checked {
-    background-color: #07c160;
+    background-color: $hat-primary--color;
     &::after {
         left: 0;
     }

@@ -94,5 +94,10 @@ export default new Router({
       name: 'tabbar',
       component: () => import('../components/tabbar.vue')
     },
+    {
+      path: '/searchbar',
+      name: 'searchbar',
+      component: () => import('../components/searchbar.vue')
+    },
   ]
 })

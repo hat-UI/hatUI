@@ -42,8 +42,10 @@ import TabBar from './packages/tabbar/index.js';
 import './packages/tabbar/tabbar.scss';
 import Badge from './packages/badge/index.js'
 import './packages/badge/badge.scss'
+import SearchBar from './packages/searchbar/index.js'
+import './packages/searchbar/searchbar.scss'
 import mixins from './mixins'
-const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup, Slider, Tabs, TabPanel, NavBar, NoticeBar,TabBar,Badge];
+const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup, Slider, Tabs, TabPanel, NavBar, NoticeBar,TabBar,Badge,SearchBar];
 const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);
