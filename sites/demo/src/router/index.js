@@ -84,5 +84,10 @@ export default new Router({
       name: 'noticebar',
       component: () => import('../components/noticebar.vue')
     },
+    {
+      path: '/badge',
+      name: 'badge',
+      component: () => import('../components/badge.vue')
+    },
   ]
 })

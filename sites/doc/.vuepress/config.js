@@ -70,6 +70,7 @@ module.exports = {
                                 ['icon.md', 'Icon 图标'],
                                 ['button.md', 'Button 按钮'],
                                 ['popup.md', 'PopUp 弹出层'],
+                                ['badge.md', 'Badage 徽标'],
                             ]
                         }, {
                             title: '导航组件',

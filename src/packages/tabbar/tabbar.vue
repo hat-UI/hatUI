@@ -13,6 +13,14 @@ export default {
     tabList: {
       type: Array,
       defualt: []
+    },
+    fixed: {
+      type: Boolean,
+      default: true
+    },
+    bottom: {
+      type: [String|Number],
+      default: 0
     }
   }
 }
