@@ -24,6 +24,10 @@ export default {
     checked: {
       type: Boolean,
       default: false
+    },
+    color: {
+      type: String,
+      default: ''
     }
   },
   computed: {
@@ -31,7 +35,7 @@ export default {
       return {
         'hat-switch-disabled': this.disabled,
       }
-    }
+    },
   },
   methods: {
     changeHandle() {

@@ -104,5 +104,10 @@ export default new Router({
       name: 'cell',
       component: () => import('../components/cell.vue')
     },
+    {
+      path: '/notify',
+      name: 'notify',
+      component: () => import('../components/notify.vue')
+    },
   ]
 })

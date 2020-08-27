@@ -1,9 +1,9 @@
-import Noticefy from './noticefy.vue';
+import Notify from './notify.js';
 import './notify.scss'
 
 
-Noticefy.install = function install(Vue) {
-    Vue.component(Noticefy.name,Noticefy)
+Notify.install = function install(Vue) {
+    Vue.prototype.$notify = Notify;
 }
 
-export default Noticefy;
+export default Notify;

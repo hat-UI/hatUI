@@ -54,6 +54,7 @@ export default {
     height: 620px;
     pointer-events: none;
     z-index: 100;
+    top: 0px;
     border-radius: 48px;
     box-shadow: 0 4px 25px 0 rgba(4,40,60,.18);
   }
@@ -61,13 +62,16 @@ export default {
     position: absolute;
     box-sizing: border-box;
     width: 302px;
+    // width: 345px;
     top: 38px;
     margin: 0 auto;
     background: #fafafa;
     border-radius: 30px;
+    // border-radius: 6px;
     z-index: 98;
     overflow-x: hidden;
-    border: 1px solid #e8e7e7;
+    border: none;
+    // border: 1px solid #e8e7e7;
   }
 }
 </style>

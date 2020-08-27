@@ -10,6 +10,8 @@
               class="hat-actionsheet-closed"
               @click.native="closeActionSheet"
               v-if="closedIcon"
+              size="18"
+              color="#dddddd"
             ></hat-icon>
           </slot>
         </div>

@@ -57,6 +57,7 @@ module.exports = {
                             children: [
                                 ['actionsheet.md', 'ActionSheet 动作面板'],
                                 ['datepicker.md', 'Datepicker 日历'],
+                                ['notify.md', 'Notify 提示'],
                                 ['toast.md', 'Toast 吐司'],
                                 ['loading.md', 'Loading 加载'],
                                 ['dialog.md', 'Dialog 对话框'],

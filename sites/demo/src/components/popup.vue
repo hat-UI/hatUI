@@ -1,23 +1,16 @@
 <template>
-  <div class="actionsheet-introduce">
-    <hat-navbar title="PopUp弹层" border></hat-navbar>
-    <div class="row-box">
-      <span class="label-text">底部弹层：</span>
-      <hat-button size="small" type="info" @click="changeHandle('show')" plain circle>默认底部popup</hat-button>
+  <div class="cell-wrap">
+    <hat-navbar title="popup弹层"></hat-navbar>
+    <br />
+    <div class="cell-wrapper">
+      <hat-cell-group circle>
+        <hat-cell title="底部弹出" @click="changeHandle('show')"></hat-cell>
+        <hat-cell title="顶部弹出" @click="changeHandle('showTop')"></hat-cell>
+        <hat-cell title="左侧弹出" @click="changeHandle('showLeft')"></hat-cell>
+        <hat-cell  title="右侧弹出" @click="changeHandle('showRight')"></hat-cell>
+      </hat-cell-group>
     </div>
-    <div class="row-box">
-      <span class="label-text">顶部弹层：</span>
-      <hat-button size="small" type="danger" @click="changeHandle('showTop')" plain circle>头部popup弹层</hat-button>
-    </div>
-    <div class="row-box">
-      <span class="label-text">左边弹层：</span>
-      <hat-button size="small" type="primary" @click="changeHandle('showLeft')" plain circle>左部popup弹层</hat-button>
-    </div>
-    <div class="row-box">
-      <span class="label-text">右边弹层：</span>
-      <hat-button size="small" type="info" @click="changeHandle('showRight')" plain circle>右部popup弹层</hat-button>
-    </div>
-    <hat-popup :show="show" @closed="changeHandle('show')" ></hat-popup>
+    <hat-popup :show="show" @closed="changeHandle('show')"></hat-popup>
     <hat-popup :show="showTop" @closed="changeHandle('showTop')" position="top"></hat-popup>
     <hat-popup :show="showLeft" @closed="changeHandle('showLeft')" position="left"></hat-popup>
     <hat-popup :show="showRight" @closed="changeHandle('showRight')" position="right"></hat-popup>
@@ -30,31 +23,19 @@ export default {
       show: false,
       showTop: false,
       showLeft: false,
-      showRight: false
-    }
+      showRight: false,
+    };
   },
   methods: {
     changeHandle(key) {
-      this[key] = !this[key]
-    }
-  }
-}
+      this[key] = !this[key];
+    },
+  },
+};
 </script>
 <style scoped lang="scss">
-.actionsheet-introduce {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .row-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 20px;
-    .label-text {
-      color: #333333;
-      font-size: 14px;
-    }
-  }
+.cell-wrapper {
+  width: 95%;
+  margin: 0 auto;
 }
 </style>

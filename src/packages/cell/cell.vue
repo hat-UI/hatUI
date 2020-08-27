@@ -1,17 +1,17 @@
 <template>
   <div class="hat-cell-link" :class="cellBorderCls" @click="clickHandle($event)">
     <div class="hat-cell-wrapper" :class="cellContentCls">
-      <div class="hat-cell-left-wrapper">
+      <div class="hat-cell-left-wrapper" v-if="isShowIcon">
         <slot name="left">
-          <hat-icon type="upload" size="24"></hat-icon>
+          <hat-icon :type="icon" size="24"></hat-icon>
         </slot>
       </div>
       <div class="hat-cell-content-wrapper">
         <span class="hat-cell-title">
-          <slot name="title">{{title}}</slot>
+          {{title}}
         </span>
-        <span class="hat-cell-sub-title">
-          <slot name="subtitle">{{subTitle}}</slot>
+        <span class="hat-cell-sub-title" v-if="subTitle">
+          {{subTitle}}
         </span>
       </div>
       <div class="hat-cell-right-wrapper">
@@ -42,11 +42,19 @@ export default {
     },
     title: {
       type: String,
-      default: '我是标题'
+      default: '主标题'
     },
     subTitle: {
       type: String,
-      default: '我是副标题'
+      default: ''
+    },
+    isShowIcon: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
+      type: String,
+      default: 'menu'
     }
   },
   data() {

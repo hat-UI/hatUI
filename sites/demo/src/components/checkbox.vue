@@ -1,30 +1,31 @@
 <template>
-  <div class="checkbox-wrap">
+  <div class="cell-wrap">
     <hat-navbar title="Checkbox多选" border></hat-navbar>
-    <div class="row-box">
-      <span class="label-text">方形多选项：</span>
-      <hat-checkbox-group v-model="modelValue">
-        <hat-checkbox label="a">男</hat-checkbox>
-        <hat-checkbox label="b">女</hat-checkbox>
-      </hat-checkbox-group>
-    </div>
-    <div class="row-box">
-      <span class="label-text">圆形多选项：</span>
-      <hat-checkbox-group v-model="modelValue1">
-        <hat-checkbox label="a" round>男</hat-checkbox>
-        <hat-checkbox label="b" round>女</hat-checkbox>
-      </hat-checkbox-group>
-    </div>
-    <div class="row-box">
-      <span class="label-text">禁止多选项：</span>
-      <hat-checkbox-group v-model="modelValue2">
-        <hat-checkbox label="a" round disabled>男</hat-checkbox>
-        <hat-checkbox label="b" round>女</hat-checkbox>
-      </hat-checkbox-group>
-    </div>
-    <div class="row-box">
-      <span class="label-text">单个多选项：</span>
-      <hat-checkbox v-model="checked">男</hat-checkbox>
+    <br />
+    <div class="cell-wrapper">
+      <hat-cell-group circle>
+        <hat-cell title="方形多选项">
+          <hat-checkbox-group v-model="modelValue" slot="right">
+            <hat-checkbox label="a">男</hat-checkbox>
+            <hat-checkbox label="b">女</hat-checkbox>
+          </hat-checkbox-group>
+        </hat-cell>
+        <hat-cell title="圆形多选项">
+          <hat-checkbox-group v-model="modelValue1" slot="right">
+            <hat-checkbox label="a" round>男</hat-checkbox>
+            <hat-checkbox label="b" round>女</hat-checkbox>
+          </hat-checkbox-group>
+        </hat-cell>
+        <hat-cell title="禁止多选项">
+          <hat-checkbox-group v-model="modelValue2" slot="right">
+            <hat-checkbox label="a" round disabled>男</hat-checkbox>
+            <hat-checkbox label="b" round>女</hat-checkbox>
+          </hat-checkbox-group>
+        </hat-cell>
+        <hat-cell title="单个多选项">
+          <hat-checkbox v-model="checked" slot="right">男</hat-checkbox>
+        </hat-cell>
+      </hat-cell-group>
     </div>
   </div>
 </template>
@@ -36,31 +37,14 @@ export default {
       modelValue: [],
       modelValue1: [],
       modelValue2: [],
-      checked: false
-    }
+      checked: false,
+    };
   },
-}
+};
 </script>
 <style scoped lang="scss">
-.checkbox-wrap {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  .row-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px 20px;
-    .label-text {
-      color: #333333;
-      font-size: 14px;
-    }
-  }
+.cell-wrapper {
+  width: 95%;
+  margin: 0 auto;
 }
 </style>

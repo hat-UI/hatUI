@@ -1,26 +1,30 @@
 <template>
-  <div class="radio-wrap">
+  <div class="cell-wrap">
     <hat-navbar title="Radio单选" border></hat-navbar>
-    <div class="row-box">
-      <span class="label-text">方形单选项目：</span>
-      <hat-radio-group v-model="modelValue">
-        <hat-radio label="a">男</hat-radio>
-        <hat-radio label="b">女</hat-radio>
-      </hat-radio-group>
-    </div>
-    <div class="row-box">
-      <span class="label-text">圆形单选项目：</span>
-      <hat-radio-group v-model="modelValue1">
-        <hat-radio label="a" round>男</hat-radio>
-        <hat-radio label="b" round>女</hat-radio>
-      </hat-radio-group>
-    </div>
-    <div class="row-box">
-      <span class="label-text">禁止单选项目：</span>
-      <hat-radio-group v-model="modelValue2">
-        <hat-radio label="a" round disabled>男</hat-radio>
-        <hat-radio label="b" round>女</hat-radio>
-      </hat-radio-group>
+    <br/>
+    <div class="cell-wrapper">
+      <hat-cell-group circle>
+        <hat-cell title="方形单选项目">
+          <hat-radio-group v-model="modelValue" slot="right">
+            <hat-radio label="a">男</hat-radio>
+            <hat-radio label="b">女</hat-radio>
+          </hat-radio-group>
+        </hat-cell>
+        <hat-cell title="圆形单选项目">
+          <hat-radio-group v-model="modelValue1" slot="right">
+            <hat-radio label="a" round>男</hat-radio>
+            <hat-radio label="b" round>女</hat-radio>
+          </hat-radio-group>
+        </hat-cell>
+        <hat-cell title="禁止单选项目">
+          <hat-radio-group v-model="modelValue1" slot="right">
+            <hat-radio-group v-model="modelValue2">
+              <hat-radio label="a" round disabled>男</hat-radio>
+              <hat-radio label="b" round>女</hat-radio>
+            </hat-radio-group>
+          </hat-radio-group>
+        </hat-cell>
+      </hat-cell-group>
     </div>
   </div>
 </template>
@@ -29,36 +33,17 @@
 export default {
   data() {
     return {
-      modelValue: 'a',
-      modelValue1: 'b',
-      modelValue2: 'b'
-    }
+      modelValue: "a",
+      modelValue1: "b",
+      modelValue2: "b",
+    };
   },
-  methods: {
-
-  }
-}
+  methods: {},
+};
 </script>
 <style scoped lang="scss">
-.radio-wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 100%;
-  height: 100%;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .row-box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px 20px;
-    .label-text {
-      color: #333333;
-      font-size: 14px;
-    }
-  }
+.cell-wrapper {
+  width: 95%;
+  margin: 0 auto;
 }
 </style>

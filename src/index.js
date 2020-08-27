@@ -48,6 +48,8 @@ import Cell from './packages/cell/index.js'
 import './packages/cell/cell.scss'
 import CellGroup from './packages/cellgroup/index.js'
 import './packages/cellgroup/cellgroup.scss'
+import Notify from './packages/notify/index.js'
+import './packages/notify/notify.scss'
 import mixins from './mixins'
 const components = [
   Button,
@@ -80,6 +82,7 @@ const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);
   });
+  Vue.prototype.$notify = Notify;
   Vue.use(mixins)
 };
 if (typeof window !== "undefined" && window.Vue) {
