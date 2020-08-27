@@ -1,73 +1,156 @@
-### NoticeBar通知栏
+### TabBar标签栏
 
 ### 引入
 
 ```js
 import Vue from 'vue';
-import { NoticeBar } from 'hatUI';
-Vue.use(NoticeBar);
+import { TabBar } from 'hatUI';
+Vue.use(TabBar);
 ```
 
 ### 代码演示
 
-- `NoticeBar`支持text指定需要滚动的文案，也可以通过默认的slot进行自定义滚动的文案。
+- `TabBar`通过传入`TabList`数组传递`tab`子项目。
 
 ```js
   <template>
-    <hat-noticebar text="这是一段需要滚动的文案"></hat-noticebar>
+    <hat-tabbar :tabList="tabList" bottom></hat-tabbar>
   </template>
+  <script>
+    export default {
+      data() {
+        return {
+          tabList: [
+            {
+              'tabTitle': '主页',
+              'curr': true,
+              'icon': 'upload',
+              'href': '###',
+              'isDot': true
+            },
+            {
+              'tabTitle': '分类',
+              'curr': false,
+              'icon': 'camera',
+              'href': '###',
+              'num': 99
+            },
+            {
+              'tabTitle': '发现',
+              'curr': false,
+              'icon': 'add',
+              'href': '###',
+            },
+            {
+              'tabTitle': '发现',
+              'curr': false,
+              'icon': 'filter',
+              'href': '###',
+              'color': '#dddddd'
+            },
+          ]
+        }
+      }
+    }
+  </script>
 ```
-- 自定义左边icon图标
+- 自定义`tab`子项目激活与未激活状态的颜色状态，`color`定义未激活状态颜色,`activeColor`定义激活状态颜色。
 
 ```js
   <template>
-    <hat-noticebar text="这是一段自定义滚动文案">
-      <hat-icon type="search"  slot="icon"></hat-icon>
-    </hat-noticebar>
+    <hat-tabbar :tabList="tabList" bottom :color="color" :activeColor="activeColor"></hat-tabbar>
   </template>
+  <script>
+    export default {
+      data() {
+        return {
+          activeColor: '#ff0000',
+          color: '#dddddd',
+          tabList: [
+            {
+              'tabTitle': '主页',
+              'curr': true,
+              'icon': 'upload',
+              'href': '###',
+              'isDot': true
+            },
+            {
+              'tabTitle': '分类',
+              'curr': false,
+              'icon': 'camera',
+              'href': '###',
+              'num': 99
+            },
+            {
+              'tabTitle': '发现',
+              'curr': false,
+              'icon': 'add',
+              'href': '###',
+            },
+          ]
+        }
+      }
+    }
+  </script>
 ```
-- 自定义样式
-
-`noticebar`支持自定义样式，通过`color`和`background-color`更改noticebar样式
+- 定义`TabBar`位置，默认情况下`TabBar`位置为`fixed`,并且居于底部。设置`fixed`为false，则按普通文档流布局排列
 ```js
   <template>
-     <hat-noticebar text="这是一条自定义的通知栏" color="#1989fa" backgroundColor="#ecf9ff"></hat-noticebar>
+     <hat-tabbar :tabList="tabList" :fixed="false"></hat-tabbar>
   </template>
 ```
-- 更改`noticebar`滚动速度，通过`speed`属性更改，默认为30px
+- `TabBar`支持组件库自带图标或者网络图片定义的图标,激活`tab``标签卡可以绑定switchTab事件，参数为激活项的值和索引值。
 
 ```js
   <template>
- <hat-noticebar text="这是一条自定义的通知栏" :speed="50"></hat-noticebar>
+    <div class="tabbar-wrap">
+      <hat-tabbar :tabList="tabList" bottom :color="color" :activeColor="activeColor" @switchTab="switchTab"></hat-tabbar>
+    </div>
   </template>
+  <script>
+    export default {
+      data() {
+        return {
+          tabList: [{
+            'tabTitle': '主页',
+            'curr': true,
+            'icon': 'http://XXXX.jpg',
+            'activeIcon': 'http://xxxx.jpg',
+            'href': '###',
+            'isDot': true
+          }]
+        }
+      },
+      methods: {
+        switchTab(value,index) {
+          console.log(value,index)
+        }
+      }
+    }
+  </script>
 ```
-- 更改`noticebar`延迟滚动，通过`delay`属性更改，默认为不延迟
-
-```js
-  <template>
-<hat-noticebar :speed="50">这是一条自定义的通知栏</hat-noticebar>
-  </template>
-```
-
-
 
 ### Props
 
 | 字段    | 说明    | 类型 |默认值|
 | :------------- |:-------------:| :-----:|:-------:|
-| text  | 设置通知栏滚动的文字| String |''|
-| speed  | 通知栏滚动速度   |  Number |30| 
-| color  | 通知栏的文案颜色   |  String |'#ed6a0c'| 
-| backgroundColor  | 通知栏的背景颜色   |  String |'#fffbe8'| 
-| delay  | 通知栏延迟滚动时间，以秒算  |  Number |0| 
-| scrollable  | 是否可滑动  |  Boolean |true| 
+| tabList  | 设置标签栏的数组子项目| Array |[]|
+| bottom  | 设置标签栏离底部的距离   |  Number |0| 
+| fixed  | 设置标签栏是否为固定定位   |  Boolean |true| 
+| color  | 标签栏子标签未激活时的颜色 |  String |'#000000'| 
+| activeColor  | 标签栏子标签激活时的颜色  |  String |'#f0250f'| 
 
 
-### Slots
+### TabList具体参数
 | 字段    | 说明    | 类型 |默认值|
 | :------------- |:-------------:| :-----:|:-------:|
-| icon  | 自定义左侧icon的样式| HTMLELEMENT |''|
-| default  | 设置通知栏的滚动内容，设置了text属性该属性不生效   |  HTMLELEMENT |''| 
+| tabTitle  | 子标签文案| String |''|
+| curr  | 当前标签是否激活   |  Boolean | false| 
+| icon  | 当前子标签的图标，如果icon设置为组件自带图标，可不设置activeIcon   |  String | ''| 
+| activeIcon  | 当前子标签激活时的图标，如果icon设置为组件自带图标，可不设置activeIcon   |  String | ''| 
+| href  | 当前子标签激活时,切换的链接地址 |  String | ''| 
+| isDot  | 当前子标签带有警示或提示信息,设置圆点徽标 |  Boolean | false| 
+| num  | 当前子标签带有警示或提示信息,设置数字徽标，设置isDot时，不生效。反之一样效果 |  Boolean | false| 
 
 <ClientOnly>
   <demo componentName="tabbar" />

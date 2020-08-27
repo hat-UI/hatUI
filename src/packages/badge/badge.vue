@@ -53,7 +53,7 @@ export default {
       }
     },
     noticeCount() {
-      return this.value > 99 ? '99+' : this.value
+      return this.value > this.max ? `${this.max}+` : this.value
     }
   }
 };

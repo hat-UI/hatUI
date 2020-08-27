@@ -71,6 +71,7 @@ Vue.use(SearchBar);
 | actionText  | searchbar搜索栏右侧按钮文案   |  String | '消失'|
 | round  | searchbar搜索栏是否为椭圆   |  Boolean | false|
 | disabled  | searchbar搜索栏是否可用   |  Boolean | false|
+| model  | searchbar搜索栏绑定的关键词值   |  String | ''|
 
 
 ### Events

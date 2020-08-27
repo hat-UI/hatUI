@@ -93,7 +93,7 @@ module.exports = {
                                 ['switch.md', 'Swicth 切换开关'],
                                 ['upload.md', 'Upload 上传'],
                                 ['field.md', 'Field 文本框'],
-                                ['searchbar.md', 'Search 搜索框'],
+                                ['searchbar.md', 'SearchBar 搜索框'],
                             ]
                         }, 
                     ]

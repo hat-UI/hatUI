@@ -14,6 +14,7 @@
           :placeholder="placeholder"
           :disabled="disabled"
           :class="{ 'hat-searchbar-disable': disabled }"
+          @input="inputHandler($event)"
           @keydown.enter="keyEnter"
         />
         <hat-icon
@@ -38,6 +39,10 @@
 export default {
   name: 'hat-searchbar',
   props: {
+    value: {
+      type: String,
+      default: ''
+    },
     background: {
       type: String,
       default: '#ffffff'
@@ -93,6 +98,9 @@ export default {
     clearWord() {
       this.searchWord = ''
       this.$emit('clear')
+    },
+    inputHandler(e) {
+      this.$emit('update:input',e.target.value)
     }
   }
 }

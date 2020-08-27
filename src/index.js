@@ -44,8 +44,38 @@ import Badge from './packages/badge/index.js'
 import './packages/badge/badge.scss'
 import SearchBar from './packages/searchbar/index.js'
 import './packages/searchbar/searchbar.scss'
+import Cell from './packages/cell/index.js'
+import './packages/cell/cell.scss'
+import CellGroup from './packages/cellgroup/index.js'
+import './packages/cellgroup/cellgroup.scss'
 import mixins from './mixins'
-const components = [Button, Icon, Toast, Switch, DatePicker, StepGroup, Step, Loading, Popup, ActionSheet, Upload, Radio, RadioGroup, Checkbox, CheckboxGroup, Slider, Tabs, TabPanel, NavBar, NoticeBar,TabBar,Badge,SearchBar];
+const components = [
+  Button,
+  Icon,
+  Toast,
+  Switch,
+  DatePicker,
+  StepGroup, 
+  Step, 
+  Loading, 
+  Popup, 
+  ActionSheet, 
+  Upload, 
+  Radio, 
+  RadioGroup, 
+  Checkbox, 
+  CheckboxGroup, 
+  Slider, 
+  Tabs, 
+  TabPanel, 
+  NavBar, 
+  NoticeBar, 
+  TabBar, 
+  Badge, 
+  SearchBar,
+  Cell,
+  CellGroup
+];
 const install = function (Vue, opts = {}) {
   components.map(component => {
     Vue.component(component.name, component);

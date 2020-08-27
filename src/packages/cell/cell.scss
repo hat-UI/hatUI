@@ -1,0 +1,74 @@
+@mixin flex-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hat-cell-link {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0 8px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    text-decoration: none;
+    color: #323233;
+    font-size: 14px;
+    cursor: pointer;
+    &:link {
+        text-decoration: none;
+    }
+
+    .hat-cell-wrapper {
+        width: 100%;
+        height: 35px;
+        justify-content: center;
+        @include flex-layout;
+        padding: 5px 0;
+
+        .hat-cell-left-wrapper,
+        .hat-cell-right-wrapper {
+            @include flex-layout;
+            justify-content: center;
+            min-width: 20px;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .hat-cell-left-wrapper {
+            margin-right: 8px;
+        }
+
+        .hat-cell-right-wrapper {
+            margin-left: 8px;
+        }
+
+        .hat-cell-content-wrapper {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+            .hat-cell-title {
+                flex: 2;
+                @include flex-layout;
+            }
+
+            .hat-cell-sub-title {
+                font-size: 12px;
+                flex: 1;
+                color: #848484;
+                @include flex-layout;
+            }
+        }
+    }
+
+    @at-root .hat-cell-top-border {
+        border-top: 1px solid #e9e9e9;
+    }
+
+    @at-root .hat-cell-bottom-border {
+        border-bottom: 1px solid #e9e9e9;
+    }
+}

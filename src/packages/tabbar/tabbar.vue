@@ -72,7 +72,7 @@ export default {
     tabbarStyle() {
       return {
         'position': this.fixed ? 'fixed' : 'relative',
-        'bottom': this.bottom ? 0 : ''
+        'bottom': this.fixed && this.bottom ? 0 : ''
       }
     }
   }

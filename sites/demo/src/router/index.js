@@ -99,5 +99,10 @@ export default new Router({
       name: 'searchbar',
       component: () => import('../components/searchbar.vue')
     },
+    {
+      path: '/cell',
+      name: 'cell',
+      component: () => import('../components/cell.vue')
+    },
   ]
 })
