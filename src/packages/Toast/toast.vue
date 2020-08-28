@@ -1,26 +1,60 @@
 <template>
-  <div class="hat-toast" v-if="visible" :class="showAnimation ? 'fadein' : 'fadeout'">
-    <span v-html="text"></span>
-  </div>
+  <transition name="hat-toast-fade">
+    <div v-if="visible" class="hat-toast">
+      <span v-if="type === 'message'">{{text}}</span>
+      <div v-if="type === 'custom'" class="hat-toast-custom">
+        <img :src="icon" v-if="isNetWorkImage(url)" />
+        <hat-icon size="40" :type="icon" v-else></hat-icon>
+        <div class="hat-toast-label">{{text}}</div>
+      </div>
+      <div v-if="type === 'loading'" class="hat-toast-loading">
+        <hat-loading :show="true" :tips="text"></hat-loading>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script>
+import Icon from '../icon/icon.vue';
+import loading from '../loading/loading.vue'
 export default {
-  name: 'hat-toast',
+  name: "hat-toast",
+  components: {
+    Icon,
+    loading
+  },
   data() {
     return {
       visible: false,
-      showAnimation: false,
+      type: 'message',
       text: '',
+      icon: 'heart',
+      duration: 1500,
+      forbidClick: false
     };
   },
   methods: {
-    show() {
-      this.visible = true;
+    setTimer() {
+      setTimeout(() => {
+        this.close();
+      }, this.duration);
     },
-    hide() {
+    close() {
       this.visible = false;
+      setTimeout(() => {
+        this.$destroy(true);
+        this.$el.parentNode.removeChild(this.$el)
+      }, 500);
     },
+    isNetWorkImage(url) {
+      if (/^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/.test(url)) {
+        return true
+      }
+      return false
+    }
+  },
+  mounted() {
+    this.setTimer();
   },
 };
 </script>

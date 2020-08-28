@@ -17,7 +17,7 @@
 export default {
   methods: {
     showNotice(key) {
-      this.$notify[key]("1213")
+      this.$notify[key](`${key}提示`)
     }
   }
 };
