@@ -1,7 +1,7 @@
 <template>
   <div :class="[prefixCls +'-wrap']" v-show="show">
     <svg :class="prefixCls" viewBox="25 25 50 50" v-if="type === 'circle'">
-      <circle :class="[prefixCls+'-circle']" cx="50" cy="50" r="20" fill="none" />
+      <circle :class="[prefixCls+'-circle']" cx="50" cy="50" r="20" :fill="none" :stroke="color" />
     </svg>
     <span class="tips" v-if="tips">{{tips}}</span>
   </div>
@@ -29,7 +29,11 @@ export default {
     tips: {
       type: String,
       default: ''
-    }
+    },
+    color: {
+      type: String,
+      default: ''
+    },
   }
 };
 </script>

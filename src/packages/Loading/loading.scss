@@ -16,13 +16,9 @@
         height: 30px;
         animation: rotate 2s linear infinite;
         .hat-loading-circle{
-            stroke: $hat-primary--color;
             stroke-width: 2;
             fill: none;
             animation: dash 1.5s linear infinite;
-        }
-        .hat-loading-wave {
-            fill: $hat-primary--color;
         }
     }
     & .tips {

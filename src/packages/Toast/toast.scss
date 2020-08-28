@@ -1,3 +1,6 @@
+@mixin padding {
+  padding: 10px;
+}
 .hat-toast {
   position: fixed;
   left: 50%;
@@ -9,12 +12,19 @@
   background-color: rgba(36, 36, 36, 0.8);
   line-height: 16px;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 4px;
   span {
     line-height: 22px;
   }
+  .hat-toast-loading {
+    @include padding;
+  }
   .hat-toast-custom {
-    padding: 10px;
+    @include padding;
+    .hat-toast-label {
+      margin-top: 10px;
+      color: #fff;
+    }
   }
 }

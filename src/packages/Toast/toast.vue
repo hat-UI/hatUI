@@ -8,7 +8,7 @@
         <div class="hat-toast-label">{{text}}</div>
       </div>
       <div v-if="type === 'loading'" class="hat-toast-loading">
-        <hat-loading :show="true" :tips="text"></hat-loading>
+        <hat-loading :show="true" :tips="text" color="#fff"></hat-loading>
       </div>
     </div>
   </transition>
