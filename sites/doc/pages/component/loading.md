@@ -10,112 +10,47 @@ Vue.use(DatePicker);
 
 ### 代码演示
 
-- Datepicker日历
+- loading加载组件
 
-DatePicker支持type为 `range`,`single`、`multiple`三种类型，默认为`range`
-
-- 支持选择单个日期演示
+Loading组件支持不同颜色的加载，通过`color`属性控制
 ```js
 <template>
-  <div class="datepicker-wrapper">
-     <hat-button type="danger" size="small" @click="changeHandle">选择单个日期</hat-button>
-     <span>{{date}}</span>
-    <hat-datepicker :show="show" type="single" @closed="changeHandle" @change="setDate"></hat-datepicker>
-  </div>
+    <div class="cell-wrapper">
+      <hat-cell-group circle>
+        <hat-cell title="Loading加载">
+          <hat-loading  slot="right" color="#07c160"></hat-loading>
+        </hat-cell>
+        <hat-cell title="红色loading">
+          <hat-loading  slot="right" color="#f00"></hat-loading>
+        </hat-cell>
+        <hat-cell title="蓝色loading">
+          <hat-loading  slot="right" color="#00f"></hat-loading>
+        </hat-cell>
+        <hat-cell title="蓝色loading">
+          <hat-loading  slot="right" color="#00f"></hat-loading>
+        </hat-cell>
+      </hat-cell-group>
+    </div>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      show: false,
-      date: ''
-    };
-  },
-  methods: {
-    setDate(val) {
-        this.date = val
-    },
-    changeHandle() {
-      this.show = !this.show
-    },
-  },
-};
-</script>
 ```
-- 支持多个日期选择
+- 支持不同尺寸的loading组件，通过size属性控制。
 
 ```vue
 <template>
-<div>
-    <hat-button  size="small" @click="changeHandle">选择多个日期</hat-button>
-     <span>{{date}}</span>
-    <hat-datepicker :show="showMultiple" type="multiple" @closed="changeHandle" @change="setDate"></hat-datepicker>
-</div>
+  <hat-cell title="不同size的loading">
+    <hat-loading  slot="right" color="#00f" :size="100"></hat-loading>
+  </hat-cell>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      show: false,
-      date: ''
-    };
-  },
-  methods: {
-    setDate(val) {
-        this.date = val
-    },
-    changeHandle() {
-      this.show = !this.show
-    },
-  },
-};
-</script>
-```
-- 支持选择日期范围
-
-```js
-<template>
-  <div>
-    <span>{{date}}</span>
-    <hat-datepicker :show="showRange" type="range" @closed="changeHandle" @change="setDate"></hat-datepicker>
-  </div>
-</template>
-<script>
-export default {
-  data() {
-    return {
-      show: false,
-      date: ''
-    };
-  },
-  methods: {
-    setDate(val) {
-        this.date = val
-    },
-    changeHandle() {
-      this.show = !this.show
-    },
-  },
-};
-</script>
-
 ```
 
 ### props
 
 | 字段    | 说明    | 类型 |默认值|
 | :------------- |:-------------:| :-----:|:-------:|
-| type  | 日历类型，支持single、range、multiple | String |range|
-| format  | 支持时间返回格式YYYY-MM-DD YYYY/MM/DD   |  String |YYYY-MM-DD|
-| closedIcon | 是否显示DatePicker的关闭按钮   | Boolean| false|
-|show|DatePicker显示和隐藏|Boolean|false|
-
-### Events
-
-| 事件名    | 说明   |
-| ------------- |:-------------:|
-| closed  | Datepicker关闭事件 | 
-| change  |  选择日历数据发生改变时触发，参数在type为sngle为字符串，其余情况为数组数据 | 
+| show  | 控制loading组件是否显示 | Boolean |true|
+| tips  | 设置loading组件显示的提示信息   |  String |''|
+| color | 设置loading组件的颜色值   | String| ''|
+|size|设置loading组件的尺寸大小|Number|50|
 
 <ClientOnly>
   <demo componentName="loading" />

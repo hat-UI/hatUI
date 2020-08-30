@@ -1,7 +1,7 @@
 <template>
   <div :class="[prefixCls +'-wrap']" v-show="show">
-    <svg :class="prefixCls" viewBox="25 25 50 50" v-if="type === 'circle'">
-      <circle :class="[prefixCls+'-circle']" cx="50" cy="50" r="20" :fill="none" :stroke="color" />
+    <svg :class="prefixCls" :viewBox="viewBox" v-if="type === 'circle'">
+      <circle :class="[prefixCls+'-circle']" :cx="size" :cy="size" :r="0.4*size" :fill="none" :stroke="color" />
     </svg>
     <span class="tips" v-if="tips">{{tips}}</span>
   </div>
@@ -20,7 +20,7 @@ export default {
   props: {
     show: {
       type: Boolean,
-      default: false
+      default: true
     },
     type: {
       type: String,
@@ -34,6 +34,15 @@ export default {
       type: String,
       default: ''
     },
+    size: {
+      type: Number,
+      default: 50
+    }
+  },
+  computed: {
+    viewBox() {
+      return `${0.5*this.size} ${0.5*this.size} ${this.size} ${this.size}`
+    }
   }
 };
 </script>
