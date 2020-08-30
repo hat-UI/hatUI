@@ -109,5 +109,10 @@ export default new Router({
       name: 'notify',
       component: () => import('../components/notify.vue')
     },
+    {
+      path: '/field',
+      name: 'field',
+      component: () => import('../components/field.vue')
+    },
   ]
 })

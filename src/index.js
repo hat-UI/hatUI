@@ -50,6 +50,8 @@ import CellGroup from './packages/cellgroup/index.js'
 import './packages/cellgroup/cellgroup.scss'
 import Notify from './packages/notify/index.js'
 import './packages/notify/notify.scss'
+import Field from './packages/field/index.js'
+import './packages/field/field.scss'
 // import mixins from './mixins'
 const components = [
   Button,
@@ -75,7 +77,8 @@ const components = [
   Badge, 
   SearchBar,
   Cell,
-  CellGroup
+  CellGroup,
+  Field
 ];
 const install = function (Vue, opts = {}) {
   components.map(component => {
