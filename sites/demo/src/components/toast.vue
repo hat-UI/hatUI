@@ -25,7 +25,7 @@ export default {
       this.$toast({
         type: 'custom',
         text: msg,
-        forbidClick: true
+        icon: 'heart'
       })
     }
   }

@@ -10,112 +10,82 @@ Vue.use(Toast);
 
 ### 代码演示
 
-- Datepicker日历
+- `Toast`支持type为 `custom`,`message`、`loading`三种类型，默认为`message`
 
-DatePicker支持type为 `range`,`single`、`multiple`三种类型，默认为`range`
-
-- 支持选择单个日期演示
-```js
+- `message`用法
+```html
 <template>
-  <div class="datepicker-wrapper">
-     <hat-button type="danger" size="small" @click="changeHandle">选择单个日期</hat-button>
-     <span>{{date}}</span>
-    <hat-datepicker :show="show" type="single" @closed="changeHandle" @change="setDate"></hat-datepicker>
+  <div class="cell-wrap">
+    <hat-navbar title="toast吐司"></hat-navbar>
+    <br />
+    <div class="cell-wrapper">
+      <hat-cell-group circle>
+        <hat-cell icon="heart" title="toast提示" @click="() => $toast('普通文本')"></hat-cell>
+      </hat-cell-group>
+    </div>
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      show: false,
-      date: ''
-    };
-  },
-  methods: {
-    setDate(val) {
-        this.date = val
-    },
-    changeHandle() {
-      this.show = !this.show
-    },
-  },
-};
-</script>
 ```
-- 支持多个日期选择
+- `loading`用法
 
 ```vue
 <template>
-<div>
-    <hat-button  size="small" @click="changeHandle">选择多个日期</hat-button>
-     <span>{{date}}</span>
-    <hat-datepicker :show="showMultiple" type="multiple" @closed="changeHandle" @change="setDate"></hat-datepicker>
-</div>
-</template>
-<script>
-export default {
-  data() {
-    return {
-      show: false,
-      date: ''
-    };
-  },
-  methods: {
-    setDate(val) {
-        this.date = val
-    },
-    changeHandle() {
-      this.show = !this.show
-    },
-  },
-};
-</script>
-```
-- 支持选择日期范围
-
-```js
-<template>
-  <div>
-    <span>{{date}}</span>
-    <hat-datepicker :show="showRange" type="range" @closed="changeHandle" @change="setDate"></hat-datepicker>
+  <div class="cell-wrap">
+    <div class="cell-wrapper">
+      <hat-cell-group circle>
+        <hat-cell icon="heart" title="loading提示" @click="showToaste('toast提示')"></hat-cell>
+      </hat-cell-group>
+    </div>
   </div>
 </template>
+
 <script>
 export default {
-  data() {
-    return {
-      show: false,
-      date: ''
-    };
-  },
   methods: {
-    setDate(val) {
-        this.date = val
-    },
-    changeHandle() {
-      this.show = !this.show
-    },
-  },
+    showToaste(key) {
+      this.$toast({
+        type: 'loading',
+        text: '加载中'
+      })
+    }
+  }
+};
+```
+- `custom`用法
+`custom`用法通过指定`icon`属性值指定自定义图案，支持组件库自带icon图标，也支持定义图片资源。
+```vue
+<template>
+  <div class="cell-wrap">
+    <div class="cell-wrapper">
+      <hat-cell-group circle>
+        <hat-cell icon="heart" title="loading提示" @click="customClose('toast提示')"></hat-cell>
+      </hat-cell-group>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    customClose(msg) {
+      this.$toast({
+        type: 'custom',
+        text: msg,
+      })
+    }
+  }
 };
 </script>
-
 ```
 
 ### props
 
 | 字段    | 说明    | 类型 |默认值|
 | :------------- |:-------------:| :-----:|:-------:|
-| type  | 日历类型，支持single、range、multiple | String |range|
-| format  | 支持时间返回格式YYYY-MM-DD YYYY/MM/DD   |  String |YYYY-MM-DD|
-| closedIcon | 是否显示DatePicker的关闭按钮   | Boolean| false|
-|show|DatePicker显示和隐藏|Boolean|false|
+| icon  | 当type为`custom`时，指定已定义图标使用 | String |'heart'|
+| text  | 指定toast吐司的类型，['message','custom','loading']   |  String |'message'|
+| duration |  指定toast吐司持续时间，单位为毫秒   | Number| 1500ms|
 
-### Events
-
-| 事件名    | 说明   |
-| ------------- |:-------------:|
-| closed  | Datepicker关闭事件 | 
-| change  |  选择日历数据发生改变时触发，参数在type为sngle为字符串，其余情况为数组数据 | 
 
 <ClientOnly>
   <demo componentName="toast" />
