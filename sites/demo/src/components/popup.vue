@@ -8,12 +8,14 @@
         <hat-cell title="顶部弹出" @click="changeHandle('showTop')"></hat-cell>
         <hat-cell title="左侧弹出" @click="changeHandle('showLeft')"></hat-cell>
         <hat-cell  title="右侧弹出" @click="changeHandle('showRight')"></hat-cell>
+        <hat-cell  title="中间弹出" @click="changeHandle('showCenter')"></hat-cell>
       </hat-cell-group>
     </div>
     <hat-popup :show="show" @closed="changeHandle('show')"></hat-popup>
     <hat-popup :show="showTop" @closed="changeHandle('showTop')" position="top"></hat-popup>
     <hat-popup :show="showLeft" @closed="changeHandle('showLeft')" position="left"></hat-popup>
     <hat-popup :show="showRight" @closed="changeHandle('showRight')" position="right"></hat-popup>
+    <hat-popup :show="showCenter" @closed="changeHandle('showCenter')" position="center"></hat-popup>
   </div>
 </template>
 <script>
@@ -24,6 +26,7 @@ export default {
       showTop: false,
       showLeft: false,
       showRight: false,
+      showCenter: false
     };
   },
   methods: {

@@ -8,6 +8,13 @@
     pointer-events: none;
     overflow: hidden;
 
+    &.hat-popup-center {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
     .hat-popup-mask {
         position: absolute;
         left: 0;
@@ -21,6 +28,10 @@
         position: absolute;
         z-index: 100;
         background-color: #ffffff;
+
+        &.hat-popup-round {
+            border-radius: 4px;
+        }
 
         &.hat-popup-circle {
             border-top-left-radius: 20px;
@@ -39,11 +50,23 @@
     opacity: 0;
 }
 
+.translate-center-animation-enter-active,
+.translate-center-animation-leave-active {
+    animation: translate-center-animation 0.3s ease-in-out;
+}
+
+.translate-center-animation-enter,
+.translate-center-animation-leave-to {
+    animation: translate-center-animation 0.3s ease-in-out reverse;
+}
+
 @each $direction in ("top", "left", "bottom", "right") {
+
     .translate-#{$direction}-animation-enter-active,
     .translate-#{$direction}-animation-leave-active {
         animation: translate-#{$direction}-animation 0.4s ease-in-out;
     }
+
     .translate-#{$direction}-animation-enter,
     .translate-#{$direction}-animation-leave-to {
         animation: translate-#{$direction}-animation 0.4s ease-in-out reverse;

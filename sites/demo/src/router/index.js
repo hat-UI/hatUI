@@ -114,5 +114,10 @@ export default new Router({
       name: 'field',
       component: () => import('../components/field.vue')
     },
+    {
+      path: '/dialog',
+      name: 'dialog',
+      component: () => import('../components/dialog.vue')
+    },
   ]
 })

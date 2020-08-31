@@ -16,4 +16,14 @@ git commit -m 'update article'
 # 格式为：git push -f git@github.com:'用户名'/'仓库名'.git master
 git push -f git@github.com:hat-UI/hat-UI.githib.io.git master
 
+# cd sites/demo
+# npm run prod:demo
+# git init 
+# git add -A
+# git commit -m 'update article'
+
+# # 覆盖式地将本地仓库发布至github，因为发布不需要保留历史记录
+# # 格式为：git push -f git@github.com:'用户名'/'仓库名'.git master
+# git push -f XXX master
+
 cd -

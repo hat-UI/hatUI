@@ -1,5 +1,9 @@
 <template>
-  <div class="hat-popup-wrapper" ref="hatPopup">
+  <div
+    class="hat-popup-wrapper"
+    ref="hatPopup"
+    :class="{ 'hat-popup-center': position === 'center' }"
+  >
     <transition name="fade">
       <div class="hat-popup-mask" v-show="show" @click="closePopup"></div>
     </transition>
@@ -8,7 +12,7 @@
         class="hat-popup-content"
         :style="styleClass"
         v-show="show"
-        :class="{'hat-popup-circle': circle}"
+        :class="{'hat-popup-circle': circle, 'hat-popup-round': position === 'center' }"
       >
         <slot></slot>
       </div>
@@ -40,6 +44,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    isCanClose: {
+      type: Boolean,
+      default: false
+    }
   },
   watch: {
     show(val) {
@@ -76,10 +84,15 @@ export default {
             `@keyframes translate-bottom-animation { 0% { bottom: -100%;} 100% { bottom: 0; }}`
           );
           break;
+        case "center":
+          stylesheet.insertRule(
+            `@keyframes translate-center-animation { 0% { transform: scale(0.6);} 100% { transform: scale(1.0); }}`
+          );
+          break;
       }
     },
     closePopup() {
-      this.$emit("closed");
+      !this.isCanClose && this.$emit("closed");
     },
   },
   computed: {
@@ -115,6 +128,11 @@ export default {
             top: 0,
             minHeight: width,
           };
+        case "center":
+          return {
+            minWidth: width,
+            minHeight: '50px'
+          }
       }
     },
   },

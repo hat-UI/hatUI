@@ -52,6 +52,8 @@ import Notify from './packages/notify/index.js'
 import './packages/notify/notify.scss'
 import Field from './packages/field/index.js'
 import './packages/field/field.scss'
+import Dialog from './packages/dialog/index.js'
+import './packages/dialog/dialog.scss'
 // import mixins from './mixins'
 const components = [
   Button,
@@ -86,6 +88,7 @@ const install = function (Vue, opts = {}) {
   });
   Vue.prototype.$notify = Notify;
   Vue.prototype.$toast = Toast;
+  Vue.prototype.$dialog = Dialog
   // Vue.use(mixins)
 };
 if (typeof window !== "undefined" && window.Vue) {
