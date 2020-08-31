@@ -1,14 +1,18 @@
 <template>
-  <transition name="hat-notify-fade">
-    <div v-if="visible" class="hat-notify" :class="`hat-notify-${this.type}`">
-      <span class="notify-content">{{message}}</span>
+  <hat-popup :show="visible" position="center" :isCanClose="false">
+    <div class="hat-dialog-wrapper">
+      123123132
     </div>
-  </transition>
+  </hat-popup>
 </template>
 
 <script>
+import popup from '../popup/popup.vue'
 export default {
-  name: "hat-notify",
+  name: "hat-dailog",
+  components: {
+    popup
+  },
   data() {
     return {
       visible: false,

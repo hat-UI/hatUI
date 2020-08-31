@@ -46,7 +46,7 @@ export default {
     },
     isCanClose: {
       type: Boolean,
-      default: false
+      default: true
     }
   },
   watch: {
@@ -92,7 +92,7 @@ export default {
       }
     },
     closePopup() {
-      !this.isCanClose && this.$emit("closed");
+      this.isCanClose && this.$emit("closed");
     },
   },
   computed: {
