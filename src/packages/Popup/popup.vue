@@ -131,7 +131,8 @@ export default {
         case "center":
           return {
             minWidth: width,
-            minHeight: '50px'
+            minHeight: '50px',
+            transform: 'scale(1.0)'
           }
       }
     },

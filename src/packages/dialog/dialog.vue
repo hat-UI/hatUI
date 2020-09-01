@@ -1,15 +1,30 @@
 <template>
-  <hat-popup :show="visible" position="center" :isCanClose="false">
+  <hat-popup :show="currVisible" position="center" :isCanClose="false">
     <div class="hat-dialog-wrapper">
+      <hat-icon
+        size="18"
+        type="close"
+        v-if="isShowClose"
+        class="hat-dialog-close"
+        @click.native="closeHandle"
+      ></hat-icon>
       <div class="hat-dialog-top-wrapper">
         <slot name="dialog-content">
-          <div class="hat-dialog-title">{{title}}</div>
-          <div class="hat-dialog-content">{{content}}</div>
+          <div class="hat-dialog-title" v-if="title">{{title}}</div>
+          <div class="hat-dialog-content" v-if="content">{{content}}</div>
         </slot>
       </div>
       <div class="hat-dialog-bottom-wrapper">
-        <div class="hat-dialog-left" @click="cancelHandle($event)" :style="cancelStyle">{{cancelText}}</div>
-        <div class="hat-dialog-right" @click="confirmHandle($event)" :style="confirmStyle">{{confirmText}}</div>
+        <div
+          class="hat-dialog-left"
+          @click="cancelHandle($event)"
+          :style="cancelStyle"
+        >{{cancelText}}</div>
+        <div
+          class="hat-dialog-right"
+          @click="confirmHandle($event)"
+          :style="confirmStyle"
+        >{{confirmText}}</div>
       </div>
     </div>
   </hat-popup>
@@ -18,22 +33,70 @@
 <script>
 import popup from "../popup/popup.vue";
 export default {
-  name: "hat-dailog",
+  name: "hat-dialog",
   components: {
     popup,
   },
+  props: {
+    visible: {
+      type: Boolean,
+      default: false
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    content: {
+      type: String,
+      default: ''
+    },
+    cancelText: {
+      type: String,
+      default: "取消"
+    },
+    confirmText: {
+      type: String,
+      default: "确定"
+    },
+    cancelBackground: {
+      type: String,
+      default: '#fff'
+    },
+    confirmBackground: {
+      type: String,
+      default: '#07c160'
+    },
+    confirmColor: {
+      type: String,
+      default: '#fff'
+    },
+    cancelColor: {
+      type: String,
+      default: '#000'
+    },
+    confirmBtn: {
+      type: Function
+    },
+    cancelBtn: {
+      type: Function
+    },
+    closeBtn: {
+      type: Function
+    },
+    isShowClose: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
-      visible: false,
-      title: "",
-      content: "",
-      cancelText: "取消",
-      confirmText: "确定",
-      cancelBackground: '#fff',
-      confirmBackground: '#07c160',
-      confirmColor: '#fff',
-      cancelColor: '#000',
-    };
+      currVisible: false,
+    }
+  },
+  watch: {
+    visible(newVal) {
+      this.currVisible = newVal
+    }
   },
   computed: {
     confirmStyle() {
@@ -51,20 +114,25 @@ export default {
   },
   methods: {
     close() {
-      this.visible = false;
+      this.currVisible = false;
       setTimeout(() => {
         this.$destroy(true);
         this.$el.parentNode.removeChild(this.$el);
       }, 500);
+      this.$emit('update:visible', false)
     },
     cancelHandle(event) {
       this.close()
-      this.confirmBtn && this.confirmBtn(event)
-    },
-    confirmHandle() {
-      this.close()
       this.cancelBtn && this.cancelBtn(event)
     },
+    confirmHandle(event) {
+      this.close()
+      this.confirmBtn && this.confirmBtn(event)
+    },
+    closeHandle(event) {
+      this.close()
+      this.closeBtn && this.closeBtn(event)
+    }
   },
 };
 </script>

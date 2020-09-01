@@ -80,7 +80,8 @@ const components = [
   SearchBar,
   Cell,
   CellGroup,
-  Field
+  Field,
+  Dialog.DialogTpl
 ];
 const install = function (Vue, opts = {}) {
   components.map(component => {
@@ -88,7 +89,7 @@ const install = function (Vue, opts = {}) {
   });
   Vue.prototype.$notify = Notify;
   Vue.prototype.$toast = Toast;
-  Vue.prototype.$dialog = Dialog
+  Vue.prototype.$dialog = Dialog.Dialog
   // Vue.use(mixins)
 };
 if (typeof window !== "undefined" && window.Vue) {

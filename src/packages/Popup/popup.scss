@@ -58,7 +58,7 @@
 
 .translate-center-animation-enter,
 .translate-center-animation-leave-to {
-    animation: translate-center-animation 0.2s ease-in-out reverse;
+    animation: translate-center-animation 0.3s ease-in-out reverse;
 }
 
 @each $direction in ("top", "left", "bottom", "right") {

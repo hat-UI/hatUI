@@ -4,26 +4,57 @@
     <br />
     <div class="cell-wrapper">
       <hat-cell-group circle>
-        <hat-cell  icon="heart" title="info提示" @click="showDialog('info')"></hat-cell>
-        <hat-cell  icon="heart" title="primary提示" @click="showDialog('primary')"></hat-cell>
-        <hat-cell  icon="heart" title="danger" @click="showDialog('danger')"></hat-cell>
-        <hat-cell  icon="heart" title="warning提示" @click="showDialog('warning')"></hat-cell>
+        <hat-cell icon="heart" title="默认用法" @click="showDialog"></hat-cell>
+        <hat-cell icon="heart" title="带content" @click="showContentDialog"></hat-cell>
+        <hat-cell icon="heart" title="带确认和取消事件" @click="showEventDialog"></hat-cell>
+        <hat-cell icon="heart" title="改变按钮颜色" @click="showColorDialog"></hat-cell>
+        <hat-cell icon="heart" title="以标签的方式" @click="showTagDialog"></hat-cell>
       </hat-cell-group>
+      <hat-dialog :visible.sync="show" title="标签使用" content="标签使用的方式"></hat-dialog>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      show: false
+    }
+  },
   methods: {
-    showDialog(key) {
+    showDialog() {
       this.$dialog({
-        title: '我是dialog',
-        content: '我是内容',
+        title: '确定删除该选项?',
+      })
+    },
+    showContentDialog() {
+      this.$dialog({
+        title: '确定删除该选项?',
+        content: '删除该选项后不可恢复，请慎重！'
+      })
+    },
+    showEventDialog() {
+      this.$dialog({
+        title: '确定删除该选项?',
+        content: '删除该选项后不可恢复，请慎重！',
+        cancelBtn(event) {
+          alert('你已取消删除')
+        },
         confirmBtn(event) {
-          alert("click confirm")
+          alert('你已删除')
         }
       })
+    },
+    showColorDialog() {
+      this.$dialog({
+        title: '确定删除该选项?',
+        content: '删除该选项后不可恢复，请慎重！',
+        confirmBackground: 'linear-gradient(to right, rgb(255, 96, 52), rgb(238, 10, 36))'
+      })
+    },
+    showTagDialog() {
+      this.show = true
     }
   }
 };

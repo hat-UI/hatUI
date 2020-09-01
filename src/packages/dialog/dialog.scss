@@ -1,6 +1,12 @@
 .hat-dialog-wrapper {
+    position: relative;
     width: 260px;
     height: auto;
+    .hat-dialog-close {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
     .hat-dialog-top-wrapper {
         display: flex;
         flex-direction: column;
