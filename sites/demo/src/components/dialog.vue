@@ -17,7 +17,13 @@
 export default {
   methods: {
     showDialog(key) {
-      this.$dialog(`${key}提示`)
+      this.$dialog({
+        title: '我是dialog',
+        content: '我是内容',
+        confirmBtn(event) {
+          alert("click confirm")
+        }
+      })
     }
   }
 };
