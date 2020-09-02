@@ -15,16 +15,18 @@
         </slot>
       </div>
       <div class="hat-dialog-bottom-wrapper">
-        <div
-          class="hat-dialog-left"
-          @click="cancelHandle($event)"
-          :style="cancelStyle"
-        >{{cancelText}}</div>
-        <div
-          class="hat-dialog-right"
-          @click="confirmHandle($event)"
-          :style="confirmStyle"
-        >{{confirmText}}</div>
+        <slot name="dialog-footer">
+          <div
+            class="hat-dialog-left"
+            @click="cancelHandle($event)"
+            :style="cancelStyle"
+          >{{cancelText}}</div>
+          <div
+            class="hat-dialog-right"
+            @click="confirmHandle($event)"
+            :style="confirmStyle"
+          >{{confirmText}}</div>
+        </slot>
       </div>
     </div>
   </hat-popup>
@@ -118,12 +120,8 @@ export default {
   },
   methods: {
     close() {
-      this.$emit('update:visible',false)
+      this.$emit('update:visible', false)
       this.currVisible = false;
-      // setTimeout(() => {
-      //   this.$destroy(true);
-      //   this.$el.parentNode.removeChild(this.$el);
-      // }, 500);
     },
     cancelHandle(event) {
       this.close()
@@ -136,7 +134,16 @@ export default {
     closeHandle(event) {
       this.close()
       this.closeBtn && this.closeBtn(event)
+    },
+    destroy() {
+      setTimeout(() => {
+        this.$destroy(true);
+        this.$el.parentNode.removeChild(this.$el);
+      }, 1000);
     }
+  },
+  destroyed() {
+    this.destroy()
   },
 };
 </script>
