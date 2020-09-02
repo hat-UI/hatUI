@@ -94,8 +94,12 @@ export default {
     }
   },
   watch: {
-    visible(newVal) {
-      this.currVisible = newVal
+    visible: {
+      handler(newVal) {
+        console.log('first')
+        this.currVisible = newVal
+      },
+      immediate: true
     }
   },
   computed: {
@@ -114,12 +118,12 @@ export default {
   },
   methods: {
     close() {
+      this.$emit('update:visible',false)
       this.currVisible = false;
-      setTimeout(() => {
-        this.$destroy(true);
-        this.$el.parentNode.removeChild(this.$el);
-      }, 500);
-      this.$emit('update:visible', false)
+      // setTimeout(() => {
+      //   this.$destroy(true);
+      //   this.$el.parentNode.removeChild(this.$el);
+      // }, 500);
     },
     cancelHandle(event) {
       this.close()
