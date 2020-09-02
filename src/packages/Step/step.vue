@@ -11,29 +11,30 @@
 </template>
 
 <script>
-import icon from '../icon/icon.vue'
+import icon from '../icon/icon.vue';
+
 export default {
   name: 'hat-step',
   components: {
-    'hat-icon': icon
+    'hat-icon': icon,
   },
   data() {
     return {
-      index: 0
-    }
+      index: 0,
+    };
   },
   computed: {
     isFirst() {
-      const parent = this.$parent
-      return parent.steps[0] === this
+      const parent = this.$parent;
+      return parent.steps[0] === this;
     },
     active() {
-      console.log(this.$parent.active)
-      return this.$parent.active >= this.index
-    }
+      console.log(this.$parent.active);
+      return this.$parent.active >= this.index;
+    },
   },
   beforeCreate() {
-    this.$parent.steps.push(this)
-  }
-}
+    this.$parent.steps.push(this);
+  },
+};
 </script>

@@ -16,12 +16,13 @@
 
 <script>
 import Icon from '../icon/icon.vue';
-import loading from '../loading/loading.vue'
+import loading from '../loading/loading.vue';
+
 export default {
-  name: "hat-toast",
+  name: 'hat-toast',
   components: {
     Icon,
-    loading
+    loading,
   },
   data() {
     return {
@@ -30,7 +31,7 @@ export default {
       text: '',
       icon: 'heart',
       duration: 1500,
-      forbidClick: false
+      forbidClick: false,
     };
   },
   methods: {
@@ -43,15 +44,15 @@ export default {
       this.visible = false;
       setTimeout(() => {
         this.$destroy(true);
-        this.$el.parentNode.removeChild(this.$el)
+        this.$el.parentNode.removeChild(this.$el);
       }, 500);
     },
     isNetWorkImage(url) {
       if (/^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/.test(url)) {
-        return true
+        return true;
       }
-      return false
-    }
+      return false;
+    },
   },
   mounted() {
     this.setTimer();

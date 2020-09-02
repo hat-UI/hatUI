@@ -25,65 +25,66 @@
 </template>
 
 <script>
-import Icon from '../icon/icon.vue'
+import Icon from '../icon/icon.vue';
+
 export default {
   name: 'hat-cell',
   components: {
-    Icon
+    Icon,
   },
   props: {
     value: {
       type: String,
-      default: ''
+      default: '',
     },
     to: {
       type: String,
-      default: ''
+      default: '',
     },
     title: {
       type: String,
-      default: '主标题'
+      default: '主标题',
     },
     subTitle: {
       type: String,
-      default: ''
+      default: '',
     },
     isShowIcon: {
       type: Boolean,
-      default: false
+      default: false,
     },
     icon: {
       type: String,
-      default: 'menu'
-    }
+      default: 'menu',
+    },
   },
   data() {
     return {
-      index: 0
-    }
+      index: 0,
+    };
   },
   computed: {
     isGroup() {
-      return this.$parent.$options._componentTag === 'hat-cell-group'
+      return this.$parent.$options._componentTag === 'hat-cell-group';
     },
     cellBorderCls() {
       return {
         'hat-cell-top-border ': !this.isGroup,
         'hat-cell-bottom-border ': !this.isGroup,
-        'hat-cell-bodrer-radius': !this.isGroup
-      }
+        'hat-cell-bodrer-radius': !this.isGroup,
+      };
     },
     cellContentCls() {
-      console.log('****',this.$parent.$children.length)
+      console.log('****', this.$parent.$children.length);
       return {
         'hat-cell-bottom-border ': this.isGroup && this.index < this.$parent.$children.length,
-      }
-    }
+      };
+    },
   },
   methods: {
     clickHandle(e) {
-      this.to ? (window.location.href = to) : (this.$emit('click', e))
-    }
-  }
-}
+      this.to ? (window.location.href = to) : (this.$emit('click', e));
+    },
+  },
+};
 </script>

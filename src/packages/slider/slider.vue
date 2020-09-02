@@ -9,21 +9,21 @@ export default {
   name: 'hat-slider',
   props: {
     value: {
-      type: String|Number,
-      default: 0
+      type: String | Number,
+      default: 0,
     },
     min: {
       type: Number,
-      default: 0
+      default: 0,
     },
     max: {
       type: Number,
-      default: 10
+      default: 10,
     },
     disabled: {
       type: Boolean,
-      default: false
-    }
-  }
-}
+      default: false,
+    },
+  },
+};
 </script>

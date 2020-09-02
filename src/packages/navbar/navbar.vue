@@ -16,16 +16,17 @@
 </template>
 
 <script>
-import Icon from "../icon/icon.vue";
+import Icon from '../icon/icon.vue';
+
 export default {
-  name: "hat-navbar",
+  name: 'hat-navbar',
   components: {
     Icon,
   },
   props: {
     title: {
       type: String,
-      default: "标题",
+      default: '标题',
     },
     border: {
       type: Boolean,
@@ -37,28 +38,28 @@ export default {
     },
     zIndex: {
       type: [String, Number],
-      default: "",
+      default: '',
     },
   },
   computed: {
     navBarClass() {
       return {
-        "hat-navbar-border-bottom": this.border,
-        "hat-navbar-fixed": this.fixed,
+        'hat-navbar-border-bottom': this.border,
+        'hat-navbar-fixed': this.fixed,
       };
     },
     navBarStyle() {
       return {
-        "z-index": this.fixed && this.zIndex,
+        'z-index': this.fixed && this.zIndex,
       };
     },
   },
   methods: {
     clickLeft($event) {
-      this.$emit("click-left", $event);
+      this.$emit('click-left', $event);
     },
     clickRight($event) {
-      this.$emit("click-right", $event);
+      this.$emit('click-right', $event);
     },
   },
 };

@@ -11,20 +11,20 @@ export default {
     value: {
       type: Array,
       default() {
-        return []
-      }
-    }
+        return [];
+      },
+    },
   },
   methods: {
     changeHandle(value) {
-      if(this.value.includes(value)) {
-        const index = this.value.findIndex(item => item === value)
-        this.value.splice(index, 1)
-      }else {
-        this.value.push(value)
+      if (this.value.includes(value)) {
+        const index = this.value.findIndex((item) => item === value);
+        this.value.splice(index, 1);
+      } else {
+        this.value.push(value);
       }
-      this.$emit('input', this.value)
-    }
-  }
-}
+      this.$emit('input', this.value);
+    },
+  },
+};
 </script>

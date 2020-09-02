@@ -1,7 +1,7 @@
 <template>
   <hat-popup :show="show" @closed="closeActionSheet" :circle="circle">
     <div class="hat-actionsheet-wrapper">
-      
+
         <div class="hat-actionsheet-default-header">
           <slot name="header">
             <div class="hat-actionsheet-title">{{title}}</div>
@@ -43,52 +43,53 @@
 </template>
 
 <script>
-import popup from "../popup/index.js";
+import popup from '../popup/index.js';
 import icon from '../icon/index.js';
-import loading from '../loading/index.js'
+import loading from '../loading/index.js';
+
 export default {
-  name: "hat-actionsheet",
+  name: 'hat-actionsheet',
   props: {
     show: {
       type: Boolean,
-      default: false
+      default: false,
     },
     actions: {
       type: Array,
       default() {
-        return []
-      }
+        return [];
+      },
     },
     title: {
       type: String,
-      default: '标题'
+      default: '标题',
     },
     circle: {
       type: Boolean,
-      defualt: false
+      defualt: false,
     },
     closedIcon: {
       type: Boolean,
-      default: false
+      default: false,
     },
     cancelText: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   components: {
     popup,
     icon,
-    loading
+    loading,
   },
   methods: {
     closeActionSheet() {
-      this.$emit("closed");
+      this.$emit('closed');
     },
     selectItem(value) {
-      this.$emit('select', value)
-      this.closeActionSheet()
-    }
+      this.$emit('select', value);
+      this.closeActionSheet();
+    },
   },
 };
 </script>

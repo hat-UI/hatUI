@@ -8,13 +8,13 @@
 
 <script>
 export default {
-  name: "hat-notify",
+  name: 'hat-notify',
   data() {
     return {
       visible: false,
-      message: "",
+      message: '',
       duration: 1500,
-      type: 'primary'
+      type: 'primary',
     };
   },
   methods: {
@@ -27,12 +27,12 @@ export default {
       this.visible = false;
       setTimeout(() => {
         this.$destroy(true);
-        this.$el.parentNode.removeChild(this.$el)
+        this.$el.parentNode.removeChild(this.$el);
       }, 500);
     },
   },
   mounted() {
-    this.setTimer(); 
+    this.setTimer();
   },
 };
 </script>

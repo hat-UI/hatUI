@@ -18,40 +18,40 @@
 export default {
   name: 'hat-tabs',
   provide() {
-    return { TabsInstance: this }
+    return { TabsInstance: this };
   },
   props: {
     value: {
       type: String | Number,
-      defualt: 0
+      defualt: 0,
     },
   },
   data() {
     return {
       navList: [],
-      activeKey: this.value
-    }
+      activeKey: this.value,
+    };
   },
   methods: {
     getTabsPanel() {
-      const tabsItem = this.$children.filter(item => item.$options._componentTag === "hat-tabpanel")
+      const tabsItem = this.$children.filter((item) => item.$options._componentTag === 'hat-tabpanel');
       tabsItem.forEach((item, index) => {
         this.navList.push({
           label: item.label,
-          name: item.name || index
-        })
+          name: item.name || index,
+        });
         if (index === 0 && !this.activeKey) {
-          this.activeKey = item.name
+          this.activeKey = item.name;
         }
-      })
+      });
     },
     selectTab(item, index) {
-      this.activeKey = item.name || index
-    }
+      this.activeKey = item.name || index;
+    },
   },
   mounted() {
-    this.getTabsPanel()
+    this.getTabsPanel();
   },
 
-}
+};
 </script>

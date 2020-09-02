@@ -10,36 +10,36 @@ export default {
   props: {
     circle: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   watch: {
     childLength(newVal, oldVal) {
       if (newVal) {
-        this.setChildrenIndex()
+        this.setChildrenIndex();
       }
-    }
+    },
   },
   computed: {
     childLength() {
-      return this.$children
+      return this.$children;
     },
     boderStyle() {
       return {
-        'border-radius': this.circle ? '8px' : '0'
-      }
-    }
+        'border-radius': this.circle ? '8px' : '0',
+      };
+    },
   },
   methods: {
     setChildrenIndex() {
       const children = this.childLength;
       children.forEach((child, index) => {
-        child.index = index
-      })
-    }
+        child.index = index;
+      });
+    },
   },
   mounted() {
-    this.setChildrenIndex()
-  }
-}
+    this.setChildrenIndex();
+  },
+};
 </script>

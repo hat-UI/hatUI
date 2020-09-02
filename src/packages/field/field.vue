@@ -3,7 +3,7 @@
     <div class="hat-field-content" :style="searchInputStyle">
       <div class="hat-field-btn" @click="leftClick">
         <slot name="left-btn-section">
-          <span class="hat-field-label">{{label}}</span>       
+          <span class="hat-field-label">{{label}}</span>
         </slot>
       </div>
       <div class="hat-field-input-wrapper">
@@ -41,70 +41,70 @@ export default {
   props: {
     value: {
       type: String,
-      default: ''
+      default: '',
     },
     background: {
       type: String,
-      default: '#ffffff'
+      default: '#ffffff',
     },
     placeholder: {
       type: String,
-      default: '请输入你的关键词'
+      default: '请输入你的关键词',
     },
     isShowBtn: {
       type: Boolean,
-      default: false
+      default: false,
     },
     actionText: {
       type: Boolean,
-      default: '取消'
+      default: '取消',
     },
     round: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
+      default: false,
     },
     type: {
       type: String,
-      default: 'text'
+      default: 'text',
     },
     label: {
       type: String,
-      default: '文本'
-    }
+      default: '文本',
+    },
   },
   computed: {
     searchBarStyle() {
       return {
-        background: this.background
-      }
+        background: this.background,
+      };
     },
     searchInputStyle() {
       return {
-        borderRadius: this.round ? '30px' : '4px'
-      }
-    }
+        borderRadius: this.round ? '30px' : '4px',
+      };
+    },
   },
   methods: {
     rightClick() {
-      this.$emit('rightClick', this.value)
+      this.$emit('rightClick', this.value);
     },
     leftClick() {
-      this.$emit('leftClick')
+      this.$emit('leftClick');
     },
     keyEnter() {
-      !this.isShowBtn && this.$emit('keyEnter', this.value)
+      !this.isShowBtn && this.$emit('keyEnter', this.value);
     },
     clearWord() {
-      this.value = ''
-      this.$emit('clear')
+      this.value = '';
+      this.$emit('clear');
     },
     inputHandler(e) {
-      this.$emit('update:input',e.target.value)
-    }
-  }
-}
+      this.$emit('update:input', e.target.value);
+    },
+  },
+};
 </script>

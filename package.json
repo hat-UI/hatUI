@@ -11,6 +11,8 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.24.0",
     "@vue/test-utils": "^1.0.0-beta.32",
@@ -35,9 +37,11 @@
     "happypack": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.12.1",
+    "husky": "^4.2.5",
     "istanbul-instrumenter-loader": "3.0.1",
     "jsdom": "^16.2.1",
     "jsdom-global": "^3.0.2",
+    "lint-staged": "^10.2.13",
     "log-symbols": "^3.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "mocha": "5.2.0",
@@ -78,7 +82,21 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "dev:doc": "vuepress dev ./sites/doc",
     "build:doc": "vuepress build ./sites/doc",
-    "build:all": "npm run dev:doc && npm run dev:demo"
+    "build:all": "npm run dev:doc && npm run dev:demo",
+    "prettier": "prettier --trailing-comma es5 --single-quote --write '**/*.{js,json,md}'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "eslint --ignore-path .eslintignore",
+      "git add "
+    ]
   },
   "nyc": {
     "include": [

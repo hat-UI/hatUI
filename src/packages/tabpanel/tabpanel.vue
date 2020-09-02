@@ -13,17 +13,17 @@ export default {
   props: {
     name: {
       type: String,
-      default: ''
+      default: '',
     },
     label: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   computed: {
     show() {
-      return this.$parent.activeKey === this.name
-    }
-  }
-}
+      return this.$parent.activeKey === this.name;
+    },
+  },
+};
 </script>

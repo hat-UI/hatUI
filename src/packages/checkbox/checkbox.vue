@@ -21,47 +21,47 @@ export default {
   props: {
     round: {
       type: Boolean,
-      default: false
+      default: false,
     },
     label: {
       type: String,
-      default: ''
+      default: '',
     },
     value: {
       type: Boolean,
-      default: false
+      default: false,
     },
     disabled: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   computed: {
     checkboxCls() {
       return {
-        'round': this.round,
-        'is-checked': this.checkedValue
-      }
+        round: this.round,
+        'is-checked': this.checkedValue,
+      };
     },
     isGroup() {
       if (this.$parent.$options._componentTag === 'hat-checkbox-group') {
-        return true
+        return true;
       }
-      return false
+      return false;
     },
     checkedValue() {
-      return this.isGroup ? this.$parent.value.includes(this.label) : this.value
-    }
+      return this.isGroup ? this.$parent.value.includes(this.label) : this.value;
+    },
   },
   methods: {
     changeHandle() {
-      const newValue = this.isGroup ? this.label : !this.value
+      const newValue = this.isGroup ? this.label : !this.value;
       if (this.isGroup) {
-        this.$parent.changeHandle(newValue)
+        this.$parent.changeHandle(newValue);
       } else {
-        this.$emit('input', newValue)
+        this.$emit('input', newValue);
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>

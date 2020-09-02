@@ -1,7 +1,7 @@
 import Upload from './upload.vue';
-import './upload.scss'
+import './upload.scss';
 
 Upload.install = function install(Vue) {
-    Vue.component(Upload.name, Upload);
+  Vue.component(Upload.name, Upload);
 };
 export default Upload;

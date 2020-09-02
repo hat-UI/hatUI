@@ -33,117 +33,118 @@
 </template>
 
 <script>
-import popup from "../popup/popup.vue";
+import popup from '../popup/popup.vue';
+
 export default {
-  name: "hat-dialog",
+  name: 'hat-dialog',
   components: {
     popup,
   },
   props: {
     visible: {
       type: Boolean,
-      default: false
+      default: false,
     },
     title: {
       type: String,
-      default: ''
+      default: '',
     },
     content: {
       type: String,
-      default: ''
+      default: '',
     },
     cancelText: {
       type: String,
-      default: "取消"
+      default: '取消',
     },
     confirmText: {
       type: String,
-      default: "确定"
+      default: '确定',
     },
     cancelBackground: {
       type: String,
-      default: '#fff'
+      default: '#fff',
     },
     confirmBackground: {
       type: String,
-      default: '#07c160'
+      default: '#07c160',
     },
     confirmColor: {
       type: String,
-      default: '#fff'
+      default: '#fff',
     },
     cancelColor: {
       type: String,
-      default: '#000'
+      default: '#000',
     },
     confirmBtn: {
-      type: Function
+      type: Function,
     },
     cancelBtn: {
-      type: Function
+      type: Function,
     },
     closeBtn: {
-      type: Function
+      type: Function,
     },
     isShowClose: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
       currVisible: false,
-    }
+    };
   },
   watch: {
     visible: {
       handler(newVal) {
-        console.log('first')
-        this.currVisible = newVal
+        console.log('first');
+        this.currVisible = newVal;
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   computed: {
     confirmStyle() {
       return {
         background: this.confirmBackground,
-        color: this.confirmColor
-      }
+        color: this.confirmColor,
+      };
     },
     cancelStyle() {
       return {
         background: this.cancelBackground,
-        color: this.cancelColor
-      }
-    }
+        color: this.cancelColor,
+      };
+    },
   },
   methods: {
     close() {
-      this.$emit('update:visible', false)
+      this.$emit('update:visible', false);
       this.currVisible = false;
     },
     cancelHandle(event) {
-      this.close()
-      this.cancelBtn && this.cancelBtn(event)
+      this.close();
+      this.cancelBtn && this.cancelBtn(event);
     },
     confirmHandle(event) {
-      this.close()
-      this.confirmBtn && this.confirmBtn(event)
+      this.close();
+      this.confirmBtn && this.confirmBtn(event);
     },
     closeHandle(event) {
-      this.close()
-      this.closeBtn && this.closeBtn(event)
+      this.close();
+      this.closeBtn && this.closeBtn(event);
     },
     destroy() {
       setTimeout(() => {
         this.$destroy(true);
         this.$el.parentNode.removeChild(this.$el);
       }, 1000);
-    }
+    },
   },
   destroyed() {
-    this.destroy()
+    this.destroy();
   },
 };
 </script>

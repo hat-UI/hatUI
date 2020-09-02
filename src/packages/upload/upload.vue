@@ -35,52 +35,53 @@
 </template>
 
 <script>
-import icon from '../icon/icon.vue'
-import loading from '../loading/loading.vue'
+import icon from '../icon/icon.vue';
+import loading from '../loading/loading.vue';
+
 export default {
   name: 'hat-upload',
   props: {
     multiple: {
       type: Boolean,
-      default: false
+      default: false,
     },
     name: {
       type: String,
-      default: ''
+      default: '',
     },
     limit: {
       type: Number,
-      default: 3
+      default: 3,
     },
 
   },
   components: {
     icon,
-    loading
+    loading,
   },
   data() {
     return {
-      previewList: []
-    }
+      previewList: [],
+    };
   },
   methods: {
 
     uploadFile(e) {
-      this.translateToBase64(e.target.files)
+      this.translateToBase64(e.target.files);
     },
     translateToBase64(files) {
-      const _this = this
+      const _this = this;
       for (let i = 0; i < files.length; i++) {
         const reader = new FileReader();
-        reader.readAsDataURL(files[i])
+        reader.readAsDataURL(files[i]);
         reader.onload = function (e) {
-          _this.previewList.push(e.target.result)
-        }
+          _this.previewList.push(e.target.result);
+        };
       }
     },
     clearFile(index) {
-      
-    }
-  }
-}
+      console.log(index);
+    },
+  },
+};
 </script>

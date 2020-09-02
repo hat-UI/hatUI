@@ -8,41 +8,41 @@
 </template>
 
 <script>
-const prefixCls = "hat-loading";
+const prefixCls = 'hat-loading';
 export default {
-  name: "hat-loading",
+  name: 'hat-loading',
   data() {
     return {
-      prefixCls: prefixCls,
-      tips: ""
+      prefixCls,
+      tips: '',
     };
   },
   props: {
     show: {
       type: Boolean,
-      default: true
+      default: true,
     },
     type: {
       type: String,
-      default: 'circle' // 可以为circle, wave
+      default: 'circle', // 可以为circle, wave
     },
     tips: {
       type: String,
-      default: ''
+      default: '',
     },
     color: {
       type: String,
-      default: ''
+      default: '',
     },
     size: {
       type: Number,
-      default: 50
-    }
+      default: 50,
+    },
   },
   computed: {
     viewBox() {
-      return `${0.5*this.size} ${0.5*this.size} ${this.size} ${this.size}`
-    }
-  }
+      return `${0.5 * this.size} ${0.5 * this.size} ${this.size} ${this.size}`;
+    },
+  },
 };
 </script>

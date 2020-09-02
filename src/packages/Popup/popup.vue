@@ -21,7 +21,7 @@
 </template>
 <script>
 export default {
-  name: "hat-popup",
+  name: 'hat-popup',
   data() {
     return {
       show: false,
@@ -30,7 +30,7 @@ export default {
   props: {
     position: {
       type: String,
-      default: "bottom",
+      default: 'bottom',
     },
     show: {
       type: Boolean,
@@ -38,7 +38,7 @@ export default {
     },
     width: {
       type: String | Number,
-      default: "25%",
+      default: '25%',
     },
     circle: {
       type: Boolean,
@@ -46,94 +46,94 @@ export default {
     },
     isCanClose: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   watch: {
     show(val) {
       if (val) {
-        this.$refs.hatPopup.style.pointerEvents = "auto";
+        this.$refs.hatPopup.style.pointerEvents = 'auto';
         return;
       }
-      this.$refs.hatPopup.style.pointerEvents = "none";
+      this.$refs.hatPopup.style.pointerEvents = 'none';
     },
   },
   methods: {
     setAnimationRule() {
       const stylesheet = document.styleSheets[0];
       const positionType = this.position;
-      const width = this.width;
+      const { width } = this;
       switch (positionType) {
-        case "left":
+        case 'left':
           stylesheet.insertRule(
-            `@keyframes translate-left-animation { 0% { left: -100%; } 100% { left:0; }}`
+            '@keyframes translate-left-animation { 0% { left: -100%; } 100% { left:0; }}',
           );
           break;
-        case "right":
+        case 'right':
           stylesheet.insertRule(
-            `@keyframes translate-right-animation { 0% { right: -100%; } 100% { right:0; }}`
+            '@keyframes translate-right-animation { 0% { right: -100%; } 100% { right:0; }}',
           );
           break;
-        case "top":
+        case 'top':
           stylesheet.insertRule(
-            `@keyframes translate-top-animation { 0% { top: -100%;  } 100% { top: 0; }}`
+            '@keyframes translate-top-animation { 0% { top: -100%;  } 100% { top: 0; }}',
           );
           break;
-        case "bottom":
+        case 'bottom':
           stylesheet.insertRule(
-            `@keyframes translate-bottom-animation { 0% { bottom: -100%;} 100% { bottom: 0; }}`
+            '@keyframes translate-bottom-animation { 0% { bottom: -100%;} 100% { bottom: 0; }}',
           );
           break;
-        case "center":
+        case 'center':
           stylesheet.insertRule(
-            `@keyframes translate-center-animation { 0% { transform: scale(0.6);} 100% { transform: scale(1.0); }}`
+            '@keyframes translate-center-animation { 0% { transform: scale(0.6);} 100% { transform: scale(1.0); }}',
           );
           break;
       }
     },
     closePopup() {
-      this.isCanClose && this.$emit("closed");
+      this.isCanClose && this.$emit('closed');
     },
   },
   computed: {
     styleClass() {
       const positionType = this.position;
-      const width = this.width;
+      const { width } = this;
       switch (positionType) {
-        case "left":
+        case 'left':
           return {
             top: 0,
             bottom: 0,
             left: 0,
             minWidth: width,
           };
-        case "right":
+        case 'right':
           return {
             top: 0,
             bottom: 0,
             right: 0,
             minWidth: width,
           };
-        case "bottom":
+        case 'bottom':
           return {
             left: 0,
             right: 0,
             bottom: 0,
             minHeight: width,
           };
-        case "top":
+        case 'top':
           return {
             left: 0,
             right: 0,
             top: 0,
             minHeight: width,
           };
-        case "center":
+        case 'center':
           return {
             minWidth: width,
             minHeight: '50px',
-            transform: 'scale(1.0)'
-          }
+            transform: 'scale(1.0)',
+          };
       }
     },
   },

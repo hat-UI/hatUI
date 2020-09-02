@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "hat-badge",
+  name: 'hat-badge',
   props: {
     value: {
       type: Number,
@@ -32,16 +32,16 @@ export default {
     },
     color: {
       type: String,
-      default: '#f61605'
+      default: '#f61605',
     },
     iconColor: {
       type: String,
-      default: '#f61605'
+      default: '#f61605',
     },
     icon: {
       type: String,
-      default: 'upload'
-    }
+      default: 'upload',
+    },
   },
   computed: {
     DotStyle() {
@@ -49,12 +49,12 @@ export default {
         color: this.color,
         zIndex: this.zIndex,
         border: `1px solid ${this.color}`,
-        'background-color': this.isDot ? `${this.color}`: ''
-      }
+        'background-color': this.isDot ? `${this.color}` : '',
+      };
     },
     noticeCount() {
-      return this.value > this.max ? `${this.max}+` : this.value
-    }
-  }
+      return this.value > this.max ? `${this.max}+` : this.value;
+    },
+  },
 };
 </script>
