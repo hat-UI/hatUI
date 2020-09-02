@@ -5,7 +5,6 @@ import hatUI from "@/index"
 Vue.config.productionTip = false
 Vue.use(hatUI)
 
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,

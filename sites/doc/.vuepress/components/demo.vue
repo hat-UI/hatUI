@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     componentUrl() {
-      return `http://localhost:8081/#/${this.componentName}`
+      return  `https://harhao.gitee.io/hat-ui/#/${this.componentName}`
     }
   },
 };
