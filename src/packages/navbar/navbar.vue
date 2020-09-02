@@ -21,46 +21,46 @@ import Icon from '../icon/icon.vue';
 export default {
   name: 'hat-navbar',
   components: {
-    Icon,
+    Icon
   },
   props: {
     title: {
       type: String,
-      default: '标题',
+      default: '标题'
     },
     border: {
       type: Boolean,
-      default: false,
+      default: false
     },
     fixed: {
       type: Boolean,
-      default: false,
+      default: false
     },
     zIndex: {
       type: [String, Number],
-      default: '',
-    },
+      default: ''
+    }
   },
   computed: {
-    navBarClass() {
+    navBarClass () {
       return {
         'hat-navbar-border-bottom': this.border,
-        'hat-navbar-fixed': this.fixed,
+        'hat-navbar-fixed': this.fixed
       };
     },
-    navBarStyle() {
+    navBarStyle () {
       return {
-        'z-index': this.fixed && this.zIndex,
+        'z-index': this.fixed && this.zIndex
       };
-    },
+    }
   },
   methods: {
-    clickLeft($event) {
+    clickLeft ($event) {
       this.$emit('click-left', $event);
     },
-    clickRight($event) {
+    clickRight ($event) {
       this.$emit('click-right', $event);
-    },
-  },
+    }
+  }
 };
 </script>

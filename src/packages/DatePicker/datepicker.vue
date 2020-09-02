@@ -54,39 +54,40 @@ export default {
   components: {
     'hat-icon': Icon,
     'hat-popup': Popup,
+    'hat-button': Button
   },
   props: {
     type: {
       type: String,
-      default: 'range', // 分别有single, multiple, range
+      default: 'range' // 分别有single, multiple, range
     },
     format: {
       type: String,
-      default: 'YYYY-MM-DD',
+      default: 'YYYY-MM-DD'
     },
     closedIcon: {
       type: Boolean,
-      default: false,
+      default: false
     },
     show: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
-  data() {
+  data () {
     return {
       dateArr: [],
       currentDate: {
         currentYear: null,
-        currentMonth: null,
+        currentMonth: null
       },
       activeCode: null,
       selectedDate: [],
-      timestamp: null,
+      timestamp: null
     };
   },
   methods: {
-    dateData(year, month) {
+    dateData (year, month) {
       const ret = [];
       if (!year || (!month && month !== 0)) {
         const today = new Date();
@@ -133,30 +134,30 @@ export default {
           month: thisMonth,
           date,
           showDate,
-          active: false,
+          active: false
         });
       }
       return {
         year,
         month,
-        days: ret,
+        days: ret
       };
     },
-    translateToMatrix(year, month) {
+    translateToMatrix (year, month) {
       const data = this.dateData(year, month);
       const len = Math.ceil(data.days.length / 7);
       const arr = [];
       this.currentDate = {
         ...this.currentDate,
         currentYear: data.year,
-        currentMonth: data.month,
+        currentMonth: data.month
       };
       for (let i = 0; i < len; i++) {
         arr.push(data.days.slice(i * 7, (i + 1) * 7));
       }
       this.dateArr = JSON.parse(JSON.stringify(arr));
     },
-    transalte(number) {
+    transalte (number) {
       const year = this.currentDate.currentYear;
       this.activeCode && this.resetActiveCode();
       const month = number > 0
@@ -164,17 +165,17 @@ export default {
         : --this.currentDate.currentMonth;
       this.translateToMatrix(year, month);
     },
-    resetActiveCode() {
+    resetActiveCode () {
       this.activeCode = null;
     },
-    selectDate(value) {
+    selectDate (value) {
       value.month > this.currentDate.currentMonth
         ? this.transalte(1)
         : value.month < this.currentDate.currentMonth && this.transalte(-1);
       this.setActiveStyle(value);
       this.setFormatDate();
     },
-    setActiveStyle(value) {
+    setActiveStyle (value) {
       const { type } = this;
       switch (type) {
         case 'single':
@@ -186,7 +187,7 @@ export default {
           break;
       }
     },
-    dateClass(date) {
+    dateClass (date) {
       const { type } = this;
       switch (type) {
         case 'single':
@@ -194,12 +195,12 @@ export default {
             'not-current-month': date.month !== this.currentDate.currentMonth,
             active:
               date.showDate === this.activeCode
-              && date.month === this.currentDate.currentMonth,
+              && date.month === this.currentDate.currentMonth
           };
         case 'multiple':
           return {
             'not-current-month': date.month !== this.currentDate.currentMonth,
-            active: date.active,
+            active: date.active
           };
         case 'range':
           return {
@@ -216,11 +217,11 @@ export default {
                 < Math.max(
                   this.selectedDate[0].date,
                   this.selectedDate[1].date,
-                ),
+                )
           };
       }
     },
-    setMultipleAndRange(value, type) {
+    setMultipleAndRange (value, type) {
       if (type === 'range' && this.selectedDate.length === 2) {
         this.selectedDate.map((item) => {
           item.active = false;
@@ -237,13 +238,13 @@ export default {
       }
       value.active = !value.active;
     },
-    setFormatDate() {
+    setFormatDate () {
       const formatType = this.format;
       const { type } = this;
       const dateData = {
         month: this.currentDate.currentMonth,
         year: this.currentDate.currentYear,
-        showDate: this.activeCode,
+        showDate: this.activeCode
       };
       switch (type) {
         case 'single':
@@ -263,7 +264,7 @@ export default {
           break;
       }
     },
-    formatDate(dateData, formatType) {
+    formatDate (dateData, formatType) {
       switch (formatType) {
         case 'YYYY-MM-DD':
           return (
@@ -283,16 +284,16 @@ export default {
           );
       }
     },
-    closeDatepicker() {
+    closeDatepicker () {
       this.$emit('closed');
     },
-    certain() {
+    certain () {
       this.$emit('change', this.timestamp);
       this.closeDatepicker();
-    },
+    }
   },
-  created() {
+  created () {
     this.translateToMatrix();
-  },
+  }
 };
 </script>

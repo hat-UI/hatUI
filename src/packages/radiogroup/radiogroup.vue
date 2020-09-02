@@ -10,14 +10,14 @@ export default {
   props: {
     value: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   methods: {
-    changeHandle(value) {
+    changeHandle (value) {
       const newVal = value;
       this.$emit('input', newVal);
-    },
-  },
+    }
+  }
 };
 </script>

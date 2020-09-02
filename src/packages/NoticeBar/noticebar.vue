@@ -22,44 +22,44 @@ import icon from '../icon/icon.vue';
 export default {
   name: 'hat-noticebar',
   components: {
-    icon,
+    icon
   },
   props: {
     backgroundColor: {
       type: String,
-      default: '#fffbe8',
+      default: '#fffbe8'
     },
     color: {
       type: String,
-      default: '#ed6a0c',
+      default: '#ed6a0c'
     },
     speed: {
       type: Number,
-      default: 20,
+      default: 20
     },
     text: {
       type: String,
-      default: '',
+      default: ''
     },
     delay: {
       type: Number,
-      default: 0,
+      default: 0
     },
     scrollable: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   computed: {
-    noticeStyle() {
+    noticeStyle () {
       return {
         backgroundColor: this.backgroundColor,
-        color: this.color,
+        color: this.color
       };
-    },
+    }
   },
   methods: {
-    initNoticeBar() {
+    initNoticeBar () {
       const style = document.styleSheets[0];
       const scrollWrapper = this.$refs.scrollerWrapper;
       const scrollContentWidth = this.$refs.scrollContent.offsetWidth;
@@ -67,15 +67,15 @@ export default {
       style.insertRule(`@Keyframes scrollAnimation{ 0% { left: ${noticebarWidth}px; } 100% { left: -${scrollContentWidth}px;}  }`);
       this.computedSpeed();
     },
-    computedSpeed() {
+    computedSpeed () {
       const scrollWidth = this.$refs.scrollContent.offsetWidth;
       const seconds = scrollWidth / this.speed;
       this.$refs.scrollContent.style.left = `${this.$refs.scrollerWrapper.offsetWidth}px`;
       this.$refs.scrollContent.style.animation = `scrollAnimation ${seconds}s ${this.delay}s linear infinite`;
-    },
+    }
   },
-  mounted() {
+  mounted () {
     this.scrollable && this.initNoticeBar();
-  },
+  }
 };
 </script>

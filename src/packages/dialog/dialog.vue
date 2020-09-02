@@ -38,113 +38,113 @@ import popup from '../popup/popup.vue';
 export default {
   name: 'hat-dialog',
   components: {
-    popup,
+    popup
   },
   props: {
     visible: {
       type: Boolean,
-      default: false,
+      default: false
     },
     title: {
       type: String,
-      default: '',
+      default: ''
     },
     content: {
       type: String,
-      default: '',
+      default: ''
     },
     cancelText: {
       type: String,
-      default: '取消',
+      default: '取消'
     },
     confirmText: {
       type: String,
-      default: '确定',
+      default: '确定'
     },
     cancelBackground: {
       type: String,
-      default: '#fff',
+      default: '#fff'
     },
     confirmBackground: {
       type: String,
-      default: '#07c160',
+      default: '#07c160'
     },
     confirmColor: {
       type: String,
-      default: '#fff',
+      default: '#fff'
     },
     cancelColor: {
       type: String,
-      default: '#000',
+      default: '#000'
     },
     confirmBtn: {
-      type: Function,
+      type: Function
     },
     cancelBtn: {
-      type: Function,
+      type: Function
     },
     closeBtn: {
-      type: Function,
+      type: Function
     },
     isShowClose: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
-  data() {
+  data () {
     return {
-      currVisible: false,
+      currVisible: false
     };
   },
   watch: {
     visible: {
-      handler(newVal) {
+      handler (newVal) {
         console.log('first');
         this.currVisible = newVal;
       },
-      immediate: true,
-    },
+      immediate: true
+    }
   },
   computed: {
-    confirmStyle() {
+    confirmStyle () {
       return {
         background: this.confirmBackground,
-        color: this.confirmColor,
+        color: this.confirmColor
       };
     },
-    cancelStyle() {
+    cancelStyle () {
       return {
         background: this.cancelBackground,
-        color: this.cancelColor,
+        color: this.cancelColor
       };
-    },
+    }
   },
   methods: {
-    close() {
+    close () {
       this.$emit('update:visible', false);
       this.currVisible = false;
     },
-    cancelHandle(event) {
+    cancelHandle (event) {
       this.close();
       this.cancelBtn && this.cancelBtn(event);
     },
-    confirmHandle(event) {
+    confirmHandle (event) {
       this.close();
       this.confirmBtn && this.confirmBtn(event);
     },
-    closeHandle(event) {
+    closeHandle (event) {
       this.close();
       this.closeBtn && this.closeBtn(event);
     },
-    destroy() {
+    destroy () {
       setTimeout(() => {
         this.$destroy(true);
         this.$el.parentNode.removeChild(this.$el);
       }, 1000);
-    },
+    }
   },
-  destroyed() {
+  destroyed () {
     this.destroy();
-  },
+  }
 };
 </script>

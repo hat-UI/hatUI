@@ -8,7 +8,7 @@ let nId = 1;
 const Dialog = (options) => {
   const id = `dialog-${nId++}`;
   const DialogInstance = new DialogConstructor({
-    propsData: { ...options },
+    propsData: { ...options }
   });
   DialogInstance.id = id;
   DialogInstance.vm = DialogInstance.$mount();

@@ -10,24 +10,24 @@ export default {
   props: {
     active: {
       type: Number,
-      default: 0,
+      default: 0
     },
     direction: {
       type: String,
-      default: 'horizontal',
-    },
+      default: 'horizontal'
+    }
   },
-  data() {
+  data () {
     return {
-      steps: [],
+      steps: []
     };
   },
   watch: {
-    steps(steps) {
+    steps (steps) {
       steps.forEach((child, index) => {
         child.index = index;
       });
-    },
-  },
+    }
+  }
 };
 </script>

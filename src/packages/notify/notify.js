@@ -10,12 +10,12 @@ const Notify = (options) => {
   options = options || {};
   if (typeof options === 'string') {
     options = {
-      message: options,
+      message: options
     };
   }
 
   const NoticeInstance = new NoticeConstructor({
-    data: options,
+    data: options
   });
   NoticeInstance.id = id;
   NoticeInstance.vm = NoticeInstance.$mount();
@@ -30,7 +30,7 @@ const Notify = (options) => {
   Notify[type] = (options) => {
     if (typeof options === 'string') {
       options = {
-        message: options,
+        message: options
       };
     }
     options.type = type;

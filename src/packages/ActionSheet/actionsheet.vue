@@ -43,53 +43,53 @@
 </template>
 
 <script>
-import popup from '../popup/index.js';
-import icon from '../icon/index.js';
-import loading from '../loading/index.js';
+import popup from '../popup/popup.vue';
+import icon from '../icon/icon.vue';
+import loading from '../loading/loading.vue';
 
 export default {
   name: 'hat-actionsheet',
   props: {
     show: {
       type: Boolean,
-      default: false,
+      default: false
     },
     actions: {
       type: Array,
-      default() {
+      default () {
         return [];
-      },
+      }
     },
     title: {
       type: String,
-      default: '标题',
+      default: '标题'
     },
     circle: {
       type: Boolean,
-      defualt: false,
+      defualt: false
     },
     closedIcon: {
       type: Boolean,
-      default: false,
+      default: false
     },
     cancelText: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   components: {
-    popup,
-    icon,
-    loading,
+    'hat-popup': popup,
+    'hat-icon': icon,
+    'hat-loading': loading
   },
   methods: {
-    closeActionSheet() {
+    closeActionSheet () {
       this.$emit('closed');
     },
-    selectItem(value) {
+    selectItem (value) {
       this.$emit('select', value);
       this.closeActionSheet();
-    },
-  },
+    }
+  }
 };
 </script>

@@ -41,67 +41,67 @@ export default {
   props: {
     value: {
       type: String,
-      default: '',
+      default: ''
     },
     background: {
       type: String,
-      default: '#ffffff',
+      default: '#ffffff'
     },
     placeholder: {
       type: String,
-      default: '请输入你的关键词',
+      default: '请输入你的关键词'
     },
     isShowBtn: {
       type: Boolean,
-      default: false,
+      default: false
     },
     actionText: {
       type: Boolean,
-      default: '取消',
+      default: '取消'
     },
     round: {
       type: Boolean,
-      default: false,
+      default: false
     },
     disabled: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
-  data() {
+  data () {
     return {
-      searchWord: '',
+      searchWord: ''
     };
   },
   computed: {
-    searchBarStyle() {
+    searchBarStyle () {
       return {
-        background: this.background,
+        background: this.background
       };
     },
-    searchInputStyle() {
+    searchInputStyle () {
       return {
-        borderRadius: this.round ? '30px' : '4px',
+        borderRadius: this.round ? '30px' : '4px'
       };
-    },
+    }
   },
   methods: {
-    rightClick() {
+    rightClick () {
       this.$emit('rightClick', this.searchWord);
     },
-    leftClick() {
+    leftClick () {
       this.$emit('leftClick');
     },
-    keyEnter() {
+    keyEnter () {
       !this.isShowBtn && this.$emit('keyEnter', this.searchWord);
     },
-    clearWord() {
+    clearWord () {
       this.searchWord = '';
       this.$emit('clear');
     },
-    inputHandler(e) {
+    inputHandler (e) {
       this.$emit('update:input', e.target.value);
-    },
-  },
+    }
+  }
 };
 </script>

@@ -8,34 +8,34 @@ export default {
   props: {
     type: {
       type: String,
-      default: '',
+      default: ''
     },
     size: {
       type: Number | String,
-      default: 24,
+      default: 24
     },
     round: {
       type: Boolean,
-      defualt: false,
+      defualt: false
     },
     color: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   computed: {
-    classStyle() {
+    classStyle () {
       return [
         this.type ? `hat-icon-${this.type}` : '',
-        this.round ? 'round' : '',
+        this.round ? 'round' : ''
       ];
     },
-    styleCls() {
+    styleCls () {
       return {
         fontSize: `${this.size}px`,
-        color: this.color,
+        color: this.color
       };
-    },
-  },
+    }
+  }
 };
 </script>

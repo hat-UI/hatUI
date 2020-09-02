@@ -22,40 +22,40 @@ export default {
   name: 'hat-toast',
   components: {
     Icon,
-    loading,
+    loading
   },
-  data() {
+  data () {
     return {
       visible: false,
       type: 'message',
       text: '',
       icon: 'heart',
       duration: 1500,
-      forbidClick: false,
+      forbidClick: false
     };
   },
   methods: {
-    setTimer() {
+    setTimer () {
       setTimeout(() => {
         this.close();
       }, this.duration);
     },
-    close() {
+    close () {
       this.visible = false;
       setTimeout(() => {
         this.$destroy(true);
         this.$el.parentNode.removeChild(this.$el);
       }, 500);
     },
-    isNetWorkImage(url) {
+    isNetWorkImage (url) {
       if (/^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/.test(url)) {
         return true;
       }
       return false;
-    },
+    }
   },
-  mounted() {
+  mounted () {
     this.setTimer();
-  },
+  }
 };
 </script>

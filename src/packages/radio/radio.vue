@@ -16,47 +16,47 @@ export default {
   props: {
     round: {
       type: Boolean,
-      default: false,
+      default: false
     },
     label: {
       type: String,
-      default: '',
+      default: ''
     },
     value: {
       type: String,
-      default: '',
+      default: ''
     },
     disabled: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
-    radioCls() {
+    radioCls () {
       return {
         round: this.round,
-        'is-checked': this.checkedValue,
+        'is-checked': this.checkedValue
       };
     },
-    isGroup() {
+    isGroup () {
       if (this.$parent.$options._componentTag === 'hat-radio-group') {
         return true;
       }
       return false;
     },
-    checkedValue() {
+    checkedValue () {
       return this.isGroup ? this.$parent.value === this.label : this.value === this.label;
-    },
+    }
   },
   methods: {
-    changeHandle() {
+    changeHandle () {
       const newValue = this.label;
       if (this.isGroup) {
         this.$parent.changeHandle(newValue);
       } else {
         this.$emit('input', newValue);
       }
-    },
-  },
+    }
+  }
 };
 </script>

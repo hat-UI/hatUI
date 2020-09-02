@@ -43,45 +43,45 @@ export default {
   props: {
     multiple: {
       type: Boolean,
-      default: false,
+      default: false
     },
     name: {
       type: String,
-      default: '',
+      default: ''
     },
     limit: {
       type: Number,
-      default: 3,
-    },
+      default: 3
+    }
 
   },
   components: {
-    icon,
-    loading,
+    'hat-icon': icon,
+    'hat-loading': loading
   },
-  data() {
+  data () {
     return {
-      previewList: [],
+      previewList: []
     };
   },
   methods: {
 
-    uploadFile(e) {
+    uploadFile (e) {
       this.translateToBase64(e.target.files);
     },
-    translateToBase64(files) {
-      const _this = this;
+    translateToBase64 (files) {
+      const self = this;
       for (let i = 0; i < files.length; i++) {
         const reader = new FileReader();
         reader.readAsDataURL(files[i]);
         reader.onload = function (e) {
-          _this.previewList.push(e.target.result);
+          self.previewList.push(e.target.result);
         };
       }
     },
-    clearFile(index) {
+    clearFile (index) {
       console.log(index);
-    },
-  },
+    }
+  }
 };
 </script>

@@ -10,13 +10,13 @@ export default {
   props: {
     value: {
       type: Array,
-      default() {
+      default () {
         return [];
-      },
-    },
+      }
+    }
   },
   methods: {
-    changeHandle(value) {
+    changeHandle (value) {
       if (this.value.includes(value)) {
         const index = this.value.findIndex((item) => item === value);
         this.value.splice(index, 1);
@@ -24,7 +24,7 @@ export default {
         this.value.push(value);
       }
       this.$emit('input', this.value);
-    },
-  },
+    }
+  }
 };
 </script>

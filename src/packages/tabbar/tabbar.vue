@@ -30,52 +30,52 @@ import Badge from '../badge/badge.vue';
 export default {
   name: 'hat-tabbar',
   components: {
-    Badge,
+    Badge
   },
   props: {
     tabList: {
       type: Array,
-      defualt: [],
+      defualt: []
     },
     bottom: {
       type: Boolean,
-      default: true,
+      default: true
     },
     fixed: {
       type: Boolean,
-      default: true,
+      default: true
     },
     color: {
       type: String,
-      default: '#000',
+      default: '#000'
     },
     activeColor: {
       type: String,
-      default: '#f0250f',
-    },
+      default: '#f0250f'
+    }
   },
   methods: {
-    switchTab(item, index) {
+    switchTab (item, index) {
       this.tabList.forEach((item, currIndex) => {
         index === currIndex ? (item.curr = true) : (item.curr = false);
       });
       window.location.href = item.href;
       this.$emit('switchTab', item, index);
     },
-    isNetWorkImage(url) {
+    isNetWorkImage (url) {
       if (/^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?$/.test(url)) {
         return true;
       }
       return false;
-    },
+    }
   },
   computed: {
-    tabbarStyle() {
+    tabbarStyle () {
       return {
         position: this.fixed ? 'fixed' : 'relative',
-        bottom: this.fixed && this.bottom ? 0 : '',
+        bottom: this.fixed && this.bottom ? 0 : ''
       };
-    },
-  },
+    }
+  }
 };
 </script>

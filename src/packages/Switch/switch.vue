@@ -19,28 +19,28 @@ export default {
   props: {
     disabled: {
       type: Boolean,
-      defualt: false,
+      defualt: false
     },
     checked: {
       type: Boolean,
-      default: false,
+      default: false
     },
     color: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   computed: {
-    swicthCls() {
+    swicthCls () {
       return {
-        'hat-switch-disabled': this.disabled,
+        'hat-switch-disabled': this.disabled
       };
-    },
+    }
   },
   methods: {
-    changeHandle() {
+    changeHandle () {
       this.$emit('change', this.checked);
-    },
-  },
+    }
+  }
 };
 </script>

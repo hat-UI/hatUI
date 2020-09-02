@@ -16,45 +16,45 @@ export default {
   props: {
     value: {
       type: Number,
-      default: 0,
+      default: 0
     },
     isDot: {
       type: Boolean,
-      default: false,
+      default: false
     },
     max: {
       type: Number,
-      default: 99,
+      default: 99
     },
     zIndex: {
       type: Number,
-      default: 1,
+      default: 1
     },
     color: {
       type: String,
-      default: '#f61605',
+      default: '#f61605'
     },
     iconColor: {
       type: String,
-      default: '#f61605',
+      default: '#f61605'
     },
     icon: {
       type: String,
-      default: 'upload',
-    },
+      default: 'upload'
+    }
   },
   computed: {
-    DotStyle() {
+    DotStyle () {
       return {
         color: this.color,
         zIndex: this.zIndex,
         border: `1px solid ${this.color}`,
-        'background-color': this.isDot ? `${this.color}` : '',
+        'background-color': this.isDot ? `${this.color}` : ''
       };
     },
-    noticeCount() {
+    noticeCount () {
       return this.value > this.max ? `${this.max}+` : this.value;
-    },
-  },
+    }
+  }
 };
 </script>

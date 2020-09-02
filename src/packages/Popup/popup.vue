@@ -22,47 +22,46 @@
 <script>
 export default {
   name: 'hat-popup',
-  data() {
+  data () {
     return {
-      show: false,
+      show: false
     };
   },
   props: {
     position: {
       type: String,
-      default: 'bottom',
+      default: 'bottom'
     },
     show: {
       type: Boolean,
-      default: false,
+      default: false
     },
     width: {
       type: String | Number,
-      default: '25%',
+      default: '25%'
     },
     circle: {
       type: Boolean,
-      default: false,
+      default: false
     },
     isCanClose: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   watch: {
-    show(val) {
+    show (val) {
       if (val) {
         this.$refs.hatPopup.style.pointerEvents = 'auto';
         return;
       }
       this.$refs.hatPopup.style.pointerEvents = 'none';
-    },
+    }
   },
   methods: {
-    setAnimationRule() {
+    setAnimationRule () {
       const stylesheet = document.styleSheets[0];
       const positionType = this.position;
-      const { width } = this;
       switch (positionType) {
         case 'left':
           stylesheet.insertRule(
@@ -91,12 +90,12 @@ export default {
           break;
       }
     },
-    closePopup() {
+    closePopup () {
       this.isCanClose && this.$emit('closed');
-    },
+    }
   },
   computed: {
-    styleClass() {
+    styleClass () {
       const positionType = this.position;
       const { width } = this;
       switch (positionType) {
@@ -105,40 +104,40 @@ export default {
             top: 0,
             bottom: 0,
             left: 0,
-            minWidth: width,
+            minWidth: width
           };
         case 'right':
           return {
             top: 0,
             bottom: 0,
             right: 0,
-            minWidth: width,
+            minWidth: width
           };
         case 'bottom':
           return {
             left: 0,
             right: 0,
             bottom: 0,
-            minHeight: width,
+            minHeight: width
           };
         case 'top':
           return {
             left: 0,
             right: 0,
             top: 0,
-            minHeight: width,
+            minHeight: width
           };
         case 'center':
           return {
             minWidth: width,
             minHeight: '50px',
-            transform: 'scale(1.0)',
+            transform: 'scale(1.0)'
           };
       }
-    },
+    }
   },
-  mounted() {
+  mounted () {
     this.setAnimationRule();
-  },
+  }
 };
 </script>

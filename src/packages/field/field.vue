@@ -41,70 +41,70 @@ export default {
   props: {
     value: {
       type: String,
-      default: '',
+      default: ''
     },
     background: {
       type: String,
-      default: '#ffffff',
+      default: '#ffffff'
     },
     placeholder: {
       type: String,
-      default: '请输入你的关键词',
+      default: '请输入你的关键词'
     },
     isShowBtn: {
       type: Boolean,
-      default: false,
+      default: false
     },
     actionText: {
       type: Boolean,
-      default: '取消',
+      default: '取消'
     },
     round: {
       type: Boolean,
-      default: false,
+      default: false
     },
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     type: {
       type: String,
-      default: 'text',
+      default: 'text'
     },
     label: {
       type: String,
-      default: '文本',
-    },
+      default: '文本'
+    }
   },
   computed: {
-    searchBarStyle() {
+    searchBarStyle () {
       return {
-        background: this.background,
+        background: this.background
       };
     },
-    searchInputStyle() {
+    searchInputStyle () {
       return {
-        borderRadius: this.round ? '30px' : '4px',
+        borderRadius: this.round ? '30px' : '4px'
       };
-    },
+    }
   },
   methods: {
-    rightClick() {
+    rightClick () {
       this.$emit('rightClick', this.value);
     },
-    leftClick() {
+    leftClick () {
       this.$emit('leftClick');
     },
-    keyEnter() {
+    keyEnter () {
       !this.isShowBtn && this.$emit('keyEnter', this.value);
     },
-    clearWord() {
+    clearWord () {
       this.value = '';
       this.$emit('clear');
     },
-    inputHandler(e) {
+    inputHandler (e) {
       this.$emit('update:input', e.target.value);
-    },
-  },
+    }
+  }
 };
 </script>

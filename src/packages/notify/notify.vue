@@ -9,30 +9,30 @@
 <script>
 export default {
   name: 'hat-notify',
-  data() {
+  data () {
     return {
       visible: false,
       message: '',
       duration: 1500,
-      type: 'primary',
+      type: 'primary'
     };
   },
   methods: {
-    setTimer() {
+    setTimer () {
       setTimeout(() => {
         this.close();
       }, this.duration);
     },
-    close() {
+    close () {
       this.visible = false;
       setTimeout(() => {
         this.$destroy(true);
         this.$el.parentNode.removeChild(this.$el);
       }, 500);
-    },
+    }
   },
-  mounted() {
+  mounted () {
     this.setTimer();
-  },
+  }
 };
 </script>

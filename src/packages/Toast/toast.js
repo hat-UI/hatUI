@@ -9,11 +9,11 @@ const Toast = (options) => {
   const id = `toast-${nId++}`;
   options = typeof options === 'string' ? ({
     text: options,
-    type: 'message',
+    type: 'message'
   }) : options;
 
   const ToastInstance = new ToastConstructor({
-    data: options,
+    data: options
   });
   ToastInstance.id = id;
   ToastInstance.vm = ToastInstance.$mount();

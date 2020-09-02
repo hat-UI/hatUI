@@ -19,56 +19,56 @@ import Icon from '../icon/icon.vue';
 export default {
   name: 'hat-button',
   components: {
-    'hat-icon': Icon,
+    'hat-icon': Icon
   },
   props: {
     size: {
       type: String,
-      default: 'small',
+      default: 'small'
     },
     plain: {
       type: Boolean,
-      default: false,
+      default: false
     },
     type: {
       type: String,
-      default: 'default',
+      default: 'default'
     },
     disabled: {
       type: Boolean,
-      default: false,
+      default: false
     },
     circle: {
       type: Boolean,
-      default: false,
+      default: false
     },
     round: {
       type: Boolean,
-      default: false,
+      default: false
     },
     icon: {
       type: String,
-      default: '',
+      default: ''
     },
     color: {
       type: String,
-      default: '',
+      default: ''
     },
     block: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
-  data() {
+  data () {
     return {};
   },
   methods: {
-    clickHandler() {
+    clickHandler () {
       this.$emit('click');
-    },
+    }
   },
   computed: {
-    cls() {
+    cls () {
       let className = `hat-button hat-button-${this.type} hat-button-${this.size}`;
       this.circle && (className += ' hat-button-circle');
       this.round && (className += ' hat-button-round');
@@ -76,20 +76,20 @@ export default {
       this.plain && (className += ' hat-button-plain');
       return className;
     },
-    styleCls() {
+    styleCls () {
       const styleObj = [];
       this.color
         && styleObj.push({
           background: this.color,
           color: '#fff',
-          border: 'none',
+          border: 'none'
         });
       this.block && styleObj.push({
         display: 'block',
-        width: '100%',
+        width: '100%'
       });
       return styleObj;
-    },
-  },
+    }
+  }
 };
 </script>
