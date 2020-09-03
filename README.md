@@ -1,11 +1,22 @@
-# hatUI
-![](https://travis-ci.org/hat-UI/hatUI.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/hat-UI/hatUI/badge.svg?branch=master)](https://coveralls.io/github/hat-UI/hatUI?branch=master)
-![](https://img.shields.io/badge/License-MIT-brightgreen)
+<p align="center">
+    <img src="https://s1.ax1x.com/2020/08/24/dDoAeI.png" />
+</p>
+
+<p align="center">
+  <a href="https://travis-ci.org/hat-UI/hatUI.svg?branch=function_comp_dev">
+    <img src="https://travis-ci.org/hat-UI/hatUI.svg?branch=function_comp_dev">
+  </a>
+  <a href="https://coveralls.io/repos/github/hat-UI/hatUI/badge.svg?branch=function_comp_dev">
+    <img src="https://coveralls.io/repos/github/hat-UI/hatUI/badge.svg?branch=function_comp_dev">
+  </a>
+  <a href="https://img.shields.io/badge/License-MIT-brightgreen">
+    <img src="https://img.shields.io/badge/License-MIT-brightgreen">
+  </a>
+</p>
+
 
 > 一套移动端轻量级Vue组件库
     
-[![dDoAeI.png](https://s1.ax1x.com/2020/08/24/dDoAeI.png)](https://imgchr.com/i/dDoAeI)
 ## 项目开发目录功能设计说明
 
 ```bash
