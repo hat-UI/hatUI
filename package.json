@@ -26,10 +26,8 @@
     "cross-env": "^7.0.2",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
     "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-vue": "^6.2.2",
     "expect": "^25.1.0",
     "file-loader": "^6.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
@@ -110,7 +108,8 @@
     "sourceMap": false
   },
   "keywords": [
-    "scaffold",
+    "library",
+    "component",
     "vue"
   ],
   "theme": "sites/demo/src/theme/variable.scss",

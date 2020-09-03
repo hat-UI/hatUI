@@ -99,7 +99,6 @@ export default {
   watch: {
     visible: {
       handler (newVal) {
-        console.log('first');
         this.currVisible = newVal;
       },
       immediate: true
