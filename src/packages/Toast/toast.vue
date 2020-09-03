@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import Icon from '@/icon/icon.vue';
-import loading from '@/loading/loading.vue';
+import icon from '../icon/icon.vue';
+import loading from '../loading/loading.vue';
 
 export default {
   name: 'hat-toast',
   components: {
-    Icon,
+    icon,
     loading
   },
   data () {

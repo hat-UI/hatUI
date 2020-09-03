@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import Icon from '@/icon/icon.vue';
+import icon from '../icon/icon.vue';
 
 export default {
   name: 'hat-button',
   components: {
-    'hat-icon': Icon
+    'hat-icon': icon
   },
   props: {
     size: {
