@@ -14,8 +14,7 @@
 </template>
 
 <script>
-import Icon from '../icon/icon.vue';
-
+import Icon from '../icon';
 export default {
   name: 'hat-button',
   components: {

@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Icon from '../icon/icon.vue';
-import Loading from '../loading/loading.vue';
+import Icon from '../icon';
+import Loading from '../loading';
 
 export default {
   name: 'hat-toast',
