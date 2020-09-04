@@ -1,7 +1,7 @@
 <template>
   <div :class="[prefixCls +'-wrap']" v-show="show">
     <svg :class="prefixCls" :viewBox="viewBox" v-if="type === 'circle'">
-      <circle :class="[prefixCls+'-circle']" :cx="size" :cy="size" :r="0.4*size" :fill="none" :stroke="color" />
+      <circle :class="[prefixCls+'-circle']" :cx="size" :cy="size" :r="0.4*size" fill="none" :stroke="color" />
     </svg>
     <span class="tips" v-if="tips">{{tips}}</span>
   </div>
@@ -13,8 +13,7 @@ export default {
   name: 'hat-loading',
   data () {
     return {
-      prefixCls,
-      tips: ''
+      prefixCls
     };
   },
   props: {

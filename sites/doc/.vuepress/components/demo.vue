@@ -22,7 +22,8 @@ export default {
   },
   computed: {
     componentUrl() {
-      return  `https://harhao.gitee.io/hatui-site/#/${this.componentName}`
+      // return  `https://harhao.gitee.io/hatui-site/#/${this.componentName}`
+      return  `http://localhost:8081/#/${this.componentName}`
     }
   },
 };

@@ -22,7 +22,7 @@ export default {
   name: 'hat-toast',
   components: {
     'hat-icon': Icon,
-    'hat-loading': loading
+    'hat-loading': Loading
   },
   data () {
     return {

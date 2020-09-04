@@ -80,7 +80,7 @@ export default {
           break;
         case 'center':
           stylesheet.insertRule(
-            '@keyframes translate-center-animation { 0% { transform: scale(0.6);} 100% { transform: scale(1.0); }}',
+            '@keyframes translate-center-animation { 0% { opacity: 0;  transform: scale(1.1);} 100% { opacity: 1; transform: scale(1.0); }}',
           );
           break;
       }

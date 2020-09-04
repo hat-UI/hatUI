@@ -13,6 +13,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        transform-origin: center center;
     }
 
     .hat-popup-mask {
@@ -43,7 +44,7 @@
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .5s;
+    transition: opacity .6s ease;
 }
 
 .fade-enter,

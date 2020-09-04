@@ -1,5 +1,5 @@
 <template>
-  <hat-popup :show="currVisible" position="center" :isCanClose="false">
+  <hat-popup :show="currVisible" position="center" :isCanClose="false" :id="id">
     <div class="hat-dialog-wrapper">
       <hat-icon
         size="18"
@@ -89,6 +89,10 @@ export default {
     isShowClose: {
       type: Boolean,
       default: false
+    },
+    id: {
+      type: String,
+      default: ''
     }
   },
   data () {

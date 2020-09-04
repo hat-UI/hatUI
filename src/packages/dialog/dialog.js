@@ -6,16 +6,21 @@ const DialogConstructor = Vue.extend(DialogTpl);
 let nId = 1;
 
 const Dialog = (options) => {
-  const id = `dialog-${nId++}`;
+  options.id = options.id || 'hat-dialog-default-id';
   const DialogInstance = new DialogConstructor({
-    propsData: { ...options }
+    propsData: options
   });
-  DialogInstance.id = id;
+  DialogInstance.id = options.id;
   DialogInstance.vm = DialogInstance.$mount();
   DialogInstance.vm.visible = true;
   DialogInstance.dom = DialogInstance.vm.$el;
-  document.body.appendChild(DialogInstance.dom);
-  DialogInstance.dom.zIndex = nId + 1001;
+  let dialogDom = document.querySelector('#' + options.id);
+  if (options.id && dialogDom) {
+    dialogDom.parentNode.replaceChild(DialogInstance.$el, dialogDom);
+  } else {
+    document.body.appendChild(DialogInstance.$el);
+  }
+  DialogInstance.dom.zIndex = (nId++) + 1001;
   return DialogInstance.vm;
 };
 
