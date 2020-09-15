@@ -20,7 +20,8 @@ export default {
   },
   data () {
     return {
-      index: 0
+      index: 0,
+      direction: 'horizontal'
     };
   },
   computed: {
@@ -29,7 +30,6 @@ export default {
       return parent.steps[0] === this;
     },
     active () {
-      console.log(this.$parent.active);
       return this.$parent.active >= this.index;
     }
   },

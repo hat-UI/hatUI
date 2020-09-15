@@ -26,6 +26,7 @@ export default {
     steps (steps) {
       steps.forEach((child, index) => {
         child.index = index;
+        child.direction = this.direction
       });
     }
   }
