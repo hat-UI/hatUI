@@ -18,7 +18,10 @@ rimraf(`./dist/${config.packageName}.min.js`,(err) => {
 
 module.exports = merge(baseConfig, {
   mode: "production",
-  devtool: false,
+  devtool: 'cheap-module-source-map',
+  externals: {
+    vue: 'vue'
+  },
   entry: path.resolve(__dirname, "../src/index.js"),
   output: {
     filename:`${config.packageName}.min.js`,

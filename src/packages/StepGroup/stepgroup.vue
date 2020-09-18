@@ -1,5 +1,5 @@
 <template>
-  <div class="hat-step-graoup">
+  <div class="hat-step-group" :class="[direction === 'horizontal'? 'is-horizontal': 'is-vertical']">
     <slot></slot>
   </div>
 </template>
@@ -17,13 +17,13 @@ export default {
       default: 'horizontal'
     }
   },
-  data () {
+  data() {
     return {
       steps: []
     };
   },
   watch: {
-    steps (steps) {
+    steps(steps) {
       steps.forEach((child, index) => {
         child.index = index;
         child.direction = this.direction
