@@ -73,7 +73,7 @@
     "demo:dll": "webpack --progress --config ./build/webpack.demo.dll.js",
     "build": "cross-env NODE_ENV=build webpack --progress --config ./build/webpack.prod.conf.js",
     "multiEntry": "cross-env NODE_ENV=multiEntry webpack --inline --progress --config ./build/webpack.mutilEntry.conf.js",
-    "serve": "http-server ./sites/demo/dist",
+    "serve": "http-server ./sites/doc/.vuepress/dist/",
     "lint": "eslint --fix src/packages/**/*.{js,vue}",
     "test:watch": "npm run test --watch",
     "test": "cross-env NODE_ENV=coverage nyc mocha-webpack --webpack-config build/webpack.test.conf.js --require test/setup.js src/packages/*/__test__/**.spec.js",
